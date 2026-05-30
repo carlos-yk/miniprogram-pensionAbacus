@@ -1,0 +1,34 @@
+.bullet {
+  margin-top: 12rpx;
+  color: #526375;
+  font-size: 28rpx;
+}
+
+.bullet:first-child {
+  margin-top: 0;
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.progress-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.progress-name {
+  color: #17324D;
+  font-size: 32rpx;
+  font-weight: 700;
+}

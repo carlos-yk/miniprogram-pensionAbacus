@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0",
+  "ruleVersion": "2026.05.28-seed",
+  "lastUpdated": "2026-05-28",
+  "status": "rules_encoded_pending_sample_verification",
+  "sourceIds": [
+    "national-retirement-age-2024"
+  ],
+  "sourceUrls": [
+    "https://www.npc.gov.cn/npc/c2/kgfb/202409/t20240913_439534.html",
+    "https://www.gov.cn/yaowen/liebiao/202409/content_6974294.htm",
+    "https://si.12333.gov.cn/184940.jhtml?menuguide=1"
+  ],
+  "notes": [
+    "根据全国人大常委会关于实施渐进式延迟法定退休年龄的决定编码。",
+    "正式上线前需要用国家社保公共服务平台退休年龄计算器抽样校验。",
+    "本文件不处理特殊工种、病退、弹性提前/延迟退休的个案审批，只给出法定退休年龄基础规则。"
+  ],
+  "rules": [
+    {
+      "workerType": "male",
+      "label": "男职工",
+      "originalRetirementAge": {
+        "years": 60,
+        "months": 0
+      },
+      "targetRetirementAge": {
+        "years": 63,
+        "months": 0
+      },
+      "effectiveFrom": "2025-01-01",
+      "delayPolicy": {
+        "stepMonths": 4,
+        "delayMonthsPerStep": 1,
+        "maxDelayMonths": 36,
+        "formula": "delayMonths = clamp(floor(monthsBetween(2025-01, originalRetirementDateMonth) / 4) + 1, 0, 36), only if originalRetirementDateMonth >= 2025-01"
+      },
+      "unaffectedBirthBefore": "1965-01",
+      "fullyDelayedBirthFrom": "1977-01",
+      "tableBirthRange": {
+        "from": "1965-01",
+        "to": "1976-12"
+      }
+    },
+    {
+      "workerType": "female_original_55",
+      "label": "原法定退休年龄55周岁的女职工",
+      "originalRetirementAge": {
+        "years": 55,
+        "months": 0
+      },
+      "targetRetirementAge": {
+        "years": 58,
+        "months": 0
+      },
+      "effectiveFrom": "2025-01-01",
+      "delayPolicy": {
+        "stepMonths": 4,
+        "delayMonthsPerStep": 1,
+        "maxDelayMonths": 36,
+        "formula": "delayMonths = clamp(floor(monthsBetween(2025-01, originalRetirementDateMonth) / 4) + 1, 0, 36), only if originalRetirementDateMonth >= 2025-01"
+      },
+      "unaffectedBirthBefore": "1970-01",
+      "fullyDelayedBirthFrom": "1982-01",
+      "tableBirthRange": {
+        "from": "1970-01",
+        "to": "1981-12"
+      }
+    },
+    {
+      "workerType": "female_original_50",
+      "label": "原法定退休年龄50周岁的女职工",
+      "originalRetirementAge": {
+        "years": 50,
+        "months": 0
+      },
+      "targetRetirementAge": {
+        "years": 55,
+        "months": 0
+      },
+      "effectiveFrom": "2025-01-01",
+      "delayPolicy": {
+        "stepMonths": 2,
+        "delayMonthsPerStep": 1,
+        "maxDelayMonths": 60,
+        "formula": "delayMonths = clamp(floor(monthsBetween(2025-01, originalRetirementDateMonth) / 2) + 1, 0, 60), only if originalRetirementDateMonth >= 2025-01"
+      },
+      "unaffectedBirthBefore": "1975-01",
+      "fullyDelayedBirthFrom": "1985-01",
+      "tableBirthRange": {
+        "from": "1975-01",
+        "to": "1984-12"
+      }
+    }
+  ],
+  "minimumContributionYearsByRetirementYear": [
+    {
+      "retirementYearFrom": 2025,
+      "retirementYearTo": 2029,
+      "requiredYears": 15,
+      "requiredMonths": 0
+    },
+    {
+      "retirementYearFrom": 2030,
+      "retirementYearTo": 2030,
+      "requiredYears": 15,
+      "requiredMonths": 6
+    },
+    {
+      "retirementYearFrom": 2031,
+      "retirementYearTo": 2031,
+      "requiredYears": 16,
+      "requiredMonths": 0
+    },
+    {
+      "retirementYearFrom": 2032,
+      "retirementYearTo": 2032,
+      "requiredYears": 16,
+      "requiredMonths": 6
+    },
+    {
+      "retirementYearFrom": 2033,
+      "retirementYearTo": 2033,
+      "requiredYears": 17,
+      "requiredMonths": 0
+    },
+    {
+      "retirementYearFrom": 2034,
+      "retirementYearTo": 2034,
+      "requiredYears": 17,
+      "requiredMonths": 6
+    },
+    {
+      "retirementYearFrom": 2035,
+      "retirementYearTo": 2035,
+      "requiredYears": 18,
+      "requiredMonths": 0
+    },
+    {
+      "retirementYearFrom": 2036,
+      "retirementYearTo": 2036,
+      "requiredYears": 18,
+      "requiredMonths": 6
+    },
+    {
+      "retirementYearFrom": 2037,
+      "retirementYearTo": 2037,
+      "requiredYears": 19,
+      "requiredMonths": 0
+    },
+    {
+      "retirementYearFrom": 2038,
+      "retirementYearTo": 2038,
+      "requiredYears": 19,
+      "requiredMonths": 6
+    },
+    {
+      "retirementYearFrom": 2039,
+      "retirementYearTo": null,
+      "requiredYears": 20,
+      "requiredMonths": 0
+    }
+  ],
+  "verificationSamples": [
+    {
+      "workerType": "male",
+      "birthMonth": "1965-01",
+      "expectedDelayMonths": 1,
+      "expectedRetirementAge": "60岁1个月",
+      "expectedRetirementMonth": "2025-02"
+    },
+    {
+      "workerType": "male",
+      "birthMonth": "1976-12",
+      "expectedDelayMonths": 36,
+      "expectedRetirementAge": "63岁",
+      "expectedRetirementMonth": "2039-12"
+    },
+    {
+      "workerType": "female_original_55",
+      "birthMonth": "1970-01",
+      "expectedDelayMonths": 1,
+      "expectedRetirementAge": "55岁1个月",
+      "expectedRetirementMonth": "2025-02"
+    },
+    {
+      "workerType": "female_original_55",
+      "birthMonth": "1981-12",
+      "expectedDelayMonths": 36,
+      "expectedRetirementAge": "58岁",
+      "expectedRetirementMonth": "2039-12"
+    },
+    {
+      "workerType": "female_original_50",
+      "birthMonth": "1975-01",
+      "expectedDelayMonths": 1,
+      "expectedRetirementAge": "50岁1个月",
+      "expectedRetirementMonth": "2025-02"
+    },
+    {
+      "workerType": "female_original_50",
+      "birthMonth": "1984-12",
+      "expectedDelayMonths": 60,
+      "expectedRetirementAge": "55岁",
+      "expectedRetirementMonth": "2039-12"
+    }
+  ]
+}
+

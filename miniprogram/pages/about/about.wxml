@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="title">说明</view>
+  <view class="subtitle">结果为估算参考，实际养老金以社保经办机构核定为准。</view>
+
+  <view class="section">
+    <view class="section-title">支持城市</view>
+    <view class="progress-list">
+      <block wx:for="{{cityProgress}}" wx:key="city">
+        <view class="card progress-card">
+          <view class="progress-head">
+            <view class="progress-name">{{item.name}}</view>
+            <view class="{{item.tagClassName}}">{{item.label}}</view>
+          </view>
+          <view class="muted">{{item.summary}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">数据来源</view>
+    <view class="card">
+      <view class="bullet">- 使用公开政策参数和退休年龄规则估算。</view>
+      <view class="bullet">- 城市数据会持续核对更新。</view>
+      <view class="bullet">- 未开放城市暂不提供测算。</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">隐私说明</view>
+    <view class="card">
+      <view class="bullet">- 不登录，不上传用户数据。</view>
+      <view class="bullet">- 最近一次测算和个人账户余额仅保存在本机。</view>
+      <view class="bullet">- 默认分享卡不展示养老金金额、出生年月、缴费年限或个人账户余额。</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">免责声明</view>
+    <view class="card">
+      <view class="bullet">- 本结果为估算值，仅供参考。</view>
+      <view class="bullet">- 实际养老金以社保经办机构核定为准。</view>
+      <view class="bullet">- 过渡性养老金、多地缴费、特殊退休情况暂未纳入精算。</view>
+    </view>
+  </view>
+</view>

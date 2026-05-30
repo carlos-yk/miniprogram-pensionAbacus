@@ -1,0 +1,14 @@
+{
+  "name": "pension-abacus-miniprogram",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "verify": "npm test && npm run verify:json && npm run verify:js && npm run verify:copy && npm run verify:pages && npm run verify:smoke",
+    "verify:json": "node tests/verify-json.js",
+    "verify:js": "node tests/verify-js-syntax.js",
+    "verify:copy": "node tests/verify-copy.js",
+    "verify:pages": "node tests/verify-pages.js",
+    "verify:smoke": "node tests/smoke-miniprogram.js"
+  }
+}

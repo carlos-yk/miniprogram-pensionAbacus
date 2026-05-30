@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "1.0",
+  "sourceCatalogVersion": "2026.05.28-seed",
+  "lastReviewedAt": "2026-05-28",
+  "sources": [
+    {
+      "sourceId": "national-enterprise-pension-system-2005",
+      "level": "P0",
+      "region": "national",
+      "title": "国务院关于完善企业职工基本养老保险制度的决定",
+      "documentNo": "国发〔2005〕38号",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2008-03/28/content_7376.htm",
+      "publisher": "国务院",
+      "publishedAt": "2005-12-03",
+      "effectiveFrom": "2006-01-01",
+      "effectiveTo": null,
+      "fields": [
+        "pension-policy.employeePension.components",
+        "pension-policy.employeePension.personalAccountCreditRate",
+        "pension-policy.employeePension.minimumContributionYears.before2030"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "national-social-insurance-rate-2019",
+      "level": "P0",
+      "region": "national",
+      "title": "国务院办公厅关于印发降低社会保险费率综合方案的通知",
+      "documentNo": "国办发〔2019〕13号",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2019-04/04/content_5379629.htm",
+      "publisher": "国务院办公厅",
+      "publishedAt": "2019-04-04",
+      "effectiveFrom": "2019-05-01",
+      "effectiveTo": null,
+      "fields": [
+        "pension-policy.employeePension.employerContributionRate"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "national-retirement-age-2024",
+      "level": "P0",
+      "region": "national",
+      "title": "全国人民代表大会常务委员会关于实施渐进式延迟法定退休年龄的决定",
+      "url": "https://www.gov.cn/yaowen/liebiao/202409/content_6974294.htm",
+      "publisher": "全国人民代表大会常务委员会",
+      "publishedAt": "2024-09-13",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": null,
+      "fields": [
+        "pension-policy.employeePension.retirementAgePolicy",
+        "pension-policy.employeePension.minimumContributionYears.gradualIncrease"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "national-social-insurance-law-2010",
+      "level": "P0",
+      "region": "national",
+      "title": "中华人民共和国社会保险法",
+      "url": "https://chinajob.mohrss.gov.cn/h5/c/2010-10-29/33172.shtml",
+      "publisher": "全国人民代表大会常务委员会",
+      "publishedAt": "2010-10-28",
+      "effectiveFrom": "2011-07-01",
+      "effectiveTo": null,
+      "fields": [
+        "pension-policy.employeePension.eligibility"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "shanghai-social-insurance-base-2025",
+      "level": "P1",
+      "region": "shanghai",
+      "title": "本市调整2025年度社保缴费基数上下限",
+      "url": "https://rsj.sh.gov.cn/tgsgg_17341/20250918/t0035_1435637.html",
+      "publisher": "上海市人力资源和社会保障局",
+      "publishedAt": "2025-09-18",
+      "effectiveFrom": "2025-07-01",
+      "effectiveTo": null,
+      "fields": [
+        "city-history-params.shanghai.2025.averageWage.value",
+        "city-history-params.shanghai.2025.contributionBase.employee.floor",
+        "city-history-params.shanghai.2025.contributionBase.employee.ceiling"
+      ],
+      "extractedValues": {
+        "averageWage": 12434,
+        "contributionBaseFloor": 7460,
+        "contributionBaseCeiling": 37302
+      },
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "shanghai-pension-calculation-method-2025",
+      "level": "P2",
+      "region": "shanghai",
+      "title": "1992年底以前参加工作的人员，如何按照职保办法计发养老待遇？",
+      "url": "https://rsj.sh.gov.cn/tyljjfbf_17557/20250527/t0035_1432739.html",
+      "publisher": "上海市人力资源和社会保障局",
+      "publishedAt": "2025-05-27",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "fields": [
+        "pension-policy.employeePension.basicPensionFormula",
+        "pension-policy.employeePension.accountPensionFormula",
+        "pension-policy.employeePension.transitionPensionNotes"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "shanghai-payout-months-table",
+      "level": "P2",
+      "region": "shanghai",
+      "title": "个人账户养老金计发月数表",
+      "url": "https://rsj.sh.gov.cn/cmsres/e1/e19b75f5a1194a84ad4804905de19713/bf4ed6480e155a32233f8954372ec151.pdf",
+      "publisher": "上海市人力资源和社会保障局",
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "fields": [
+        "payout-months.monthsByRetirementAge"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "beijing-contribution-base-2025",
+      "level": "P1",
+      "region": "beijing",
+      "title": "关于2025年度各项社会保险缴费工资基数上下限的通告",
+      "documentNo": "京人社发〔2025〕11号",
+      "url": "https://rsj.beijing.gov.cn/xxgk/2024zcwj/202509/t20250918_4204880.html",
+      "publisher": "北京市人力资源和社会保障局",
+      "publishedAt": "2025-09-18",
+      "effectiveFrom": "2025-07-01",
+      "effectiveTo": null,
+      "fields": [
+        "city-history-params.beijing.2025.contributionBase.employee.floor",
+        "city-history-params.beijing.2025.contributionBase.employee.ceiling",
+        "city-history-params.beijing.2025.contributionBase.flexible.floor",
+        "city-history-params.beijing.2025.contributionBase.flexible.ceiling"
+      ],
+      "extractedValues": {
+        "contributionBaseFloor": 7162,
+        "contributionBaseCeiling": 35811
+      },
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "beijing-benefit-calculation-base-2025",
+      "level": "P1",
+      "region": "beijing",
+      "title": "关于2025年本市参保人员社会保险待遇有关问题的通告",
+      "documentNo": "京人社发〔2025〕13号",
+      "url": "https://rsj.beijing.gov.cn/xxgk/2024zcwj/202511/t20251107_4265291.html",
+      "publisher": "北京市人力资源和社会保障局",
+      "publishedAt": "2025-11-07",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "fields": [
+        "city-history-params.beijing.2025.pensionCalculationBase.value"
+      ],
+      "extractedValues": {
+        "pensionCalculationBase": 12049
+      },
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "beijing-pension-calculator",
+      "level": "P3",
+      "region": "beijing",
+      "title": "北京市基本养老保险待遇测算表",
+      "url": "https://fuwu.rsj.beijing.gov.cn/oldjbylbxdy/index7.html",
+      "publisher": "北京市人力资源和社会保障局",
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "fields": [
+        "calculation-cross-check"
+      ],
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "shenzhen-pension-calculation-base-2025",
+      "level": "P1",
+      "region": "shenzhen",
+      "title": "深圳市2025年职工基本养老金计发基数是多少？",
+      "url": "https://hrss.sz.gov.cn/zmhd/cjwt/cjwt/shbz/content/post_12493488.html",
+      "publisher": "深圳市人力资源和社会保障局",
+      "publishedAt": "2025-11-17",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "fields": [
+        "city-history-params.shenzhen.2025.pensionCalculationBase.value"
+      ],
+      "extractedValues": {
+        "pensionCalculationBase": 11293
+      },
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_second_review"
+      }
+    },
+    {
+      "sourceId": "guangdong-pension-base-and-contribution-base-2025",
+      "level": "P1",
+      "region": "guangdong",
+      "title": "关于公布2025年职工基本养老保险缴费基数上下限和基本养老金计发基数有关问题的通知",
+      "documentNo": "粤人社发〔2025〕32号",
+      "url": "https://hrss.gd.gov.cn/zwgk/xxgkml/bmwj/qtwj/shbz/content/post_4789618.html",
+      "publisher": "广东省人力资源和社会保障厅",
+      "publishedAt": "2025-10-27",
+      "effectiveFrom": "2025-07-01",
+      "effectiveTo": null,
+      "fields": [
+        "city-history-params.shenzhen.2025.contributionBase.employee.floor",
+        "city-history-params.shenzhen.2025.contributionBase.employee.ceiling"
+      ],
+      "extractedValues": {
+        "enterpriseContributionBaseCeiling": 27549,
+        "enterpriseContributionBaseFloorOtherRegions": 4775,
+        "guangdongPensionCalculationBase": 9493
+      },
+      "review": {
+        "collectedBy": "Codex",
+        "reviewedBy": "",
+        "reviewedAt": "",
+        "status": "pending_city_applicability_review"
+      }
+    }
+  ]
+}
+

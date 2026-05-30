@@ -1,0 +1,87 @@
+<view class="page result-page">
+  <block wx:if="{{result}}">
+    <view class="result-hero">
+      <view class="hero-caption">预计每月养老金</view>
+      <view class="amount-row">
+        <text class="amount">{{result.amountText}}</text>
+        <text class="amount-unit">元/月</text>
+      </view>
+      <view class="range">估算范围：{{result.rangeText}}</view>
+      <view class="result-note">结果仅供参考，实际以社保经办机构核定为准。</view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">养老金拆分</view>
+      <view class="card">
+        <view class="list-row">
+          <view>基础养老金</view>
+          <view>{{result.basicText}}</view>
+        </view>
+        <view class="list-row">
+          <view>个人账户养老金</view>
+          <view>{{result.accountText}}</view>
+        </view>
+        <view class="list-row">
+          <view>过渡性养老金</view>
+          <view class="muted">暂未纳入</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">关键假设</view>
+      <view class="card">
+        <view class="fact-row">
+          <view class="fact-label">退休年龄</view>
+          <view class="fact-value">{{result.retirementText}}</view>
+        </view>
+        <view class="fact-row">
+          <view class="fact-label">退休月份</view>
+          <view class="fact-value">{{result.retirementMonthText}}</view>
+        </view>
+        <view class="fact-row">
+          <view class="fact-label">预计缴费年限</view>
+          <view class="fact-value">{{result.contributionYearsText}}</view>
+        </view>
+        <view class="fact-row">
+          <view class="fact-label">最低缴费要求</view>
+          <view class="fact-value">{{result.requiredContributionYearsText}}</view>
+        </view>
+        <view class="{{result.eligibilityClassName}}">
+          {{result.eligibility.message}}
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">结果说明</view>
+      <view class="card">
+        <view class="status-title">{{result.statusLabel}}</view>
+        <block wx:for="{{result.assumptions}}" wx:key="*this">
+          <view class="bullet">- {{item}}</view>
+        </block>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">重要提示</view>
+      <view class="card warning-card">
+        <block wx:for="{{result.warnings}}" wx:key="*this">
+          <view class="bullet">- {{item}}</view>
+        </block>
+      </view>
+    </view>
+
+    <view class="section action-stack">
+      <view class="primary-button" bindtap="openAccount">补充个人账户余额</view>
+      <button wx:if="{{result.canShare}}" class="secondary-button share-button" open-type="share">分享给朋友</button>
+      <view class="secondary-button" bindtap="recalculate">重新测算</view>
+    </view>
+  </block>
+
+  <view wx:else class="empty-state">
+    <view class="title">还没有测算结果</view>
+    <view class="subtitle">先完成快速测算，再回来看结果。</view>
+    <view class="primary-button empty-button" bindtap="recalculate">去测算</view>
+  </view>
+</view>

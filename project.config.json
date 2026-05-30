@@ -1,0 +1,14 @@
+{
+  "description": "退休金算盘微信小程序",
+  "miniprogramRoot": "miniprogram/",
+  "projectname": "PensionAbacus",
+  "appid": "wxdb087b8773c3eb61",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}

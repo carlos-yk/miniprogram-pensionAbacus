@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "benchmarkVersion": null,
+  "status": "not_generated",
+  "reason": "official city history params are incomplete; generate benchmark samples after at least 2015-2025 city params are backfilled and reviewed.",
+  "requiredBeforeGeneration": [
+    "city-history-params.json backfilled for target benchmark years",
+    "pension-policy.json reviewed",
+    "payout-months.json reviewed",
+    "sample generation rules finalized"
+  ]
+}
+

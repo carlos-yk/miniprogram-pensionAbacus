@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-05-28",
+  "description": "city-key-params-2015-2025.json 使用到、但尚未全部归并进 sources.json 的来源清单。后续二次复核后应逐条并入 sources.json。",
+  "items": [
+    {
+      "sourceId": "beijing-historical-contribution-base-table",
+      "region": "beijing",
+      "title": "历年养老、失业、工伤保险缴费基数上下限、缴费比例一览表",
+      "url": "https://www.bjchy.gov.cn/affair/zfywdt/4028805a963caa6d01968c40d939029d.html",
+      "status": "pending_second_review",
+      "notes": "北京 2015-2025 缴费基数工作台主要来源。需确认是否为北京人社原始页面镜像或区政府转发页面。"
+    },
+    {
+      "sourceId": "beijing-contribution-base-2020",
+      "region": "beijing",
+      "title": "2020年度各项社会保险缴费工资基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "已从北京历年表和公开通告口径录入，待补北京人社原始 URL。"
+    },
+    {
+      "sourceId": "beijing-contribution-base-2021",
+      "region": "beijing",
+      "title": "2021年度各项社会保险缴费工资基数上下限",
+      "url": "https://rsj.beijing.gov.cn/yltc/sbzytzx/202311/t20231101_3292089.html",
+      "status": "pending_second_review",
+      "notes": "用于 2021.07-2022.06 缴费基数。"
+    },
+    {
+      "sourceId": "beijing-contribution-base-2022",
+      "region": "beijing",
+      "title": "2022年度各项社会保险缴费工资基数上下限",
+      "url": "https://rsj.beijing.gov.cn/xxgk/gzdt/202207/t20220722_2776976.html",
+      "status": "pending_second_review",
+      "notes": "用于 2022.07-2023.06 缴费基数。"
+    },
+    {
+      "sourceId": "beijing-contribution-base-2023",
+      "region": "beijing",
+      "title": "2023年度各项社会保险缴费工资基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "已从北京历年表录入，待补北京人社原始 URL。"
+    },
+    {
+      "sourceId": "beijing-contribution-base-2024",
+      "region": "beijing",
+      "title": "关于2024年度各项社会保险缴费工资基数上下限的通告",
+      "url": "https://rsj.beijing.gov.cn/xxgk/2024zcwj/202407/t20240731_3763677.html",
+      "status": "pending_second_review",
+      "notes": "用于 2024.07-2025.06 缴费基数。"
+    },
+    {
+      "sourceId": "shanghai-contribution-base-2020",
+      "region": "shanghai",
+      "title": "2020年度上海市职工社会保险缴费基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "已记录 9339、4927、28017，待补上海人社原始 URL。"
+    },
+    {
+      "sourceId": "shanghai-contribution-base-2021",
+      "region": "shanghai",
+      "title": "2021年度上海市职工社会保险缴费基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "已记录 10338、5975、31014，待补上海人社原始 URL。"
+    },
+    {
+      "sourceId": "shanghai-average-wage-2021",
+      "region": "shanghai",
+      "title": "上海市2021年度全口径城镇单位就业人员平均工资",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "用于 2022 缴费基数候选值推导，待补官方来源。"
+    },
+    {
+      "sourceId": "shanghai-contribution-base-2024",
+      "region": "shanghai",
+      "title": "2024年度上海市职工社会保险缴费基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "已记录 12307、7384、36921，待补上海人社原始 URL。"
+    },
+    {
+      "sourceId": "guangdong-contribution-base-2016",
+      "region": "guangdong",
+      "title": "广东省2016社保年度企业职工基本养老保险缴费基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "用于深圳早期候选参数映射，需确认深圳适用口径。"
+    },
+    {
+      "sourceId": "guangdong-contribution-base-2020",
+      "region": "guangdong",
+      "title": "广东省2020社保年度企业职工基本养老保险缴费基数上下限",
+      "url": null,
+      "status": "pending_source_url",
+      "notes": "用于深圳 2020.07-2021.06 部分参数，需继续复核。"
+    },
+    {
+      "sourceId": "guangdong-contribution-base-2022",
+      "region": "guangdong",
+      "title": "广东省2022社保年度企业职工基本养老保险缴费基数上下限",
+      "url": "https://hrss.gd.gov.cn/zwgk/xxgkml/bmwj/gfxwj/content/post_3836505.html",
+      "status": "pending_second_review",
+      "notes": "用于深圳 2022.07-2023.06 部分参数，需继续复核深圳分区口径。"
+    },
+    {
+      "sourceId": "guangdong-contribution-base-2024",
+      "region": "guangdong",
+      "title": "广东省2024年职工基本养老保险缴费基数上下限和基本养老金计发基数有关问题",
+      "url": "https://hrss.gd.gov.cn/zwgk/xxgkml/bmwj/qtwj/shbz/content/mpost_4615604.html",
+      "status": "pending_second_review",
+      "notes": "用于深圳 2024.07-2025.06 缴费基数。"
+    },
+    {
+      "sourceId": "shenzhen-contribution-base-lower-adjustment-2024",
+      "region": "shenzhen",
+      "title": "深圳企业职工基本养老保险缴费基数下限有关调整政策解读",
+      "url": "https://hrss.sz.gov.cn/gkmlpt/content/11/11052/mpost_11052266.html",
+      "status": "pending_second_review",
+      "notes": "用于确认深圳 2024-07 起缴费基数下限随广东省最低缴费基数标准调整。"
+    },
+    {
+      "sourceId": "shenzhen-pension-calculation-base-2024",
+      "region": "shenzhen",
+      "title": "深圳市2024年职工基本养老金计发基数是多少？",
+      "url": "https://hrss.sz.gov.cn/zmhd/cjwt/cjwt/shbz/content/post_12042340.html",
+      "status": "pending_second_review",
+      "extractedValues": {
+        "pensionCalculationBase": 11181
+      },
+      "notes": "官方问答页面。"
+    }
+  ]
+}

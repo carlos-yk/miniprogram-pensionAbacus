@@ -1,0 +1,124 @@
+<view class="page with-bottom-bar">
+  <view class="title">先算个大概</view>
+  <view class="subtitle">只填必要信息，结果页会说明估算边界。</view>
+
+  <view wx:if="{{showScenarioBanner}}" class="scenario-banner">
+    <view class="scenario-title">{{scenarioTitle}}</view>
+    <view class="scenario-desc">{{scenarioDesc}}</view>
+  </view>
+
+  <view class="form-brief">
+    <view>
+      <view class="brief-title">填写 5 项，先得到区间估算</view>
+      <view class="brief-desc">不确定的信息可以选择保守估算，后续再补充账户余额。</view>
+    </view>
+    <view class="brief-badge">约 30 秒</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">出生年月</view>
+    <picker mode="date" fields="month" value="{{birthMonth}}" bindchange="onBirthMonthChange">
+      <view class="picker-card card">
+        <view>{{birthMonthLabel}}</view>
+        <view class="muted">用于推算法定退休时间</view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="section-title">性别 / 退休类型</view>
+    <view class="worker-grid">
+      <block wx:for="{{workerTypes}}" wx:key="key">
+        <view
+          class="{{item.className}}"
+          bindtap="selectWorkerType"
+          data-key="{{item.key}}"
+        >
+          <view class="option-label">{{item.label}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{showFemaleUnknownHint}}" class="hint option-hint">
+      会按可能退休类型给出更宽区间，不输出单一确定退休年龄。
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">预计退休 / 待遇领取城市</view>
+    <view class="option-list">
+      <block wx:for="{{cityOptions}}" wx:key="city">
+        <view
+          class="{{item.className}}"
+          bindtap="selectCity"
+          data-city="{{item.city}}"
+        >
+          <view>
+            <view class="city-name">{{item.name}}</view>
+            <view class="city-message">{{item.displayMessage}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{cityMessage}}" class="field-error">{{cityMessage}}</view>
+    <view class="source-link" bindtap="openAbout">查看数据来源</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">已缴费年限</view>
+    <view class="card input-card">
+      <input
+        type="digit"
+        placeholder="例如 15、30、40"
+        value="{{paidYears}}"
+        bindinput="onPaidYearsInput"
+      />
+      <view class="input-unit">年</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">当前大概按什么水平缴费？</view>
+    <view class="option-list">
+      <block wx:for="{{visibleContributionOptions}}" wx:key="key">
+        <view
+          class="{{item.className}}"
+          bindtap="selectContribution"
+          data-key="{{item.key}}"
+        >
+          <view class="contribution-head">
+            <view class="contribution-title">{{item.title}}</view>
+          </view>
+          <view class="muted">{{item.desc}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="more-contribution" bindtap="toggleContributionOptions">
+      {{advancedContributionToggleText}}
+    </view>
+    <view wx:if="{{showAmountInput}}" class="card input-card amount-input">
+      <input
+        type="number"
+        placeholder="{{amountPlaceholder}}"
+        value="{{contributionAmount}}"
+        bindinput="onContributionAmountInput"
+      />
+      <view class="input-unit">元/月</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="account-card card" bindtap="openAccount">
+      <view>
+        <view class="account-title">我知道个人账户余额，先补充</view>
+        <view class="muted">{{accountHint}}</view>
+      </view>
+      <view class="account-arrow">›</view>
+    </view>
+  </view>
+
+  <view wx:if="{{formError}}" class="field-error form-error">{{formError}}</view>
+
+  <view class="bottom-bar">
+    <view class="{{submitClassName}}" bindtap="onSubmitTap">{{submitLabel}}</view>
+  </view>
+</view>

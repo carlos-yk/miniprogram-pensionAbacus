@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/calculate/calculate",
+    "pages/result/result",
+    "pages/account/account",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTitleText": "退休金算盘",
+    "navigationBarBackgroundColor": "#176B73",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F6F8FA"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

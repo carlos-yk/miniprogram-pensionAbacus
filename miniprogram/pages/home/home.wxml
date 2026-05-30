@@ -1,0 +1,59 @@
+<view class="page home-page">
+  <view class="brand-panel">
+    <view class="brand">
+      <view class="abacus-mark">算</view>
+      <view>
+        <view class="title">退休金算盘</view>
+        <view class="subtitle">少填也能算，细填更准确</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="module primary-module" bindtap="onModuleTap" data-key="employee">
+      <view>
+        <view class="module-kicker">城镇职工基本养老保险</view>
+        <view class="module-title">城镇职工养老金测算</view>
+        <view class="module-desc">约 30 秒完成快速估算</view>
+      </view>
+      <view class="module-action">开始</view>
+    </view>
+  </view>
+
+  <view class="section quick-actions">
+    <view wx:if="{{hasLastResult}}" class="quick-action" bindtap="openLastResult">
+      <view>
+        <view class="quick-title">继续上次测算</view>
+        <view class="quick-desc">{{lastResultSummary}}</view>
+      </view>
+      <view class="quick-arrow">›</view>
+    </view>
+    <view class="quick-action" bindtap="startFamilyEstimate">
+      <view>
+        <view class="quick-title">帮家人测算</view>
+        <view class="quick-desc">用同一流程为父母或伴侣先算个大概</view>
+      </view>
+      <view class="quick-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">长期规划模块</view>
+    <view class="future-grid">
+      <block wx:for="{{futureModules}}" wx:key="key">
+        <view
+          class="future-card"
+          bindtap="onModuleTap"
+          data-key="{{item.key}}"
+        >
+          <view class="future-title">{{item.title}}</view>
+          <view class="tag disabled-tag">{{item.desc}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="footer-note" bindtap="openAbout">
+    无需登录，测算信息仅保存在本机。结果为估算参考，最终以社保经办机构核定为准
+  </view>
+</view>

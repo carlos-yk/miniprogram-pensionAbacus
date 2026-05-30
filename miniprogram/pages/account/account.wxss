@@ -1,0 +1,33 @@
+.input-card {
+  display: flex;
+  align-items: center;
+  min-height: 104rpx;
+}
+
+.input-card input {
+  flex: 1;
+  min-height: 88rpx;
+  color: #17324D;
+  font-size: 34rpx;
+}
+
+.input-unit {
+  color: #6B7A89;
+  font-size: 28rpx;
+}
+
+.account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.guide-row {
+  margin-top: 12rpx;
+  color: #526375;
+  font-size: 28rpx;
+}
+
+.guide-row:first-child {
+  margin-top: 0;
+}

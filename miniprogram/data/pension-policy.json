@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "policyVersion": "2026.05.28-seed",
+  "lastUpdated": "2026-05-28",
+  "employeePension": {
+    "scope": "城镇职工基本养老保险估算",
+    "components": [
+      "basicPension",
+      "personalAccountPension",
+      "transitionPension"
+    ],
+    "basicPensionFormula": {
+      "formula": "基础养老金 = (待遇计发基数或上年度当地职工平均工资 + 本人指数化月平均缴费工资) / 2 * 缴费年限 * 1%",
+      "notes": [
+        "不同城市字段口径可能不同，上海口径使用办理申领时上年度全市城镇单位就业人员月平均工资，北京使用年度养老保险待遇计算基数。",
+        "剩余缴费月数的计发比例需按地方规则处理。"
+      ],
+      "sourceIds": [
+        "national-enterprise-pension-system-2005",
+        "shanghai-pension-calculation-method-2025"
+      ]
+    },
+    "accountPensionFormula": {
+      "formula": "个人账户养老金 = 退休时个人账户储存额 / 计发月数",
+      "sourceIds": [
+        "national-enterprise-pension-system-2005",
+        "shanghai-pension-calculation-method-2025",
+        "shanghai-payout-months-table"
+      ]
+    },
+    "transitionPension": {
+      "v1Handling": "暂不精算，作为结果页提示或低精度补充项。",
+      "notes": [
+        "过渡性养老金地区差异大，涉及视同缴费、统账结合前后政策、地方历史规则。",
+        "上海示例涉及1992年底以前参加工作、1993-1997虚账实记等口径。"
+      ],
+      "sourceIds": [
+        "shanghai-pension-calculation-method-2025"
+      ]
+    },
+    "rates": {
+      "employeePersonalRate": {
+        "value": 0.08,
+        "meaning": "职工个人缴费比例，通常记入个人账户。",
+        "sourceIds": [
+          "national-enterprise-pension-system-2005"
+        ],
+        "status": "official_pending_second_review"
+      },
+      "personalAccountCreditRate": {
+        "value": 0.08,
+        "meaning": "个人账户规模按本人缴费工资8%记入。",
+        "sourceIds": [
+          "national-enterprise-pension-system-2005"
+        ],
+        "status": "official_pending_second_review"
+      },
+      "employerContributionRate": {
+        "value": 0.16,
+        "meaning": "企业职工基本养老保险单位缴费比例一般可降至16%，具体以地方执行口径为准。",
+        "sourceIds": [
+          "national-social-insurance-rate-2019"
+        ],
+        "status": "official_pending_local_review"
+      }
+    },
+    "eligibility": {
+      "minimumContributionYears": {
+        "before2030": 15,
+        "gradualIncrease": {
+          "startsFromYear": 2030,
+          "targetYears": 20,
+          "notes": "自2030年1月1日起，最低缴费年限由15年逐步提高至20年，具体按退休年份规则处理。"
+        },
+        "sourceIds": [
+          "national-retirement-age-2024",
+          "national-social-insurance-law-2010"
+        ],
+        "status": "official_pending_rule_table"
+      }
+    },
+    "retirementAgePolicy": {
+      "type": "progressive_delay",
+      "effectiveFrom": "2025-01-01",
+      "sourceIds": [
+        "national-retirement-age-2024"
+      ],
+      "status": "source_recorded_rule_table_not_built",
+      "notes": [
+        "正式计算需要按出生年月、性别、岗位类型生成 retirement-age-rules.json。",
+        "当前仅记录政策来源，尚未维护完整查表。"
+      ]
+    }
+  }
+}
+

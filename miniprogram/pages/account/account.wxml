@@ -1,0 +1,31 @@
+<view class="page with-bottom-bar">
+  <view class="title">补充个人账户余额</view>
+  <view class="subtitle">如果你能查到个人账户余额，结果会更接近实际；不知道也可以跳过。</view>
+
+  <view class="section">
+    <view class="section-title">当前个人账户余额</view>
+    <view class="card input-card">
+      <input type="number" placeholder="请输入金额" value="{{balance}}" bindinput="onInput" />
+      <view class="input-unit">元</view>
+    </view>
+    <view wx:if="{{error}}" class="field-error">{{error}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="hint">余额通常可在当地人社、社保或政务服务平台查询。填写后只保存在本机，不会上传服务器。找不到这个数也没关系，可以继续使用系统估算。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">怎么查询</view>
+    <view class="card">
+      <view class="guide-row">1. 打开当地人社、社保或政务服务小程序。</view>
+      <view class="guide-row">2. 找到养老保险个人账户或权益记录。</view>
+      <view class="guide-row">3. 复制“个人账户累计储存额”或相近字段填入这里。</view>
+    </view>
+  </view>
+
+  <view class="bottom-bar account-actions">
+    <view class="primary-button" bindtap="save">保存并返回</view>
+    <view class="secondary-button" bindtap="skip">暂时不知道</view>
+  </view>
+</view>

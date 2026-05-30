@@ -1,0 +1,427 @@
+{
+  "schemaVersion": "1.0",
+  "paramVersion": "2026.05.28-seed-key-params",
+  "lastUpdated": "2026-05-28",
+  "status": "mixed_official_and_candidate_pending_review",
+  "description": "上海、北京、深圳 2015-2025 城镇职工养老保险关键参数补齐表。该文件用于数据回补工作台；生产计算仍应读取 city-history-params.json 或后续归并后的参数库。未归并进 sources.json 的来源线索记录在 source-backlog-2026-05-28.json。",
+  "qualityLevels": {
+    "official_source_recorded": "已有官方来源，待二次复核。",
+    "derived_from_official_formula": "由官方规则和官方上下限推导，待复核。",
+    "candidate_pending_official_source": "候选值，待找到或确认官方来源。",
+    "missing_pending_backfill": "缺失，待回补。"
+  },
+  "cities": {
+    "shanghai": {
+      "name": "上海",
+      "notes": [
+        "2020、2021、2024、2025 已记录上海人社官方来源。",
+        "2015-2019、2022-2023 为候选值，需继续补官方来源页面或 PDF。",
+        "上海基础养老金口径使用办理申领时上年度全市城镇单位就业人员月平均工资。"
+      ],
+      "annualParams": [
+        {
+          "year": 2015,
+          "effectiveFrom": "2015-04-01",
+          "effectiveTo": "2016-03-31",
+          "averageWage": 5451,
+          "contributionBaseFloor": 3271,
+          "contributionBaseCeiling": 16353,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2016,
+          "effectiveFrom": "2016-04-01",
+          "effectiveTo": "2017-03-31",
+          "averageWage": 5939,
+          "contributionBaseFloor": 3563,
+          "contributionBaseCeiling": 17817,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2017,
+          "effectiveFrom": "2017-04-01",
+          "effectiveTo": "2018-03-31",
+          "averageWage": 6504,
+          "contributionBaseFloor": 3902,
+          "contributionBaseCeiling": 19512,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2018,
+          "effectiveFrom": "2018-04-01",
+          "effectiveTo": "2019-03-31",
+          "averageWage": 7132,
+          "contributionBaseFloor": 4279,
+          "contributionBaseCeiling": 21396,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2019,
+          "effectiveFrom": "2019-05-01",
+          "effectiveTo": "2020-06-30",
+          "averageWage": 8211,
+          "contributionBaseFloor": 4927,
+          "contributionBaseCeiling": 24633,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2020,
+          "effectiveFrom": "2020-07-01",
+          "effectiveTo": "2021-06-30",
+          "averageWage": 9339,
+          "contributionBaseFloor": 4927,
+          "contributionBaseCeiling": 28017,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "shanghai-contribution-base-2020"
+          ]
+        },
+        {
+          "year": 2021,
+          "effectiveFrom": "2021-07-01",
+          "effectiveTo": "2022-06-30",
+          "averageWage": 10338,
+          "contributionBaseFloor": 5975,
+          "contributionBaseCeiling": 31014,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "shanghai-contribution-base-2021"
+          ]
+        },
+        {
+          "year": 2022,
+          "effectiveFrom": "2022-07-01",
+          "effectiveTo": "2023-06-30",
+          "averageWage": 11396,
+          "contributionBaseFloor": 6520,
+          "contributionBaseCeiling": 34188,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": [
+            "shanghai-average-wage-2021"
+          ]
+        },
+        {
+          "year": 2023,
+          "effectiveFrom": "2023-07-01",
+          "effectiveTo": "2024-06-30",
+          "averageWage": 12183,
+          "contributionBaseFloor": 7310,
+          "contributionBaseCeiling": 36549,
+          "quality": "candidate_pending_official_source",
+          "sourceIds": []
+        },
+        {
+          "year": 2024,
+          "effectiveFrom": "2024-07-01",
+          "effectiveTo": "2025-06-30",
+          "averageWage": 12307,
+          "contributionBaseFloor": 7384,
+          "contributionBaseCeiling": 36921,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "shanghai-contribution-base-2024"
+          ]
+        },
+        {
+          "year": 2025,
+          "effectiveFrom": "2025-07-01",
+          "effectiveTo": "2026-06-30",
+          "averageWage": 12434,
+          "contributionBaseFloor": 7460,
+          "contributionBaseCeiling": 37302,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "shanghai-social-insurance-base-2025"
+          ]
+        }
+      ]
+    },
+    "beijing": {
+      "name": "北京",
+      "notes": [
+        "北京人社提供了历年养老、失业、工伤保险缴费基数上下限、缴费比例一览表，2015-2025 缴费基数可直接据此入库。",
+        "北京养老待遇计算基数另按年度维护，当前仅 2025 已记录。"
+      ],
+      "periodParams": [
+        {
+          "period": "2015.10-2016.04",
+          "effectiveFrom": "2015-10-01",
+          "effectiveTo": "2016-04-30",
+          "contributionBaseFloor": 2585,
+          "contributionBaseCeiling": 19389,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2016.05-2016.06",
+          "effectiveFrom": "2016-05-01",
+          "effectiveTo": "2016-06-30",
+          "contributionBaseFloor": 2585,
+          "contributionBaseCeiling": 19389,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2016.07-2017.06",
+          "effectiveFrom": "2016-07-01",
+          "effectiveTo": "2017-06-30",
+          "contributionBaseFloor": 2834,
+          "contributionBaseCeiling": 21258,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2017.07-2018.06",
+          "effectiveFrom": "2017-07-01",
+          "effectiveTo": "2018-06-30",
+          "contributionBaseFloor": 3082,
+          "contributionBaseCeiling": 23118,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2018.07-2019.04",
+          "effectiveFrom": "2018-07-01",
+          "effectiveTo": "2019-04-30",
+          "contributionBaseFloor": 3387,
+          "contributionBaseCeiling": 25401,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2019.05-2019.06",
+          "effectiveFrom": "2019-05-01",
+          "effectiveTo": "2019-06-30",
+          "contributionBaseFloor": 3387,
+          "contributionBaseCeiling": 25401,
+          "employerRate": 0.16,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2019.07-2019.11",
+          "effectiveFrom": "2019-07-01",
+          "effectiveTo": "2019-11-30",
+          "contributionBaseFloor": 3613,
+          "contributionBaseCeiling": 23565,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2019.12-2020.06",
+          "effectiveFrom": "2019-12-01",
+          "effectiveTo": "2020-06-30",
+          "contributionBaseFloor": 3613,
+          "contributionBaseCeiling": 23565,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2020.07-2020.12",
+          "effectiveFrom": "2020-07-01",
+          "effectiveTo": "2020-12-31",
+          "averageWage": 8847,
+          "contributionBaseFloor": 3613,
+          "contributionBaseCeiling": 26541,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2020"
+          ]
+        },
+        {
+          "period": "2021.01-2021.06",
+          "effectiveFrom": "2021-01-01",
+          "effectiveTo": "2021-06-30",
+          "contributionBaseFloor": 3613,
+          "contributionBaseCeiling": 26541,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table"
+          ]
+        },
+        {
+          "period": "2021.07-2022.06",
+          "effectiveFrom": "2021-07-01",
+          "effectiveTo": "2022-06-30",
+          "averageWage": 9407,
+          "contributionBaseFloor": 5360,
+          "contributionBaseCeiling": 28221,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2021"
+          ]
+        },
+        {
+          "period": "2022.07-2023.06",
+          "effectiveFrom": "2022-07-01",
+          "effectiveTo": "2023-06-30",
+          "averageWage": 10628,
+          "contributionBaseFloor": 5869,
+          "contributionBaseCeiling": 31884,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2022"
+          ]
+        },
+        {
+          "period": "2023.07-2024.06",
+          "effectiveFrom": "2023-07-01",
+          "effectiveTo": "2024-06-30",
+          "averageWage": 11297,
+          "contributionBaseFloor": 6326,
+          "contributionBaseCeiling": 33891,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2023"
+          ]
+        },
+        {
+          "period": "2024.07-2025.06",
+          "effectiveFrom": "2024-07-01",
+          "effectiveTo": "2025-06-30",
+          "averageWage": 11761,
+          "contributionBaseFloor": 6821,
+          "contributionBaseCeiling": 35283,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2024"
+          ]
+        },
+        {
+          "period": "2025.07-2026.06",
+          "effectiveFrom": "2025-07-01",
+          "effectiveTo": "2026-06-30",
+          "averageWage": 11937,
+          "contributionBaseFloor": 7162,
+          "contributionBaseCeiling": 35811,
+          "pensionCalculationBase": 12049,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "beijing-historical-contribution-base-table",
+            "beijing-contribution-base-2025",
+            "beijing-benefit-calculation-base-2025"
+          ]
+        }
+      ]
+    },
+    "shenzhen": {
+      "name": "深圳",
+      "notes": [
+        "深圳 2025 养老金计发基数由深圳人社单独公布。",
+        "深圳 2024-07 起缴费基数下限按广东省同期缴费基数最低标准执行，深圳人社政策解读已确认该适用口径。",
+        "2015-2023 历史缴费基数仍需继续回补，不能用当前值回推。"
+      ],
+      "periodParams": [
+        {
+          "period": "2016.07-2017.06",
+          "effectiveFrom": "2016-07-01",
+          "effectiveTo": "2017-06-30",
+          "averageWage": 5525,
+          "contributionBaseFloor": 2906,
+          "contributionBaseCeiling": 16575,
+          "quality": "official_source_recorded_for_guangdong_pending_shenzhen_mapping",
+          "sourceIds": [
+            "guangdong-contribution-base-2016"
+          ]
+        },
+        {
+          "period": "2020.07-2021.06",
+          "effectiveFrom": "2020-07-01",
+          "effectiveTo": "2021-06-30",
+          "averageWage": 6756,
+          "contributionBaseFloor": null,
+          "contributionBaseCeiling": 23640,
+          "quality": "official_source_recorded_partial",
+          "sourceIds": [
+            "guangdong-contribution-base-2020"
+          ]
+        },
+        {
+          "period": "2022.07-2023.06",
+          "effectiveFrom": "2022-07-01",
+          "effectiveTo": "2023-06-30",
+          "averageWage": 8310,
+          "contributionBaseFloor": null,
+          "contributionBaseCeiling": 24930,
+          "pensionCalculationBaseGuangdong": 8682,
+          "quality": "official_source_recorded_partial",
+          "sourceIds": [
+            "guangdong-contribution-base-2022"
+          ]
+        },
+        {
+          "period": "2024.01-2024.06",
+          "effectiveFrom": "2024-01-01",
+          "effectiveTo": "2024-06-30",
+          "contributionBaseFloor": 3523,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "shenzhen-contribution-base-lower-adjustment-2024"
+          ]
+        },
+        {
+          "period": "2024.07-2025.06",
+          "effectiveFrom": "2024-07-01",
+          "effectiveTo": "2025-06-30",
+          "averageWage": 9167,
+          "contributionBaseFloor": 4492,
+          "contributionBaseCeiling": 27501,
+          "pensionCalculationBase": 11181,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "guangdong-contribution-base-2024",
+            "shenzhen-contribution-base-lower-adjustment-2024",
+            "shenzhen-pension-calculation-base-2024"
+          ]
+        },
+        {
+          "period": "2025.07-2026.06",
+          "effectiveFrom": "2025-07-01",
+          "effectiveTo": "2026-06-30",
+          "averageWage": 9183,
+          "contributionBaseFloor": 4775,
+          "contributionBaseCeiling": 27549,
+          "pensionCalculationBase": 11293,
+          "quality": "official_source_recorded",
+          "sourceIds": [
+            "guangdong-pension-base-and-contribution-base-2025",
+            "shenzhen-contribution-base-lower-adjustment-2024",
+            "shenzhen-pension-calculation-base-2025"
+          ]
+        }
+      ],
+      "missingPeriods": [
+        "2015.01-2016.06",
+        "2017.07-2020.06",
+        "2021.07-2022.06",
+        "2023.07-2023.12"
+      ]
+    }
+  }
+}
