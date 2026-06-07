@@ -53,3 +53,22 @@ test('devtools verifier fails with a clear message when cli is missing', () => {
   assert.match(output, /WeChat DevTools CLI missing/);
   assert.match(output, /Set WECHAT_DEVTOOLS_CLI/);
 });
+
+test('devtools preview verifier fails when preview artifacts are not generated', () => {
+  const fakeCli = createFakeCli();
+  const result = spawnSync(process.execPath, ['tests/verify-devtools-cli.js', '--preview'], {
+    cwd: root,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      WECHAT_DEVTOOLS_CLI: fakeCli
+    }
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 1);
+  assert.match(output, /WeChat DevTools preview artifacts missing/);
+  assert.match(output, /pension-abacus-preview\.png/);
+  assert.match(output, /pension-abacus-preview\.json/);
+  assert.match(output, /DevTools is logged in/);
+});
