@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const { spawnSync } = require('node:child_process');
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const { buildReleaseNextActions } = require('./lib/releaseNextActions');
 const { collectReleaseSupportFileIssues } = require('./lib/releaseSupportFiles');
 const { collectReleaseWorktreeIssues } = require('./lib/releaseWorktree');
 
@@ -19,8 +20,6 @@ test('release readiness verifier prints actionable next steps for blockers', () 
   assert.match(output, /Release blockers/);
   assert.match(output, /Historical backlog outside public supported range: 2000-2007, 2013/);
   assert.match(output, /Release readiness next actions/);
-  assert.match(output, /\[git\/P0\] 跟踪发布资产/);
-  assert.match(output, /git add miniprogram\/assets\/release-assets\.json miniprogram\/assets\/logo-pension-abacus\.png/);
   assert.doesNotMatch(output, /\[data\/P0\] 补齐并复核上海首开数据/);
   assert.doesNotMatch(output, /Tasks: 19 in data\/generated\/city-data-backfill-tasks\.json/);
   assert.doesNotMatch(output, /data:shanghai:2000:fill-missing-fields/);
@@ -43,31 +42,19 @@ test('release status json exposes owner-based next actions', () => {
   const report = JSON.parse(result.stdout);
   assert.equal(report.conclusion, 'BLOCKED');
   assert.ok(Array.isArray(report.nextActions));
-  assert.deepEqual(report.nextActions.map((action) => action.owner), ['git', 'qa']);
 
-  const gitAction = report.nextActions.find((action) => action.owner === 'git');
   const qaAction = report.nextActions.find((action) => action.owner === 'qa');
+  assert.ok(qaAction);
   const cityGateSection = report.sections.find((section) => section.title === 'City Gate');
   const shanghaiDataSection = report.sections.find((section) => section.title === 'Shanghai Data');
   const dataBackfillSection = report.sections.find((section) => section.title === 'Data Backfill Tasks');
-  const supportFilesSection = report.sections.find((section) => section.title === 'Release Support Files');
 
-  assert.match(gitAction.command, /git add/);
-  assert.match(gitAction.command, /docs\/16-release-readiness-and-device-qa\.md/);
-  assert.match(gitAction.command, /qa\/device-qa-evidence\.example\.json/);
-  assert.match(gitAction.command, /tests\/verify-release-readiness\.js/);
   assert.ok(cityGateSection.passed.some((item) => /上海/.test(item)));
   assert.equal(shanghaiDataSection.blockers.length, 0);
   assert.ok(shanghaiDataSection.warnings.some((item) =>
     /Historical backlog outside public supported range/.test(item)
   ));
   assert.ok(dataBackfillSection.passed.some((item) => /no P0 data backfill tasks/.test(item)));
-  assert.ok(supportFilesSection.blockers.some((item) =>
-    /docs\/16-release-readiness-and-device-qa\.md/.test(item)
-  ));
-  assert.ok(supportFilesSection.blockers.some((item) =>
-    /qa\/device-qa-evidence\.example\.json/.test(item)
-  ));
   assert.equal(qaAction.evidencePath, 'qa/device-qa-evidence.json');
   assert.equal(qaAction.draftCommand, 'npm run qa:device-evidence:init');
   assert.ok(qaAction.artifactRequirements.includes('devtools.qrOutput'));
@@ -77,6 +64,51 @@ test('release status json exposes owner-based next actions', () => {
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'noForbiddenCompetitionCopy'));
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'shanghaiAccountLookupGuideVisible'));
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'aboutDataSourceAndDisclaimerVisible'));
+});
+
+test('release next actions include git command when release files are not clean', () => {
+  const actions = buildReleaseNextActions({
+    assetIssues: {
+      missing: [],
+      untracked: ['miniprogram/assets/release-assets.json'],
+      modified: ['miniprogram/assets/logo-pension-abacus.png'],
+      invalid: []
+    },
+    cityDataIssues: { blockers: [], warnings: [] },
+    dataBackfillSummary: {
+      totalTasks: 0,
+      byType: {},
+      visibleTasks: [],
+      remainingHiddenTasks: 0,
+      reportPath: 'data/generated/city-data-backfill-tasks.json'
+    },
+    devtoolsIssues: { blockers: [], warnings: [], previewCommand: 'preview command' },
+    deviceQaIssues: {
+      blockers: [],
+      warnings: [],
+      evidencePath: 'qa/device-qa-evidence.json',
+      examplePath: 'qa/device-qa-evidence.example.json'
+    },
+    supportFileIssues: {
+      missing: [],
+      untracked: ['docs/16-release-readiness-and-device-qa.md'],
+      modified: ['package.json']
+    },
+    worktreeIssues: {
+      modified: ['miniprogram/utils/dataGate.js'],
+      untracked: ['tests/verify-release-readiness.js']
+    }
+  });
+
+  const gitAction = actions.find((action) => action.owner === 'git');
+  assert.equal(gitAction.priority, 'P0');
+  assert.match(gitAction.command, /git add/);
+  assert.match(gitAction.command, /miniprogram\/assets\/release-assets\.json/);
+  assert.match(gitAction.command, /miniprogram\/assets\/logo-pension-abacus\.png/);
+  assert.match(gitAction.command, /docs\/16-release-readiness-and-device-qa\.md/);
+  assert.match(gitAction.command, /package\.json/);
+  assert.match(gitAction.command, /miniprogram\/utils\/dataGate\.js/);
+  assert.match(gitAction.command, /tests\/verify-release-readiness\.js/);
 });
 
 test('release readiness blocks when devtools cli precondition is missing', () => {
