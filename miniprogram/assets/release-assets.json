@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-06-03",
+  "assets": [
+    {
+      "path": "miniprogram/assets/logo-pension-abacus.png",
+      "packagePath": "/assets/logo-pension-abacus.png",
+      "purpose": "home brand logo",
+      "required": true,
+      "maxBytes": 1500000,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "usedBy": [
+        "miniprogram/pages/home/home.wxml"
+      ]
+    }
+  ]
+}

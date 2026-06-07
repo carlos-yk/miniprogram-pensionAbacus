@@ -2,12 +2,11 @@
   "schemaVersion": "1.0",
   "benchmarkVersion": null,
   "status": "not_generated",
-  "reason": "official city history params are incomplete; generate benchmark samples after at least 2015-2025 city params are backfilled and reviewed.",
+  "reason": "城市历史参数尚未补齐并复核，基准样本暂未生成。",
   "requiredBeforeGeneration": [
-    "city-history-params.json backfilled for target benchmark years",
-    "pension-policy.json reviewed",
-    "payout-months.json reviewed",
-    "sample generation rules finalized"
+    "补齐并复核目标年份城市历史参数",
+    "复核养老保险政策参数",
+    "复核计发月数表",
+    "固定样本生成规则"
   ]
 }
-

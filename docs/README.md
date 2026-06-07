@@ -29,6 +29,7 @@
 - [13 UI 风格与交互设计](./13-ui-style-and-interaction-design.md)：小程序视觉方向、页面布局、交互规则、组件和文案。
 - [14 UI 设计 QA 验收报告](./14-ui-qa-acceptance-review.md)：UI 方案验收结论、P1/P2 风险、进入原型前验收标准。
 - [15 小程序功能 QA 验收报告](./15-miniprogram-qa-acceptance-review.md)：已实现小程序的功能验收结论、P1/P2 风险、联调建议。
+- [16 发布就绪与真机验收清单](./16-release-readiness-and-device-qa.md)：发布闸门、微信开发者工具、真机 QA、数据发布和应急处理清单。
 
 ## 数据目录
 
@@ -39,6 +40,7 @@
 - [data/generated/retirement-age-test-cases.json](../data/generated/retirement-age-test-cases.json)：退休年龄规则穷举测试样例。
 - [data/generated/calculation-mvp-test-samples.json](../data/generated/calculation-mvp-test-samples.json)：MVP 养老金测算输入矩阵测试样例。
 - [data/generated/calculation-test-samples.json](../data/generated/calculation-test-samples.json)：扩展养老金测算输入矩阵测试样例。
+- [data/generated/city-data-backfill-tasks.json](../data/generated/city-data-backfill-tasks.json)：城市历史参数、来源复核和首开上海发布前补齐任务清单。
 
 ## 小程序实现
 
@@ -58,6 +60,37 @@
 
 ```bash
 npm run verify
+```
+
+查看发布状态快照：
+
+```bash
+npm run release:status
+npm run release:status:json
+```
+
+微信开发者工具 CLI 检查：
+
+```bash
+npm run verify:devtools
+```
+
+发布前专项检查：
+
+```bash
+npm run verify:assets
+npm run verify:data-readiness
+npm run verify:data-backfill-tasks
+npm run qa:device-evidence:init
+npm run verify:qa-privacy
+npm run verify:device-qa
+npm run verify:release
+```
+
+重新生成数据补齐任务清单：
+
+```bash
+npm run data:backfill-tasks
 ```
 
 ## 当前已确认结论

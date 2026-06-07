@@ -1,7 +1,9 @@
 <view class="page home-page">
   <view class="brand-panel">
     <view class="brand">
-      <view class="abacus-mark">算</view>
+      <view class="abacus-mark">
+        <image class="brand-logo" src="/assets/logo-pension-abacus.png" mode="aspectFit" />
+      </view>
       <view>
         <view class="title">退休金算盘</view>
         <view class="subtitle">少填也能算，细填更准确</view>
@@ -14,9 +16,9 @@
       <view>
         <view class="module-kicker">城镇职工基本养老保险</view>
         <view class="module-title">城镇职工养老金测算</view>
-        <view class="module-desc">约 30 秒完成快速估算</view>
+        <view class="module-desc">{{primaryModuleDesc}}</view>
       </view>
-      <view class="module-action">开始</view>
+      <view class="module-action">{{employeeActionText}}</view>
     </view>
   </view>
 
@@ -31,7 +33,7 @@
     <view class="quick-action" bindtap="startFamilyEstimate">
       <view>
         <view class="quick-title">帮家人测算</view>
-        <view class="quick-desc">用同一流程为父母或伴侣先算个大概</view>
+        <view class="quick-desc">{{familyActionDesc}}</view>
       </view>
       <view class="quick-arrow">›</view>
     </view>

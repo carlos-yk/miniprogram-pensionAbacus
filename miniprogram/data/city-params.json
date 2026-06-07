@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "paramVersion": "2026.05.28-shanghai-2015-2025",
+  "paramVersion": "2026.05.28-shanghai-2000-2025",
   "lastUpdated": "2026-05-28",
   "description": "当前可用城市参数快照。历史计算请优先使用 city-history-params.json。",
   "currentYear": 2025,
@@ -12,7 +12,13 @@
         "city": "shanghai",
         "year": 2025
       },
-      "status": "partial_pending_second_review"
+      "status": "ready",
+      "paramVersion": "2026.05.28-shanghai-2000-2025",
+      "publicSupportedYearRange": {
+        "from": 2015,
+        "to": 2025
+      },
+      "statusNotes": "公开测算支持已完成复核的 2015-2025 缴费年度；提交时按本次已缴年限检查是否触达仍在核对的早年参数。"
     },
     "beijing": {
       "name": "北京",

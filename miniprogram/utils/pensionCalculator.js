@@ -1,8 +1,9 @@
 const { getBenchmarkGate, getCityCurrentYearParam, getCityGateOption } = require('./dataGate');
 const { calculateRetirement, getRequiredContributionMonths } = require('./retirement');
+const { cityHistoryParams } = require('../data/runtime-data');
+const features = require('../config/features');
 
 const MONTHS_IN_YEAR = 12;
-const CURRENT_MONTH = '2026-05';
 const MISSING_FIELD_LABELS = {
   accountInterestRate: '个人账户记账利率',
   averageWage: '平均工资口径',
@@ -10,16 +11,26 @@ const MISSING_FIELD_LABELS = {
 };
 
 const REVIEW_STATUS_LABELS = {
-  pending_second_review: '城市数据核对中',
-  pending_city_applicability_review: '城市数据核对中',
-  pending_review: '城市数据核对中',
-  reviewed: '数据已核对',
-  production_ready: '数据已达到上线门槛'
+  pending_second_review: '该城市暂未开放测算',
+  pending_city_applicability_review: '该城市暂未开放测算',
+  pending_review: '该城市暂未开放测算',
+  reviewed: '城市参数已完成基础校验',
+  production_ready: '当前城市参数已可用于估算'
 };
 
 function monthIndex(value) {
   const [year, month] = value.split('-').map(Number);
   return year * 12 + (month - 1);
+}
+
+function yearFromMonthIndex(index) {
+  return Math.floor(index / 12);
+}
+
+function monthFromIndex(index) {
+  const year = yearFromMonthIndex(index);
+  const month = (index % 12) + 1;
+  return `${year}-${String(month).padStart(2, '0')}`;
 }
 
 function clamp(value, min, max) {
@@ -70,18 +81,136 @@ function resolveContributionBase(cityParam, contributionInput) {
   return { base, index: ratio };
 }
 
+function getCityYearlyParams(city) {
+  const history = cityHistoryParams.cities[city];
+  if (!history || !Array.isArray(history.yearlyParams)) return [];
+  return history.yearlyParams.slice().sort((a, b) => a.year - b.year);
+}
+
+function getYearParam(city, year, fallback) {
+  const yearlyParams = getCityYearlyParams(city);
+  if (yearlyParams.length === 0) return fallback;
+
+  const exact = yearlyParams.find((param) => param.year === year);
+  if (exact) return exact;
+
+  if (year < yearlyParams[0].year) return yearlyParams[0];
+  return yearlyParams[yearlyParams.length - 1];
+}
+
+function getParamMonthIndex(value) {
+  if (!value) return null;
+  return monthIndex(value.slice(0, 7));
+}
+
+function getYearParamForMonth(city, yearMonth, fallback) {
+  const yearlyParams = getCityYearlyParams(city);
+  if (yearlyParams.length === 0) return fallback;
+
+  const targetMonthIndex = monthIndex(yearMonth);
+  const effectiveMatch = yearlyParams.find((param) => {
+    const from = getParamMonthIndex(param.effectiveFrom);
+    const to = getParamMonthIndex(param.effectiveTo);
+    return from !== null && targetMonthIndex >= from && (to === null || targetMonthIndex <= to);
+  });
+
+  if (effectiveMatch) return effectiveMatch;
+  return getYearParam(city, yearFromMonthIndex(targetMonthIndex), fallback);
+}
+
+function getPersonalAccountCreditRateFromParam(yearParam, yearMonth) {
+  const segments = yearParam && yearParam.rates && yearParam.rates.personalAccountCreditRateSegments;
+  if (Array.isArray(segments) && yearMonth) {
+    const targetMonthIndex = monthIndex(yearMonth);
+    const segment = segments.find((item) => {
+      const from = getParamMonthIndex(item.effectiveFrom);
+      const to = getParamMonthIndex(item.effectiveTo);
+      return from !== null && targetMonthIndex >= from && (to === null || targetMonthIndex <= to);
+    });
+
+    if (segment && typeof segment.personalAccountCreditRate === 'number') {
+      return segment.personalAccountCreditRate;
+    }
+  }
+
+  return yearParam.rates.personalAccountCreditRate || yearParam.rates.employeePersonalRate || 0.08;
+}
+
+function getPersonalAccountCreditRateForMonth(city, yearMonth, fallback) {
+  const yearParam = getYearParamForMonth(city, yearMonth, fallback);
+  if (!yearParam) return 0.08;
+  return getPersonalAccountCreditRateFromParam(yearParam, yearMonth);
+}
+
+function buildYearContributionInput(contributionInput, currentContribution) {
+  if (!contributionInput || contributionInput.type === 'floor') {
+    return { type: 'floor' };
+  }
+
+  return {
+    type: 'ratio',
+    contributionIndex: currentContribution.index || 0.6
+  };
+}
+
+function summarizeHistoricalContribution({
+  city,
+  paidMonths,
+  currentMonth,
+  contributionInput,
+  currentContribution,
+  currentParam
+}) {
+  const months = Math.max(0, Number(paidMonths || 0));
+  if (months === 0) {
+    return {
+      account: 0,
+      averageIndex: currentContribution.index,
+      usedYearlyParams: false
+    };
+  }
+
+  const currentMonthIndex = monthIndex(currentMonth);
+  let account = 0;
+  let totalIndex = 0;
+  let usedYearlyParams = false;
+
+  for (let offset = months; offset > 0; offset -= 1) {
+    const paidMonthIndex = currentMonthIndex - offset;
+    const paidMonth = monthFromIndex(paidMonthIndex);
+    const yearParam = getYearParamForMonth(city, paidMonth, currentParam);
+    const yearContribution = resolveContributionBase(
+      yearParam,
+      buildYearContributionInput(contributionInput, currentContribution)
+    );
+    const personalRate = getPersonalAccountCreditRateFromParam(yearParam, paidMonth);
+
+    account += yearContribution.base * personalRate;
+    totalIndex += yearContribution.index;
+    if (yearParam.year !== currentParam.year) {
+      usedYearlyParams = true;
+    }
+  }
+
+  return {
+    account,
+    averageIndex: totalIndex / months,
+    usedYearlyParams
+  };
+}
+
 function buildWarnings(cityParam, personalAccountKnown, releaseMode) {
   const warnings = [
     '过渡性养老金暂未纳入；如果有较早工作经历或视同缴费，实际结果可能不同，可作为线下核定前参考。'
   ];
 
   if (releaseMode === 'internal_preview') {
-    warnings.push('城市数据还在核对，当前结果仅供参考。');
+    warnings.push('该城市数据还在核对，暂未开放测算；当前结果仅供参考。');
   }
 
   const missingFields = (cityParam.dataQuality && cityParam.dataQuality.missingFields) || [];
   if (missingFields.length > 0) {
-    warnings.push('部分参数仍在核对，当前结果为估算参考。');
+    warnings.push('部分参数仍需人工确认，当前结果为估算参考。');
   }
 
   if (!personalAccountKnown) {
@@ -114,7 +243,8 @@ function calculateKnownWorkerEstimate(input) {
 
   const retirement = calculateRetirement(input.workerType, input.birthMonth);
   const contribution = resolveContributionBase(cityParam, input.contributionInput);
-  const currentToRetirementMonths = Math.max(0, monthIndex(retirement.retirementMonth) - monthIndex(CURRENT_MONTH));
+  const currentMonth = input.currentMonth || features.calculationAsOfMonth;
+  const currentToRetirementMonths = Math.max(0, monthIndex(retirement.retirementMonth) - monthIndex(currentMonth));
   const totalContributionMonths = Math.max(0, Number(input.paidMonths || 0)) + currentToRetirementMonths;
   const totalContributionYears = totalContributionMonths / MONTHS_IN_YEAR;
   const pensionBase = getFieldValue(cityParam.pensionCalculationBase, contribution.base);
@@ -122,10 +252,24 @@ function calculateKnownWorkerEstimate(input) {
   const personalAccountKnown = Boolean(input.personalAccount && input.personalAccount.known);
   const personalRate = cityParam.rates.personalAccountCreditRate || cityParam.rates.employeePersonalRate || 0.08;
   const knownBalance = personalAccountKnown ? Number(input.personalAccount.balance || 0) : 0;
-  const estimatedPastAccount = personalAccountKnown ? knownBalance : contribution.base * personalRate * Math.max(0, Number(input.paidMonths || 0));
+  const historicalContribution = summarizeHistoricalContribution({
+    city: input.city,
+    paidMonths: input.paidMonths,
+    currentMonth,
+    contributionInput: input.contributionInput,
+    currentContribution: contribution,
+    currentParam: cityParam
+  });
+  const estimatedPastAccount = personalAccountKnown ? knownBalance : historicalContribution.account;
   const futureAccount = contribution.base * personalRate * currentToRetirementMonths;
   const accountAtRetirement = estimatedPastAccount + futureAccount;
-  const basicPension = pensionBase * (1 + contribution.index) / 2 * totalContributionYears * 0.01;
+  const averageIndex = totalContributionMonths > 0
+    ? (
+      historicalContribution.averageIndex * Math.max(0, Number(input.paidMonths || 0)) +
+      contribution.index * currentToRetirementMonths
+    ) / totalContributionMonths
+    : contribution.index;
+  const basicPension = pensionBase * (1 + averageIndex) / 2 * totalContributionYears * 0.01;
   const personalAccountPension = accountAtRetirement / retirement.payoutMonths;
   const monthlyTotal = basicPension + personalAccountPension;
   const rangeFactor = personalAccountKnown ? 0.15 : 0.25;
@@ -145,7 +289,7 @@ function calculateKnownWorkerEstimate(input) {
       paidMonths: Number(input.paidMonths || 0),
       futureMonths: currentToRetirementMonths,
       totalMonths: totalContributionMonths,
-      averageIndex: Number(contribution.index.toFixed(2)),
+      averageIndex: Number(averageIndex.toFixed(2)),
       monthlyBase: Math.round(contribution.base)
     },
     eligibility: {
@@ -172,6 +316,9 @@ function calculateKnownWorkerEstimate(input) {
     releaseMode,
     assumptions: [
       '未来按当前缴费水平持续到退休。',
+      historicalContribution.usedYearlyParams
+        ? '历史缴费已按当前可用年度参数分段估算，适合先看大概。'
+        : '历史缴费按当前可用城市参数估算，适合先看大概。',
       '个人账户按当前可用规则估算，不代表官方核定。',
       '实际养老金以当地社保经办机构核定为准。'
     ],
@@ -235,6 +382,8 @@ function buildDefaultSharePayload() {
 }
 
 module.exports = {
+  _getPersonalAccountCreditRateForMonth: getPersonalAccountCreditRateForMonth,
+  _getYearParamForMonth: getYearParamForMonth,
   buildDefaultSharePayload,
   calculatePensionEstimate
 };

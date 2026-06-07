@@ -52,38 +52,6 @@
       "notes": "用于 2024.07-2025.06 缴费基数。"
     },
     {
-      "sourceId": "shanghai-contribution-base-2020",
-      "region": "shanghai",
-      "title": "2020年度上海市职工社会保险缴费基数上下限",
-      "url": null,
-      "status": "pending_source_url",
-      "notes": "已记录 9339、4927、28017，待补上海人社原始 URL。"
-    },
-    {
-      "sourceId": "shanghai-contribution-base-2021",
-      "region": "shanghai",
-      "title": "2021年度上海市职工社会保险缴费基数上下限",
-      "url": null,
-      "status": "pending_source_url",
-      "notes": "已记录 10338、5975、31014，待补上海人社原始 URL。"
-    },
-    {
-      "sourceId": "shanghai-average-wage-2021",
-      "region": "shanghai",
-      "title": "上海市2021年度全口径城镇单位就业人员平均工资",
-      "url": null,
-      "status": "pending_source_url",
-      "notes": "用于 2022 缴费基数候选值推导，待补官方来源。"
-    },
-    {
-      "sourceId": "shanghai-contribution-base-2024",
-      "region": "shanghai",
-      "title": "2024年度上海市职工社会保险缴费基数上下限",
-      "url": null,
-      "status": "pending_source_url",
-      "notes": "已记录 12307、7384、36921，待补上海人社原始 URL。"
-    },
-    {
       "sourceId": "guangdong-contribution-base-2016",
       "region": "guangdong",
       "title": "广东省2016社保年度企业职工基本养老保险缴费基数上下限",

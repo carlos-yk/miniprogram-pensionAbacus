@@ -1,7 +1,7 @@
 module.exports = {
   "cityParams": {
     "schemaVersion": "1.0",
-    "paramVersion": "2026.05.28-shanghai-2015-2025",
+    "paramVersion": "2026.05.28-shanghai-2000-2025",
     "lastUpdated": "2026-05-28",
     "description": "当前可用城市参数快照。历史计算请优先使用 city-history-params.json。",
     "currentYear": 2025,
@@ -13,7 +13,13 @@ module.exports = {
           "city": "shanghai",
           "year": 2025
         },
-        "status": "partial_pending_second_review"
+        "status": "ready",
+        "paramVersion": "2026.05.28-shanghai-2000-2025",
+        "publicSupportedYearRange": {
+          "from": 2015,
+          "to": 2025
+        },
+        "statusNotes": "公开测算支持已完成复核的 2015-2025 缴费年度；提交时按本次已缴年限检查是否触达仍在核对的早年参数。"
       },
       "beijing": {
         "name": "北京",
@@ -37,7 +43,7 @@ module.exports = {
   },
   "cityHistoryParams": {
     "schemaVersion": "1.0",
-    "paramVersion": "2026.05.28-shanghai-2015-2025",
+    "paramVersion": "2026.05.28-shanghai-2000-2025",
     "lastUpdated": "2026-05-28",
     "targetCities": [
       "shanghai",
@@ -46,8 +52,9 @@ module.exports = {
     ],
     "canonical": true,
     "notes": [
-      "上海 2015-2025 城镇职工养老保险关键参数已归并进正式历史参数。",
-      "2020、2021、2024、2025 已有官方来源记录；2015-2019、2022-2023 保留候选来源状态，仍需二次复核官方页面或PDF。",
+      "上海 2000-2025 城镇职工养老保险关键参数已归并进正式历史参数。",
+      "2000-2013 已有关键参数来源待二次复核；2014、2015-2025 个人账户记账利率已补入公开来源并完成本轮复核。",
+      "2005 年 2006-01-01 至 2006-03-31 个人账户划入比例仍需二次复核，当前按可用政策线索显式标记为 partial。",
       "历史年度参数必须逐年使用，不允许静默使用最新年份参数替代历史年份。",
       "深圳缴费基数使用广东省2025通知作为来源线索，仍需二次复核深圳适用性。"
     ],
@@ -55,6 +62,1176 @@ module.exports = {
       "shanghai": {
         "name": "上海",
         "yearlyParams": [
+          {
+            "year": 2000,
+            "periodLabel": "2000年度，2000-04-01至2001-03-31社保缴费基数口径",
+            "effectiveFrom": "2000-04-01",
+            "effectiveTo": "2001-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 1179,
+              "unit": "CNY/month",
+              "period": "1999年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-1999-regulation-repost"
+              ],
+              "quality": "official_notice_repost_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 1179,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-1999-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 707,
+                "ceiling": 3537,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-1999-regulation-repost",
+                  "shanghai-pension-account-rule-1998-official"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              },
+              "flexible": {
+                "floor": 707,
+                "ceiling": 3537,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-1999-regulation-repost",
+                  "shanghai-pension-account-rule-1998-official"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.07,
+              "employerRate": 0.225,
+              "employerRateSegments": [
+                {
+                  "effectiveFrom": "2000-04-01",
+                  "effectiveTo": "2000-11-30",
+                  "employerRate": 0.255,
+                  "sourceIds": [
+                    "shanghai-employer-rate-adjustment-2000-official"
+                  ],
+                  "quality": "official_municipal_notice_production_ready"
+                },
+                {
+                  "effectiveFrom": "2000-12-01",
+                  "effectiveTo": "2001-03-31",
+                  "employerRate": 0.225,
+                  "sourceIds": [
+                    "shanghai-employer-rate-adjustment-2000-official"
+                  ],
+                  "quality": "official_municipal_notice_production_ready"
+                }
+              ],
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-account-rule-1998-official",
+                "shanghai-employer-rate-adjustment-2000-official"
+              ],
+              "quality": "official_municipal_notice_and_account_rule_production_ready_pending_other_fields"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate",
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2001,
+            "periodLabel": "2001年度，2001-04-01至2002-03-31社保缴费基数口径",
+            "effectiveFrom": "2001-04-01",
+            "effectiveTo": "2002-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 1285,
+              "unit": "CNY/month",
+              "period": "2000年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2000-regulation-repost"
+              ],
+              "quality": "official_notice_repost_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 1285,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2000-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 771,
+                "ceiling": 3855,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2000-regulation-repost"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              },
+              "flexible": {
+                "floor": 771,
+                "ceiling": 3855,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2000-regulation-repost"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.07,
+              "employerRate": 0.225,
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "shanghai-pension-account-rule-1998-official"
+              ],
+              "quality": "official_account_rule_and_policy_repost_pending_rate_original_url"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate",
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL",
+                "养老保险费率原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2002,
+            "periodLabel": "2002年度，2002-04-01至2003-03-31社保缴费基数口径",
+            "effectiveFrom": "2002-04-01",
+            "effectiveTo": "2003-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 1480,
+              "unit": "CNY/month",
+              "period": "2001年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2001-regulation-repost"
+              ],
+              "quality": "official_notice_repost_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 1480,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2001-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 888,
+                "ceiling": 4440,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2001-regulation-repost"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              },
+              "flexible": {
+                "floor": 888,
+                "ceiling": 4440,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2001-regulation-repost"
+                ],
+                "quality": "derived_from_official_wage_pending_standard_source_review"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.07,
+              "employerRate": 0.225,
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "shanghai-pension-account-rule-1998-official"
+              ],
+              "quality": "official_account_rule_and_policy_repost_pending_rate_original_url"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate",
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL",
+                "养老保险费率原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2003,
+            "periodLabel": "2003年度，2003-04-01至2004-03-31社保缴费基数口径",
+            "effectiveFrom": "2003-04-01",
+            "effectiveTo": "2004-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 1623,
+              "unit": "CNY/month",
+              "period": "2002年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2002-regulation-repost"
+              ],
+              "quality": "official_notice_repost_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 1623,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2002-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 974,
+                "ceiling": 4869,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2003-public-report"
+                ],
+                "quality": "public_document_cross_checked_production_ready_pending_original_url"
+              },
+              "flexible": {
+                "floor": 974,
+                "ceiling": 4869,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2003-public-report"
+                ],
+                "quality": "public_document_cross_checked_production_ready_pending_original_url"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.225,
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2003-public-report",
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-rate-adjustment-2004-policy-repost"
+              ],
+              "quality": "public_document_policy_repost_cross_checked_pending_original_url",
+              "employeePersonalRateSegments": [
+                {
+                  "effectiveFrom": "2003-04-01",
+                  "effectiveTo": "2003-07-31",
+                  "employeePersonalRate": 0.07,
+                  "sourceIds": [
+                    "shanghai-pension-rate-adjustment-2003-policy-repost",
+                    "shanghai-social-insurance-standard-2003-public-report"
+                  ],
+                  "quality": "policy_repost_cross_checked_production_ready_pending_original_url"
+                },
+                {
+                  "effectiveFrom": "2003-08-01",
+                  "effectiveTo": "2004-03-31",
+                  "employeePersonalRate": 0.08,
+                  "sourceIds": [
+                    "shanghai-pension-rate-adjustment-2003-policy-repost",
+                    "shanghai-social-insurance-standard-2003-public-report"
+                  ],
+                  "quality": "policy_repost_cross_checked_production_ready_pending_original_url"
+                }
+              ]
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate",
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL",
+                "养老保险费率原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2004,
+            "periodLabel": "2004年度，2004-04-01至2005-03-31社保缴费基数口径",
+            "effectiveFrom": "2004-04-01",
+            "effectiveTo": "2005-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 1847,
+              "unit": "CNY/month",
+              "period": "2003年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2003-regulation-repost"
+              ],
+              "quality": "official_notice_repost_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 1847,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2003-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1108,
+                "ceiling": 5541,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2003-regulation-repost",
+                  "shanghai-social-insurance-base-2004-public-notice",
+                  "shanghai-social-insurance-standard-2004-public-report"
+                ],
+                "quality": "official_district_repost_and_public_document_production_ready_pending_original_url"
+              },
+              "flexible": {
+                "floor": 1108,
+                "ceiling": 5541,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2003-regulation-repost",
+                  "shanghai-social-insurance-base-2004-public-notice",
+                  "shanghai-social-insurance-standard-2004-public-report"
+                ],
+                "quality": "official_district_repost_and_public_document_production_ready_pending_original_url"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.225,
+              "employerRateSegments": [
+                {
+                  "effectiveFrom": "2004-04-01",
+                  "effectiveTo": "2004-07-31",
+                  "employerRate": 0.225,
+                  "sourceIds": [
+                    "shanghai-pension-rate-adjustment-2004-policy-repost"
+                  ],
+                  "quality": "official_municipal_policy_production_ready"
+                },
+                {
+                  "effectiveFrom": "2004-08-01",
+                  "effectiveTo": "2005-03-31",
+                  "employerRate": 0.22,
+                  "sourceIds": [
+                    "shanghai-pension-rate-adjustment-2004-policy-repost"
+                  ],
+                  "quality": "official_municipal_policy_production_ready"
+                }
+              ],
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2004-public-report",
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-rate-adjustment-2004-policy-repost"
+              ],
+              "quality": "official_policy_segments_and_public_document_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            },
+            "accountInterestRate": {
+              "value": 0.0198,
+              "unit": "annual_rate",
+              "period": "2004年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2004"
+              ],
+              "quality": "preserved_official_policy_repost_production_ready"
+            }
+          },
+          {
+            "year": 2005,
+            "periodLabel": "2005年度，2005-04-01至2006-03-31社保缴费基数口径",
+            "effectiveFrom": "2005-04-01",
+            "effectiveTo": "2006-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 2033,
+              "unit": "CNY/month",
+              "period": "2004年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2004-regulation-repost"
+              ],
+              "quality": "official_notice_repost_production_ready_pending_original_url"
+            },
+            "pensionCalculationBase": {
+              "value": 2033,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2004-regulation-repost",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_notice_repost_production_ready_pending_original_url"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1220,
+                "ceiling": 6099,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2004-regulation-repost",
+                  "shanghai-social-insurance-standard-2005-public-report"
+                ],
+                "quality": "official_notice_repost_and_public_report_production_ready_pending_original_url"
+              },
+              "flexible": {
+                "floor": 1220,
+                "ceiling": 6099,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2004-regulation-repost",
+                  "shanghai-social-insurance-standard-2005-public-report"
+                ],
+                "quality": "official_notice_repost_and_public_report_production_ready_pending_original_url"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.11,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2005-public-report",
+                "national-enterprise-pension-system-2005",
+                "shanghai-pension-rate-adjustment-2003-policy-repost",
+                "shanghai-pension-rate-adjustment-2004-policy-repost"
+              ],
+              "quality": "public_report_policy_repost_and_transition_rule_cross_checked_pending_rate_original_url",
+              "personalAccountCreditRateSegments": [
+                {
+                  "effectiveFrom": "2005-04-01",
+                  "effectiveTo": "2005-12-31",
+                  "personalAccountCreditRate": 0.11,
+                  "sourceIds": [
+                    "shanghai-pension-rate-adjustment-2003-policy-repost"
+                  ],
+                  "quality": "policy_repost_cross_checked_production_ready_pending_original_rate_url"
+                },
+                {
+                  "effectiveFrom": "2006-01-01",
+                  "effectiveTo": "2006-03-31",
+                  "personalAccountCreditRate": 0.08,
+                  "sourceIds": [
+                    "national-enterprise-pension-system-2005"
+                  ],
+                  "quality": "national_policy_production_ready"
+                }
+              ]
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate",
+                "平均工资原始官方页面URL",
+                "社保缴费标准原始官方页面URL",
+                "养老保险费率原始官方页面URL"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2006,
+            "periodLabel": "2006年度，2006-04-01至2007-03-31社保缴费基数口径",
+            "effectiveFrom": "2006-04-01",
+            "effectiveTo": "2007-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 2235,
+              "unit": "CNY/month",
+              "period": "2005年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2005-public-report"
+              ],
+              "quality": "public_report_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 2235,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2005-public-report",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_public_report_wage_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1341,
+                "ceiling": 6705,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2005-public-report"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              },
+              "flexible": {
+                "floor": 1341,
+                "ceiling": 6705,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2005-public-report"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "official_policy_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2007,
+            "periodLabel": "2007年度，2007-04-01至2008-03-31社保缴费基数口径",
+            "effectiveFrom": "2007-04-01",
+            "effectiveTo": "2008-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 2464,
+              "unit": "CNY/month",
+              "period": "2006年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2006"
+              ],
+              "quality": "official_statistics_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 2464,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2006",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1478,
+                "ceiling": 7392,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2006"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              },
+              "flexible": {
+                "floor": 1478,
+                "ceiling": 7392,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2006"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "official_policy_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2008,
+            "periodLabel": "2008年度，2008-04-01至2009-03-31社保缴费基数口径",
+            "effectiveFrom": "2008-04-01",
+            "effectiveTo": "2009-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 2892,
+              "unit": "CNY/month",
+              "period": "2007年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2007"
+              ],
+              "quality": "official_wage_source_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 2892,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2007",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1735,
+                "ceiling": 8676,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2007"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              },
+              "flexible": {
+                "floor": 1735,
+                "ceiling": 8676,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2007"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "official_policy_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0414,
+              "unit": "annual_rate",
+              "period": "2008年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2008"
+              ],
+              "quality": "preserved_official_policy_repost_production_ready"
+            }
+          },
+          {
+            "year": 2009,
+            "periodLabel": "2009年度，2009-04-01至2010-03-31社保缴费基数口径",
+            "effectiveFrom": "2009-04-01",
+            "effectiveTo": "2010-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 3292,
+              "unit": "CNY/month",
+              "period": "2008年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2008"
+              ],
+              "quality": "official_wage_source_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 3292,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2008",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 1975,
+                "ceiling": 9876,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2008"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              },
+              "flexible": {
+                "floor": 1975,
+                "ceiling": 9876,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-average-wage-2008"
+                ],
+                "quality": "derived_from_official_wage_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-pension-rate-adjustment-2004-policy-repost",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "official_policy_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0225,
+              "unit": "annual_rate",
+              "period": "2009年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2009"
+              ],
+              "quality": "preserved_official_policy_repost_production_ready"
+            }
+          },
+          {
+            "year": 2010,
+            "periodLabel": "2010年度，2010-04-01至2011-03-31社保缴费基数口径",
+            "effectiveFrom": "2010-04-01",
+            "effectiveTo": "2011-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 3566,
+              "unit": "CNY/month",
+              "period": "2009年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2009"
+              ],
+              "quality": "official_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 3566,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2009",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 2140,
+                "ceiling": 10698,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2010"
+                ],
+                "quality": "official_local_standard_production_ready"
+              },
+              "flexible": {
+                "floor": 2140,
+                "ceiling": 10698,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2010"
+                ],
+                "quality": "official_local_standard_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2010",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "national_policy_and_local_standard_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0225,
+              "unit": "annual_rate",
+              "period": "2010年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2010"
+              ],
+              "quality": "preserved_official_policy_repost_production_ready"
+            }
+          },
+          {
+            "year": 2011,
+            "periodLabel": "2011年度，2011-04-01至2012-03-31社保缴费基数口径",
+            "effectiveFrom": "2011-04-01",
+            "effectiveTo": "2012-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 3896,
+              "unit": "CNY/month",
+              "period": "2010年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2010"
+              ],
+              "quality": "official_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 3896,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2010",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 2338,
+                "ceiling": 11688,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2011-april-public-report",
+                  "shanghai-social-insurance-standard-2011"
+                ],
+                "quality": "official_standard_and_public_report_production_ready"
+              },
+              "flexible": {
+                "floor": 2338,
+                "ceiling": 11688,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2011-april-public-report",
+                  "shanghai-social-insurance-standard-2011"
+                ],
+                "quality": "official_standard_and_public_report_production_ready"
+              },
+              "employeeSegments": [
+                {
+                  "effectiveFrom": "2011-04-01",
+                  "effectiveTo": "2011-06-30",
+                  "floor": 2338,
+                  "ceiling": 11688,
+                  "sourceIds": [
+                    "shanghai-social-insurance-standard-2011-april-public-report"
+                  ],
+                  "quality": "public_report_cross_checked_with_official_wage_production_ready"
+                },
+                {
+                  "effectiveFrom": "2011-07-01",
+                  "effectiveTo": "2012-03-31",
+                  "floor": 2338,
+                  "ceiling": 11688,
+                  "sourceIds": [
+                    "shanghai-social-insurance-standard-2011"
+                  ],
+                  "quality": "official_local_standard_production_ready"
+                }
+              ],
+              "flexibleSegments": [
+                {
+                  "effectiveFrom": "2011-04-01",
+                  "effectiveTo": "2011-06-30",
+                  "floor": 2338,
+                  "ceiling": 11688,
+                  "sourceIds": [
+                    "shanghai-social-insurance-standard-2011-april-public-report"
+                  ],
+                  "quality": "public_report_cross_checked_with_official_wage_production_ready"
+                },
+                {
+                  "effectiveFrom": "2011-07-01",
+                  "effectiveTo": "2012-03-31",
+                  "floor": 2338,
+                  "ceiling": 11688,
+                  "sourceIds": [
+                    "shanghai-social-insurance-standard-2011"
+                  ],
+                  "quality": "official_local_standard_production_ready"
+                }
+              ]
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2011-april-public-report",
+                "shanghai-social-insurance-standard-2011",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "national_policy_official_standard_and_public_report_production_ready"
+            },
+            "dataQuality": {
+              "level": "complete",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0275,
+              "unit": "annual_rate",
+              "period": "2011年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2011-rights-record-report"
+              ],
+              "quality": "public_report_cross_checked_production_ready_pending_original_notice"
+            }
+          },
+          {
+            "year": 2012,
+            "periodLabel": "2012年度，2012-04-01至2013-03-31社保缴费基数口径",
+            "effectiveFrom": "2012-04-01",
+            "effectiveTo": "2013-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 4331,
+              "unit": "CNY/month",
+              "period": "2011年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2011"
+              ],
+              "quality": "official_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 4331,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2011",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 2599,
+                "ceiling": 12993,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2012"
+                ],
+                "quality": "official_local_standard_production_ready"
+              },
+              "flexible": {
+                "floor": 2599,
+                "ceiling": 12993,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2012"
+                ],
+                "quality": "official_local_standard_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.22,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2012",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "national_policy_and_local_standard_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.035,
+              "unit": "annual_rate",
+              "period": "2012年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2012"
+              ],
+              "quality": "preserved_official_policy_repost_production_ready"
+            }
+          },
+          {
+            "year": 2013,
+            "periodLabel": "2013年度，2013-04-01至2014-03-31社保缴费基数口径",
+            "effectiveFrom": "2013-04-01",
+            "effectiveTo": "2014-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 4692,
+              "unit": "CNY/month",
+              "period": "2012年度",
+              "label": "全市职工月平均工资",
+              "sourceIds": [
+                "shanghai-average-wage-2012"
+              ],
+              "quality": "official_pending_second_review"
+            },
+            "pensionCalculationBase": {
+              "value": 4692,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-average-wage-2012",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_official_wage_pending_second_review"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 2815,
+                "ceiling": 14076,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2013"
+                ],
+                "quality": "official_pending_second_review"
+              },
+              "flexible": {
+                "floor": 2815,
+                "ceiling": 14076,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2013"
+                ],
+                "quality": "official_pending_second_review"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.21,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2013",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "historical_local_rate_pending_second_review"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [
+                "accountInterestRate"
+              ],
+              "reviewStatus": "pending_review"
+            }
+          },
+          {
+            "year": 2014,
+            "periodLabel": "2014年度，2014-04-01至2015-03-31社保缴费基数口径",
+            "effectiveFrom": "2014-04-01",
+            "effectiveTo": "2015-03-31",
+            "currency": "CNY",
+            "averageWage": {
+              "value": 5036,
+              "unit": "CNY/month",
+              "period": "2013年度",
+              "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2014"
+              ],
+              "quality": "public_report_cross_checked_production_ready"
+            },
+            "pensionCalculationBase": {
+              "value": 5036,
+              "unit": "CNY/month",
+              "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2014",
+                "shanghai-pension-calculation-method-2025"
+              ],
+              "quality": "derived_from_public_report_cross_checked_production_ready"
+            },
+            "contributionBase": {
+              "employee": {
+                "floor": 3022,
+                "ceiling": 15108,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2014"
+                ],
+                "quality": "public_report_cross_checked_production_ready"
+              },
+              "flexible": {
+                "floor": 3022,
+                "ceiling": 15108,
+                "unit": "CNY/month",
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2014"
+                ],
+                "quality": "public_report_cross_checked_production_ready"
+              }
+            },
+            "rates": {
+              "employeePersonalRate": 0.08,
+              "employerRate": 0.21,
+              "personalAccountCreditRate": 0.08,
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2014",
+                "national-enterprise-pension-system-2005"
+              ],
+              "quality": "public_report_cross_checked_production_ready"
+            },
+            "dataQuality": {
+              "level": "partial",
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0425,
+              "unit": "annual_rate",
+              "period": "2014年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2014-public-report"
+              ],
+              "quality": "public_report_cross_checked_production_ready_pending_original_notice"
+            }
+          },
           {
             "year": 2015,
             "periodLabel": "2015年度，2015-04-01至2016-03-31社保缴费基数口径",
@@ -66,32 +1243,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2014年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2015-public-report"
+              ],
+              "quality": "official_image_repost_cross_checked_production_ready"
             },
             "pensionCalculationBase": {
               "value": 5451,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-standard-2015-public-report",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_image_repost_cross_checked_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 3271,
                 "ceiling": 16353,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2015-public-report"
+                ],
+                "quality": "official_image_repost_cross_checked_production_ready"
               },
               "flexible": {
                 "floor": 3271,
                 "ceiling": 16353,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2015-public-report"
+                ],
+                "quality": "official_image_repost_cross_checked_production_ready"
               }
             },
             "rates": {
@@ -99,16 +1283,24 @@ module.exports = {
               "employerRate": 0.21,
               "personalAccountCreditRate": 0.08,
               "sourceIds": [
+                "shanghai-social-insurance-standard-2015-public-report",
                 "national-enterprise-pension-system-2005"
               ],
-              "quality": "historical_local_rate_pending_second_review"
+              "quality": "official_image_repost_cross_checked_and_national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0275,
+              "unit": "annual_rate",
+              "period": "2015年度",
+              "sourceIds": [
+                "shanghai-account-interest-rate-2015"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "preserved_official_policy_repost_production_ready"
             }
           },
           {
@@ -122,32 +1314,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2015年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2016"
+              ],
+              "quality": "derived_from_official_base_production_ready"
             },
             "pensionCalculationBase": {
               "value": 5939,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-standard-2016",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_base_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 3563,
                 "ceiling": 17817,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2016"
+                ],
+                "quality": "official_local_standard_production_ready"
               },
               "flexible": {
                 "floor": 3563,
                 "ceiling": 17817,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2016"
+                ],
+                "quality": "official_local_standard_production_ready"
               }
             },
             "rates": {
@@ -155,16 +1354,24 @@ module.exports = {
               "employerRate": 0.2,
               "personalAccountCreditRate": 0.08,
               "sourceIds": [
+                "shanghai-social-insurance-standard-2016",
                 "national-enterprise-pension-system-2005"
               ],
-              "quality": "historical_local_rate_pending_second_review"
+              "quality": "official_local_standard_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0831,
+              "unit": "annual_rate",
+              "period": "2016年度",
+              "sourceIds": [
+                "national-account-interest-rate-2016"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -178,32 +1385,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2016年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-base-2017-hrss-report"
+              ],
+              "quality": "hrss_reported_production_ready"
             },
             "pensionCalculationBase": {
               "value": 6504,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-base-2017-hrss-report",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_hrss_reported_base_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 3902,
                 "ceiling": 19512,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2017-hrss-report"
+                ],
+                "quality": "hrss_reported_production_ready"
               },
               "flexible": {
                 "floor": 3902,
                 "ceiling": 19512,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2017-hrss-report"
+                ],
+                "quality": "hrss_reported_production_ready"
               }
             },
             "rates": {
@@ -211,16 +1425,24 @@ module.exports = {
               "employerRate": 0.2,
               "personalAccountCreditRate": 0.08,
               "sourceIds": [
+                "shanghai-social-insurance-base-2017-hrss-report",
                 "national-enterprise-pension-system-2005"
               ],
-              "quality": "historical_local_rate_pending_second_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0712,
+              "unit": "annual_rate",
+              "period": "2017年度",
+              "sourceIds": [
+                "national-account-interest-rate-2017"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -234,32 +1456,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2017年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-standard-2018"
+              ],
+              "quality": "derived_from_official_base_production_ready"
             },
             "pensionCalculationBase": {
               "value": 7132,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-standard-2018",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_base_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 4279,
                 "ceiling": 21396,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2018"
+                ],
+                "quality": "official_local_standard_production_ready"
               },
               "flexible": {
                 "floor": 4279,
                 "ceiling": 21396,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-standard-2018"
+                ],
+                "quality": "official_local_standard_production_ready"
               }
             },
             "rates": {
@@ -267,16 +1496,24 @@ module.exports = {
               "employerRate": 0.2,
               "personalAccountCreditRate": 0.08,
               "sourceIds": [
+                "shanghai-social-insurance-standard-2018",
                 "national-enterprise-pension-system-2005"
               ],
-              "quality": "historical_local_rate_pending_second_review"
+              "quality": "official_local_standard_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0829,
+              "unit": "annual_rate",
+              "period": "2018年度",
+              "sourceIds": [
+                "national-account-interest-rate-2018"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -290,32 +1527,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2018年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-base-2019"
+              ],
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 8211,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-base-2019",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 4927,
                 "ceiling": 24633,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2019"
+                ],
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 4927,
                 "ceiling": 24633,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2019"
+                ],
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -326,14 +1570,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0761,
+              "unit": "annual_rate",
+              "period": "2019年度",
+              "sourceIds": [
+                "national-account-interest-rate-2019"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -350,7 +1601,7 @@ module.exports = {
               "sourceIds": [
                 "shanghai-contribution-base-2020"
               ],
-              "quality": "official_pending_second_review"
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 9339,
@@ -360,7 +1611,7 @@ module.exports = {
                 "shanghai-contribution-base-2020",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "derived_from_official_wage_pending_second_review"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
@@ -370,7 +1621,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2020"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 4927,
@@ -379,7 +1630,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2020"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -390,14 +1641,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0604,
+              "unit": "annual_rate",
+              "period": "2020年度",
+              "sourceIds": [
+                "national-account-interest-rate-2020"
               ],
-              "reviewStatus": "pending_second_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -414,7 +1672,7 @@ module.exports = {
               "sourceIds": [
                 "shanghai-contribution-base-2021"
               ],
-              "quality": "official_pending_second_review"
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 10338,
@@ -424,7 +1682,7 @@ module.exports = {
                 "shanghai-contribution-base-2021",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "derived_from_official_wage_pending_second_review"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
@@ -434,7 +1692,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2021"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 5975,
@@ -443,7 +1701,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2021"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -454,14 +1712,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0669,
+              "unit": "annual_rate",
+              "period": "2021年度",
+              "sourceIds": [
+                "national-account-interest-rate-2021"
               ],
-              "reviewStatus": "pending_second_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -478,7 +1743,7 @@ module.exports = {
               "sourceIds": [
                 "shanghai-average-wage-2021"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 11396,
@@ -488,7 +1753,7 @@ module.exports = {
                 "shanghai-average-wage-2021",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
@@ -496,18 +1761,18 @@ module.exports = {
                 "ceiling": 34188,
                 "unit": "CNY/month",
                 "sourceIds": [
-                  "shanghai-average-wage-2021"
+                  "shanghai-social-insurance-base-2022-official-wechat-repost"
                 ],
-                "quality": "candidate_pending_official_source"
+                "quality": "official_wechat_repost_production_ready"
               },
               "flexible": {
                 "floor": 6520,
                 "ceiling": 34188,
                 "unit": "CNY/month",
                 "sourceIds": [
-                  "shanghai-average-wage-2021"
+                  "shanghai-social-insurance-base-2022-official-wechat-repost"
                 ],
-                "quality": "candidate_pending_official_source"
+                "quality": "official_wechat_repost_production_ready"
               }
             },
             "rates": {
@@ -518,14 +1783,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0612,
+              "unit": "annual_rate",
+              "period": "2022年度",
+              "sourceIds": [
+                "national-account-interest-rate-2022"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -539,32 +1811,39 @@ module.exports = {
               "unit": "CNY/month",
               "period": "2022年度",
               "label": "全口径城镇单位就业人员平均工资或当年缴费基数使用工资口径",
-              "sourceIds": [],
-              "quality": "candidate_pending_official_source"
+              "sourceIds": [
+                "shanghai-social-insurance-base-2023"
+              ],
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 12183,
               "unit": "CNY/month",
               "basis": "上海计发办法使用办理申领时上年度全市城镇单位就业人员月平均工资；历史回补阶段以该年度缴费基数使用工资口径作为当前可用估算口径。",
               "sourceIds": [
+                "shanghai-social-insurance-base-2023",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "candidate_pending_official_source"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
                 "floor": 7310,
                 "ceiling": 36549,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2023"
+                ],
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 7310,
                 "ceiling": 36549,
                 "unit": "CNY/month",
-                "sourceIds": [],
-                "quality": "candidate_pending_official_source"
+                "sourceIds": [
+                  "shanghai-social-insurance-base-2023"
+                ],
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -575,14 +1854,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0397,
+              "unit": "annual_rate",
+              "period": "2023年度",
+              "sourceIds": [
+                "national-account-interest-rate-2023"
               ],
-              "reviewStatus": "pending_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -599,7 +1885,7 @@ module.exports = {
               "sourceIds": [
                 "shanghai-contribution-base-2024"
               ],
-              "quality": "official_pending_second_review"
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 12307,
@@ -609,7 +1895,7 @@ module.exports = {
                 "shanghai-contribution-base-2024",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "derived_from_official_wage_pending_second_review"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
@@ -619,7 +1905,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2024"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 7384,
@@ -628,7 +1914,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-contribution-base-2024"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -639,14 +1925,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.0262,
+              "unit": "annual_rate",
+              "period": "2024年度",
+              "sourceIds": [
+                "national-account-interest-rate-2024"
               ],
-              "reviewStatus": "pending_second_review"
+              "quality": "official_production_ready"
             }
           },
           {
@@ -663,7 +1956,7 @@ module.exports = {
               "sourceIds": [
                 "shanghai-social-insurance-base-2025"
               ],
-              "quality": "official_pending_second_review"
+              "quality": "official_production_ready"
             },
             "pensionCalculationBase": {
               "value": 12434,
@@ -673,7 +1966,7 @@ module.exports = {
                 "shanghai-social-insurance-base-2025",
                 "shanghai-pension-calculation-method-2025"
               ],
-              "quality": "derived_from_official_wage_pending_second_review"
+              "quality": "derived_from_official_wage_production_ready"
             },
             "contributionBase": {
               "employee": {
@@ -683,7 +1976,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-social-insurance-base-2025"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               },
               "flexible": {
                 "floor": 7460,
@@ -692,7 +1985,7 @@ module.exports = {
                 "sourceIds": [
                   "shanghai-social-insurance-base-2025"
                 ],
-                "quality": "official_pending_second_review"
+                "quality": "official_production_ready"
               }
             },
             "rates": {
@@ -703,14 +1996,21 @@ module.exports = {
                 "national-enterprise-pension-system-2005",
                 "national-social-insurance-rate-2019"
               ],
-              "quality": "mixed_national_policy_pending_local_review"
+              "quality": "national_policy_production_ready"
             },
             "dataQuality": {
               "level": "partial",
-              "missingFields": [
-                "accountInterestRate"
+              "missingFields": [],
+              "reviewStatus": "production_ready"
+            },
+            "accountInterestRate": {
+              "value": 0.015,
+              "unit": "annual_rate",
+              "period": "2025年度",
+              "sourceIds": [
+                "national-account-interest-rate-2025"
               ],
-              "reviewStatus": "pending_second_review"
+              "quality": "official_production_ready"
             }
           }
         ]
@@ -859,7 +2159,7 @@ module.exports = {
   },
   "cityHistoryCoverage": {
     "schemaVersion": "1.0",
-    "coverageVersion": "2026.05.28-shanghai-2015-2025",
+    "coverageVersion": "2026.05.28-shanghai-2000-2025",
     "lastUpdated": "2026-05-28",
     "targetYearRange": {
       "from": 2000,
@@ -869,7 +2169,7 @@ module.exports = {
       "file": "city-key-params-2015-2025.json",
       "scope": "2015-2025 key parameters workspace, not yet canonical production data",
       "summary": {
-        "shanghai": "上海 2015-2025 已归并正式历史参数；2020、2021、2024、2025 有官方来源记录，2015-2019、2022-2023 仍为候选或待复核。",
+        "shanghai": "上海 2015-2025 已完成 production ready 复核，作为公开测算支持范围；2000-2007、2013 仍保留为历史补齐 backlog。普通提交会按本次已缴年限检查实际触达年份，触达未复核年份时不开放该组测算。",
         "beijing": "2015-2025 缴费基数已有官方历史表记录；2025 待遇计发基数已记录。",
         "shenzhen": "2024-2025 已有深圳/广东官方来源记录；2015-2023 仍为部分回补。"
       }
@@ -877,8 +2177,13 @@ module.exports = {
     "cities": {
       "shanghai": {
         "name": "上海",
-        "officialCompleteYears": [],
-        "partialYears": [
+        "officialCompleteYears": [
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2014,
           2015,
           2016,
           2017,
@@ -891,7 +2196,7 @@ module.exports = {
           2024,
           2025
         ],
-        "missingYears": [
+        "partialYears": [
           2000,
           2001,
           2002,
@@ -900,16 +2205,16 @@ module.exports = {
           2005,
           2006,
           2007,
-          2008,
-          2009,
-          2010,
-          2011,
-          2012,
-          2013,
-          2014
+          2013
         ],
-        "nextBackfillBatch": "2000-2014",
-        "notes": "2015-2025 已有关键养老金输入参数；仍缺个人账户记账利率，且部分年份缺官方来源 URL，故标为 partial。"
+        "missingYears": [],
+        "nextBackfillBatch": "source-and-field-review",
+        "notes": "上海 2015-2025 已完成 production ready 复核，作为公开测算支持范围；2000-2007、2013 仍保留为历史补齐 backlog。普通提交会按本次已缴年限检查实际触达年份，触达未复核年份时不开放该组测算。",
+        "publicSupportedYearRange": {
+          "from": 2015,
+          "to": 2025
+        },
+        "releaseGate": "public_supported_range_ready_with_input_level_history_check"
       },
       "beijing": {
         "name": "北京",
@@ -1335,12 +2640,12 @@ module.exports = {
     "schemaVersion": "1.0",
     "benchmarkVersion": null,
     "status": "not_generated",
-    "reason": "official city history params are incomplete; generate benchmark samples after at least 2015-2025 city params are backfilled and reviewed.",
+    "reason": "城市历史参数尚未补齐并复核，基准样本暂未生成。",
     "requiredBeforeGeneration": [
-      "city-history-params.json backfilled for target benchmark years",
-      "pension-policy.json reviewed",
-      "payout-months.json reviewed",
-      "sample generation rules finalized"
+      "补齐并复核目标年份城市历史参数",
+      "复核养老保险政策参数",
+      "复核计发月数表",
+      "固定样本生成规则"
     ]
   }
 };

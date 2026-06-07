@@ -18,7 +18,7 @@
   <view class="section">
     <view class="section-title">怎么查询</view>
     <view class="card">
-      <view class="guide-row">1. 打开当地人社、社保或政务服务小程序。</view>
+      <view class="guide-row">1. 上海用户可先看随申办或上海人社。</view>
       <view class="guide-row">2. 找到养老保险个人账户或权益记录。</view>
       <view class="guide-row">3. 复制“个人账户累计储存额”或相近字段填入这里。</view>
     </view>

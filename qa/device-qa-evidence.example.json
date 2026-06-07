@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "releaseCity": "shanghai",
+  "testedAt": "2026-06-03T12:00:00.000Z",
+  "tester": "name",
+  "devtools": {
+    "cliPath": "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+    "previewGenerated": false,
+    "qrOutput": "/tmp/pension-abacus-preview.png",
+    "infoOutput": "/tmp/pension-abacus-preview.json"
+  },
+  "devices": [
+    {
+      "platform": "iOS",
+      "model": "iPhone",
+      "osVersion": "iOS version",
+      "wechatVersion": "WeChat version",
+      "screenshot": "qa/artifacts/ios-main-flow.png",
+      "result": "pending"
+    },
+    {
+      "platform": "Android",
+      "model": "Android phone",
+      "osVersion": "Android version",
+      "wechatVersion": "WeChat version",
+      "screenshot": "qa/artifacts/android-main-flow.png",
+      "result": "pending"
+    }
+  ],
+  "checks": {
+    "homeEmployeeEntryOnly": false,
+    "disabledFutureModules": false,
+    "unsupportedHistoricalYearsBlocked": false,
+    "requiredFormValidation": false,
+    "femaleRetirementTwoColumnLayout": false,
+    "accountBalanceFlow": false,
+    "resultExplanationVisible": false,
+    "shanghaiAccountLookupGuideVisible": false,
+    "aboutDataSourceAndDisclaimerVisible": false,
+    "sharePrivacySafe": false,
+    "noForbiddenCompetitionCopy": false,
+    "largeFontReadable": false,
+    "keyboardAndSafeAreaOk": false,
+    "iosSmokePass": false,
+    "androidSmokePass": false
+  },
+  "notes": "Replace this template with qa/device-qa-evidence.json after real device QA. The evidence file and qa/artifacts/ files are intentionally not release assets. Set devtools.previewGenerated=true only after npm run verify:devtools:preview creates the QR and info files. Set each device result and checks.* item to pass/true only after validating it on real devices. testedAt must be later than the latest miniprogram/data/asset change. devtools.qrOutput, devtools.infoOutput, and each device.screenshot path must exist when npm run verify:device-qa is executed."
+}

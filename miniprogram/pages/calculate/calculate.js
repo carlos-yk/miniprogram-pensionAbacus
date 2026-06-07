@@ -1,5 +1,11 @@
-const { getCityGateOptions, getDisabledCitySubmitLabel } = require('../../utils/dataGate');
+const {
+  getCityGateOptions,
+  getDisabledCitySubmitLabel,
+  getUnsupportedPaidHistoryYears
+} = require('../../utils/dataGate');
 const { calculatePensionEstimate } = require('../../utils/pensionCalculator');
+const { calculateRetirement } = require('../../utils/retirement');
+const { toMonthIndex } = require('../../utils/date');
 const {
   getAdvancedContributionOptions,
   getContributionOptions,
@@ -13,6 +19,8 @@ const workerTypes = getWorkerTypes();
 const contributionOptions = getContributionOptions();
 const primaryContributionOptions = getPrimaryContributionOptions();
 const advancedContributionOptions = getAdvancedContributionOptions();
+const MAX_REASONABLE_PAID_YEARS = 50;
+const RETIRED_GRACE_MONTHS = 12;
 
 function decorateWorkerTypes(selectedKey) {
   return workerTypes.map((item) => ({
@@ -57,6 +65,76 @@ function decorateCityOptions(options, selectedCity) {
 
 function canEstimateCity(option) {
   return Boolean(option && (option.canSubmit || option.canPreview));
+}
+
+function getWorkerTypeTracks(workerType) {
+  if (workerType === 'female_unknown') {
+    return ['female_original_50', 'female_original_55'];
+  }
+
+  return [workerType];
+}
+
+function getRetirementScopeError(workerType, birthMonth) {
+  if (!workerType || !birthMonth) return '';
+
+  const currentMonthIndex = toMonthIndex(features.calculationAsOfMonth);
+  const retirementMonthIndexes = getWorkerTypeTracks(workerType).map((track) =>
+    toMonthIndex(calculateRetirement(track, birthMonth).retirementMonth)
+  );
+  const latestRetirementMonth = Math.max(...retirementMonthIndexes);
+
+  if (latestRetirementMonth < currentMonthIndex - RETIRED_GRACE_MONTHS) {
+    return '这个工具更适合估算未退休或刚接近退休的情况，已退休人员建议直接查询实际待遇。';
+  }
+
+  return '';
+}
+
+function getInputBoundaryError({ birthMonth, workerType, paidYears }) {
+  if (birthMonth && toMonthIndex(birthMonth) > toMonthIndex(features.calculationAsOfMonth)) {
+    return '出生年月不能晚于当前测算月份。';
+  }
+
+  if (Number(paidYears) > MAX_REASONABLE_PAID_YEARS) {
+    return '已缴费年限看起来偏高，请核对后再测算。';
+  }
+
+  return getRetirementScopeError(workerType, birthMonth);
+}
+
+function formatYearRange(years) {
+  if (!years || years.length === 0) return '';
+  const sorted = years.slice().sort((a, b) => a - b);
+  const ranges = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+
+  for (let index = 1; index < sorted.length; index += 1) {
+    const year = sorted[index];
+    if (year === prev + 1) {
+      prev = year;
+      continue;
+    }
+    ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+    start = year;
+    prev = year;
+  }
+
+  ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+  return ranges.join('、');
+}
+
+function getHistorySupportError(city, paidYears) {
+  if (!city || !(Number(paidYears) > 0)) return '';
+
+  const unsupportedYears = getUnsupportedPaidHistoryYears({
+    city,
+    paidMonths: Math.round(Number(paidYears) * 12)
+  });
+  if (unsupportedYears.length === 0) return '';
+
+  return `这组缴费年限会用到 ${formatYearRange(unsupportedYears)} 年历史年份，数据还在核对，暂未开放这组测算。`;
 }
 
 function getScenarioCopy(scenario) {
@@ -132,10 +210,16 @@ Page({
   onShow() {
     const storageKeys = getStorageKeys(this.data.scenario);
     const accountBalance = storage.get(storageKeys.account, null);
-    const cityOptions = getCityGateOptions({ internalPreview: features.internalPreviewEnabled });
+    const cityOptions = getCityGateOptions({
+      internalPreview: features.internalPreviewEnabled,
+      previewCities: features.previewCities
+    });
     this.setData({
       cityOptions: decorateCityOptions(cityOptions, this.data.city),
-      submitLabel: getDisabledCitySubmitLabel({ internalPreview: features.internalPreviewEnabled }),
+      submitLabel: getDisabledCitySubmitLabel({
+        internalPreview: features.internalPreviewEnabled,
+        previewCities: features.previewCities
+      }),
       hasAccountBalance: accountBalance !== null && accountBalance !== '',
       accountBalance,
       accountHint: accountBalance !== null && accountBalance !== ''
@@ -168,7 +252,10 @@ Page({
   selectCity(event) {
     const city = event.currentTarget.dataset.city;
     const option = this.data.cityOptions.find((item) => item.city === city);
-    const cityOptions = getCityGateOptions({ internalPreview: features.internalPreviewEnabled });
+    const cityOptions = getCityGateOptions({
+      internalPreview: features.internalPreviewEnabled,
+      previewCities: features.previewCities
+    });
     const message = option && option.canPreview ? option.previewMessage : (option ? option.message : '');
     this.setData({
       city,
@@ -226,6 +313,14 @@ Page({
     const contribution = this.getSelectedContribution();
     const needsAmount = contribution && contribution.needsAmount;
     const hasAmount = !needsAmount || Number(this.data.contributionAmount) > 0;
+    const boundaryError = getInputBoundaryError({
+      birthMonth: this.data.birthMonth,
+      workerType: this.data.workerType,
+      paidYears: this.data.paidYears
+    });
+    const historySupportError = selectedCity && selectedCity.canSubmit
+      ? getHistorySupportError(this.data.city, this.data.paidYears)
+      : '';
     const canSubmit = Boolean(
       this.data.birthMonth &&
       this.data.workerType &&
@@ -233,7 +328,9 @@ Page({
       canEstimateCity(selectedCity) &&
       Number(this.data.paidYears) > 0 &&
       contribution &&
-      hasAmount
+      hasAmount &&
+      !boundaryError &&
+      !historySupportError
     );
 
     this.setData({
@@ -241,7 +338,10 @@ Page({
       submitClassName: canSubmit ? 'primary-button' : 'primary-button disabled',
       submitLabel: selectedCity
         ? (selectedCity.canSubmit ? '立即测算' : (selectedCity.canPreview ? '开始试算' : '暂未开放测算'))
-        : getDisabledCitySubmitLabel({ internalPreview: features.internalPreviewEnabled })
+        : getDisabledCitySubmitLabel({
+          internalPreview: features.internalPreviewEnabled,
+          previewCities: features.previewCities
+        })
     });
   },
 
@@ -268,10 +368,22 @@ Page({
   validate() {
     const selectedCity = this.data.cityOptions.find((item) => item.city === this.data.city);
     if (!this.data.birthMonth) return '请选择出生年月。';
+    if (toMonthIndex(this.data.birthMonth) > toMonthIndex(features.calculationAsOfMonth)) {
+      return '出生年月不能晚于当前测算月份。';
+    }
     if (!this.data.workerType) return '请选择性别 / 退休类型。';
     if (!selectedCity) return '请选择预计退休城市。';
     if (!canEstimateCity(selectedCity)) return selectedCity.message;
     if (!(Number(this.data.paidYears) > 0)) return '请填写已缴费年限。';
+    if (Number(this.data.paidYears) > MAX_REASONABLE_PAID_YEARS) {
+      return '已缴费年限看起来偏高，请核对后再测算。';
+    }
+    const retirementScopeError = getRetirementScopeError(this.data.workerType, this.data.birthMonth);
+    if (retirementScopeError) return retirementScopeError;
+    if (selectedCity.canSubmit) {
+      const historySupportError = getHistorySupportError(this.data.city, this.data.paidYears);
+      if (historySupportError) return historySupportError;
+    }
     if (!this.getSelectedContribution()) return '请选择当前缴费水平。';
     if (this.getSelectedContribution().needsAmount && !(Number(this.data.contributionAmount) > 0)) {
       return '请补充金额后再测算。';

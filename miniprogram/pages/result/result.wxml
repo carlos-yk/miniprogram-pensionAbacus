@@ -64,6 +64,27 @@
     </view>
 
     <view class="section">
+      <view class="section-title">数据说明</view>
+      <view class="card">
+        <view class="fact-row">
+          <view class="fact-label">城市数据</view>
+          <view class="fact-value">{{result.dataStatusText}}</view>
+        </view>
+        <view class="bullet">- {{result.dataImpactText}}</view>
+        <view class="source-link" bindtap="openAbout">查看数据来源和免责声明</view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">为什么是这个数</view>
+      <view class="card">
+        <block wx:for="{{result.explainers}}" wx:key="*this">
+          <view class="bullet">- {{item}}</view>
+        </block>
+      </view>
+    </view>
+
+    <view class="section">
       <view class="section-title">重要提示</view>
       <view class="card warning-card">
         <block wx:for="{{result.warnings}}" wx:key="*this">

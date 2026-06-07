@@ -67,13 +67,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2252,
-          "rangeLow": 1689,
-          "rangeHigh": 2815
+          "monthlyTotal": 1975,
+          "rangeLow": 1481,
+          "rangeHigh": 2469
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 769,
+          "personalAccountPension": 491,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -217,13 +217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3136,
-          "rangeLow": 2352,
-          "rangeHigh": 3920
+          "monthlyTotal": 2673,
+          "rangeLow": 2005,
+          "rangeHigh": 3342
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 1281,
+          "personalAccountPension": 819,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -367,13 +367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4240,
-          "rangeLow": 3180,
-          "rangeHigh": 5300
+          "monthlyTotal": 3546,
+          "rangeLow": 2660,
+          "rangeHigh": 4433
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1921,
+          "personalAccountPension": 1228,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -517,13 +517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7552,
-          "rangeLow": 5664,
-          "rangeHigh": 9440
+          "monthlyTotal": 6165,
+          "rangeLow": 4624,
+          "rangeHigh": 7706
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 3843,
+          "personalAccountPension": 2456,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -667,13 +667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2265,
-          "rangeLow": 1699,
-          "rangeHigh": 2831
+          "monthlyTotal": 1985,
+          "rangeLow": 1488,
+          "rangeHigh": 2481
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 773,
+          "personalAccountPension": 492,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -817,13 +817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3153,
-          "rangeLow": 2365,
-          "rangeHigh": 3942
+          "monthlyTotal": 2686,
+          "rangeLow": 2014,
+          "rangeHigh": 3357
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 1288,
+          "personalAccountPension": 821,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -967,13 +967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4264,
-          "rangeLow": 3198,
-          "rangeHigh": 5329
+          "monthlyTotal": 3563,
+          "rangeLow": 2672,
+          "rangeHigh": 4453
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1932,
+          "personalAccountPension": 1231,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1117,13 +1117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7595,
-          "rangeLow": 5696,
-          "rangeHigh": 9493
+          "monthlyTotal": 6193,
+          "rangeLow": 4644,
+          "rangeHigh": 7741
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 3864,
+          "personalAccountPension": 2462,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1267,13 +1267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3020,
-          "rangeLow": 2265,
-          "rangeHigh": 3775
+          "monthlyTotal": 2542,
+          "rangeLow": 1907,
+          "rangeHigh": 3178
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 1030,
+          "personalAccountPension": 553,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1417,13 +1417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4204,
-          "rangeLow": 3153,
-          "rangeHigh": 5255
+          "monthlyTotal": 3408,
+          "rangeLow": 2556,
+          "rangeHigh": 4260
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1718,
+          "personalAccountPension": 922,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1567,13 +1567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5685,
-          "rangeLow": 4264,
-          "rangeHigh": 7106
+          "monthlyTotal": 4491,
+          "rangeLow": 3368,
+          "rangeHigh": 5614
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 2576,
+          "personalAccountPension": 1382,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1717,13 +1717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10126,
-          "rangeLow": 7595,
-          "rangeHigh": 12658
+          "monthlyTotal": 7738,
+          "rangeLow": 5804,
+          "rangeHigh": 9673
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 5153,
+          "personalAccountPension": 2765,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -1867,13 +1867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4530,
-          "rangeLow": 3397,
-          "rangeHigh": 5662
+          "monthlyTotal": 3617,
+          "rangeLow": 2713,
+          "rangeHigh": 4521
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1546,
+          "personalAccountPension": 633,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2017,13 +2017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6306,
-          "rangeLow": 4730,
-          "rangeHigh": 7883
+          "monthlyTotal": 4785,
+          "rangeLow": 3589,
+          "rangeHigh": 5982
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2576,
+          "personalAccountPension": 1055,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2167,13 +2167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8527,
-          "rangeLow": 6395,
-          "rangeHigh": 10659
+          "monthlyTotal": 6245,
+          "rangeLow": 4684,
+          "rangeHigh": 7807
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 3864,
+          "personalAccountPension": 1583,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2317,13 +2317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15189,
-          "rangeLow": 11392,
-          "rangeHigh": 18986
+          "monthlyTotal": 10626,
+          "rangeLow": 7969,
+          "rangeHigh": 13282
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 7729,
+          "personalAccountPension": 3165,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2467,13 +2467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6040,
-          "rangeLow": 4530,
-          "rangeHigh": 7550
+          "monthlyTotal": 4679,
+          "rangeLow": 3509,
+          "rangeHigh": 5849
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 2061,
+          "personalAccountPension": 700,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2617,13 +2617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8409,
-          "rangeLow": 6306,
-          "rangeHigh": 10511
+          "monthlyTotal": 6141,
+          "rangeLow": 4605,
+          "rangeHigh": 7676
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3435,
+          "personalAccountPension": 1167,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2767,13 +2767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11370,
-          "rangeLow": 8527,
-          "rangeHigh": 14212
+          "monthlyTotal": 7968,
+          "rangeLow": 5976,
+          "rangeHigh": 9960
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 5153,
+          "personalAccountPension": 1751,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -2917,13 +2917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 20252,
-          "rangeLow": 15189,
-          "rangeHigh": 25315
+          "monthlyTotal": 13448,
+          "rangeLow": 10086,
+          "rangeHigh": 16810
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 10305,
+          "personalAccountPension": 3501,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3067,13 +3067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2252,
-          "rangeLow": 1689,
-          "rangeHigh": 2815
+          "monthlyTotal": 1975,
+          "rangeLow": 1481,
+          "rangeHigh": 2469
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 769,
+          "personalAccountPension": 491,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3217,13 +3217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3136,
-          "rangeLow": 2352,
-          "rangeHigh": 3920
+          "monthlyTotal": 2673,
+          "rangeLow": 2005,
+          "rangeHigh": 3342
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 1281,
+          "personalAccountPension": 819,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3367,13 +3367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4240,
-          "rangeLow": 3180,
-          "rangeHigh": 5300
+          "monthlyTotal": 3546,
+          "rangeLow": 2660,
+          "rangeHigh": 4433
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1921,
+          "personalAccountPension": 1228,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3517,13 +3517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7552,
-          "rangeLow": 5664,
-          "rangeHigh": 9440
+          "monthlyTotal": 6165,
+          "rangeLow": 4624,
+          "rangeHigh": 7706
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 3843,
+          "personalAccountPension": 2456,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3667,13 +3667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2265,
-          "rangeLow": 1699,
-          "rangeHigh": 2831
+          "monthlyTotal": 1985,
+          "rangeLow": 1488,
+          "rangeHigh": 2481
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 773,
+          "personalAccountPension": 492,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3817,13 +3817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3153,
-          "rangeLow": 2365,
-          "rangeHigh": 3942
+          "monthlyTotal": 2686,
+          "rangeLow": 2014,
+          "rangeHigh": 3357
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 1288,
+          "personalAccountPension": 821,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -3967,13 +3967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4264,
-          "rangeLow": 3198,
-          "rangeHigh": 5329
+          "monthlyTotal": 3563,
+          "rangeLow": 2672,
+          "rangeHigh": 4453
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1932,
+          "personalAccountPension": 1231,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4117,13 +4117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7595,
-          "rangeLow": 5696,
-          "rangeHigh": 9493
+          "monthlyTotal": 6193,
+          "rangeLow": 4644,
+          "rangeHigh": 7741
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 3864,
+          "personalAccountPension": 2462,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4267,13 +4267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3020,
-          "rangeLow": 2265,
-          "rangeHigh": 3775
+          "monthlyTotal": 2542,
+          "rangeLow": 1907,
+          "rangeHigh": 3178
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 1030,
+          "personalAccountPension": 553,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4417,13 +4417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4204,
-          "rangeLow": 3153,
-          "rangeHigh": 5255
+          "monthlyTotal": 3408,
+          "rangeLow": 2556,
+          "rangeHigh": 4260
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1718,
+          "personalAccountPension": 922,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4567,13 +4567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5685,
-          "rangeLow": 4264,
-          "rangeHigh": 7106
+          "monthlyTotal": 4491,
+          "rangeLow": 3368,
+          "rangeHigh": 5614
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 2576,
+          "personalAccountPension": 1382,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4717,13 +4717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10126,
-          "rangeLow": 7595,
-          "rangeHigh": 12658
+          "monthlyTotal": 7738,
+          "rangeLow": 5804,
+          "rangeHigh": 9673
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 5153,
+          "personalAccountPension": 2765,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -4867,13 +4867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4530,
-          "rangeLow": 3397,
-          "rangeHigh": 5662
+          "monthlyTotal": 3617,
+          "rangeLow": 2713,
+          "rangeHigh": 4521
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1546,
+          "personalAccountPension": 633,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5017,13 +5017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6306,
-          "rangeLow": 4730,
-          "rangeHigh": 7883
+          "monthlyTotal": 4785,
+          "rangeLow": 3589,
+          "rangeHigh": 5982
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2576,
+          "personalAccountPension": 1055,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5167,13 +5167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8527,
-          "rangeLow": 6395,
-          "rangeHigh": 10659
+          "monthlyTotal": 6245,
+          "rangeLow": 4684,
+          "rangeHigh": 7807
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 3864,
+          "personalAccountPension": 1583,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5317,13 +5317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15189,
-          "rangeLow": 11392,
-          "rangeHigh": 18986
+          "monthlyTotal": 10626,
+          "rangeLow": 7969,
+          "rangeHigh": 13282
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 7729,
+          "personalAccountPension": 3165,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5467,13 +5467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6040,
-          "rangeLow": 4530,
-          "rangeHigh": 7550
+          "monthlyTotal": 4679,
+          "rangeLow": 3509,
+          "rangeHigh": 5849
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 2061,
+          "personalAccountPension": 700,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5617,13 +5617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8409,
-          "rangeLow": 6306,
-          "rangeHigh": 10511
+          "monthlyTotal": 6141,
+          "rangeLow": 4605,
+          "rangeHigh": 7676
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3435,
+          "personalAccountPension": 1167,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5767,13 +5767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11370,
-          "rangeLow": 8527,
-          "rangeHigh": 14212
+          "monthlyTotal": 7968,
+          "rangeLow": 5976,
+          "rangeHigh": 9960
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 5153,
+          "personalAccountPension": 1751,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -5917,13 +5917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 20252,
-          "rangeLow": 15189,
-          "rangeHigh": 25315
+          "monthlyTotal": 13448,
+          "rangeLow": 10086,
+          "rangeHigh": 16810
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 10305,
+          "personalAccountPension": 3501,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6067,13 +6067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4579,
-          "rangeLow": 3435,
-          "rangeHigh": 5724
+          "monthlyTotal": 4250,
+          "rangeLow": 3187,
+          "rangeHigh": 5312
         },
         "breakdown": {
           "basicPension": 2835,
-          "personalAccountPension": 1744,
+          "personalAccountPension": 1415,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6217,13 +6217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6451,
-          "rangeLow": 4838,
-          "rangeHigh": 8064
+          "monthlyTotal": 5902,
+          "rangeLow": 4426,
+          "rangeHigh": 7377
         },
         "breakdown": {
           "basicPension": 3544,
-          "personalAccountPension": 2908,
+          "personalAccountPension": 2358,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6367,13 +6367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8791,
-          "rangeLow": 6593,
-          "rangeHigh": 10989
+          "monthlyTotal": 7967,
+          "rangeLow": 5975,
+          "rangeHigh": 9959
         },
         "breakdown": {
           "basicPension": 4430,
-          "personalAccountPension": 4361,
+          "personalAccountPension": 3537,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6517,13 +6517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15810,
-          "rangeLow": 11858,
-          "rangeHigh": 19763
+          "monthlyTotal": 14162,
+          "rangeLow": 10622,
+          "rangeHigh": 17703
         },
         "breakdown": {
           "basicPension": 7087,
-          "personalAccountPension": 8723,
+          "personalAccountPension": 7075,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6667,13 +6667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4593,
-          "rangeLow": 3445,
-          "rangeHigh": 5741
+          "monthlyTotal": 4260,
+          "rangeLow": 3195,
+          "rangeHigh": 5325
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1750,
+          "personalAccountPension": 1417,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6817,13 +6817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6470,
-          "rangeLow": 4853,
-          "rangeHigh": 8088
+          "monthlyTotal": 5915,
+          "rangeLow": 4436,
+          "rangeHigh": 7394
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2916,
+          "personalAccountPension": 2361,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -6967,13 +6967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8817,
-          "rangeLow": 6613,
-          "rangeHigh": 11021
+          "monthlyTotal": 7984,
+          "rangeLow": 5988,
+          "rangeHigh": 9980
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 4374,
+          "personalAccountPension": 3541,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7117,13 +7117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15857,
-          "rangeLow": 11892,
-          "rangeHigh": 19821
+          "monthlyTotal": 14191,
+          "rangeLow": 10643,
+          "rangeHigh": 17739
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 8748,
+          "personalAccountPension": 7083,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7267,13 +7267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5396,
-          "rangeLow": 4047,
-          "rangeHigh": 6745
+          "monthlyTotal": 4829,
+          "rangeLow": 3622,
+          "rangeHigh": 6036
         },
         "breakdown": {
           "basicPension": 3341,
-          "personalAccountPension": 2056,
+          "personalAccountPension": 1488,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7417,13 +7417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7602,
-          "rangeLow": 5702,
-          "rangeHigh": 9503
+          "monthlyTotal": 6656,
+          "rangeLow": 4992,
+          "rangeHigh": 8320
         },
         "breakdown": {
           "basicPension": 4176,
-          "personalAccountPension": 3426,
+          "personalAccountPension": 2481,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7567,13 +7567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10359,
-          "rangeLow": 7769,
-          "rangeHigh": 12949
+          "monthlyTotal": 8941,
+          "rangeLow": 6706,
+          "rangeHigh": 11176
         },
         "breakdown": {
           "basicPension": 5220,
-          "personalAccountPension": 5139,
+          "personalAccountPension": 3721,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7717,13 +7717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 18630,
-          "rangeLow": 13973,
-          "rangeHigh": 23288
+          "monthlyTotal": 15793,
+          "rangeLow": 11845,
+          "rangeHigh": 19742
         },
         "breakdown": {
           "basicPension": 8352,
-          "personalAccountPension": 10279,
+          "personalAccountPension": 7442,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -7867,13 +7867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7003,
-          "rangeLow": 5252,
-          "rangeHigh": 8754
+          "monthlyTotal": 5919,
+          "rangeLow": 4439,
+          "rangeHigh": 7399
         },
         "breakdown": {
           "basicPension": 4335,
-          "personalAccountPension": 2668,
+          "personalAccountPension": 1584,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8017,13 +8017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9866,
-          "rangeLow": 7399,
-          "rangeHigh": 12332
+          "monthlyTotal": 8058,
+          "rangeLow": 6044,
+          "rangeHigh": 10073
         },
         "breakdown": {
           "basicPension": 5419,
-          "personalAccountPension": 4446,
+          "personalAccountPension": 2639,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8167,13 +8167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13444,
-          "rangeLow": 10083,
-          "rangeHigh": 16805
+          "monthlyTotal": 10733,
+          "rangeLow": 8050,
+          "rangeHigh": 13416
         },
         "breakdown": {
           "basicPension": 6774,
-          "personalAccountPension": 6670,
+          "personalAccountPension": 3959,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8317,13 +8317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 24178,
-          "rangeLow": 18133,
-          "rangeHigh": 30222
+          "monthlyTotal": 18756,
+          "rangeLow": 14067,
+          "rangeHigh": 23445
         },
         "breakdown": {
           "basicPension": 10838,
-          "personalAccountPension": 13339,
+          "personalAccountPension": 7918,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8467,13 +8467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8610,
-          "rangeLow": 6457,
-          "rangeHigh": 10762
+          "monthlyTotal": 6993,
+          "rangeLow": 5245,
+          "rangeHigh": 8742
         },
         "breakdown": {
           "basicPension": 5330,
-          "personalAccountPension": 3280,
+          "personalAccountPension": 1663,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8617,13 +8617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 12129,
-          "rangeLow": 9097,
-          "rangeHigh": 15162
+          "monthlyTotal": 9435,
+          "rangeLow": 7076,
+          "rangeHigh": 11794
         },
         "breakdown": {
           "basicPension": 6663,
-          "personalAccountPension": 5467,
+          "personalAccountPension": 2772,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8767,13 +8767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 16528,
-          "rangeLow": 12396,
-          "rangeHigh": 20660
+          "monthlyTotal": 12487,
+          "rangeLow": 9365,
+          "rangeHigh": 15608
         },
         "breakdown": {
           "basicPension": 8328,
-          "personalAccountPension": 8200,
+          "personalAccountPension": 4159,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -8917,13 +8917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 29725,
-          "rangeLow": 22294,
-          "rangeHigh": 37157
+          "monthlyTotal": 21642,
+          "rangeLow": 16231,
+          "rangeHigh": 27052
         },
         "breakdown": {
           "basicPension": 13325,
-          "personalAccountPension": 16400,
+          "personalAccountPension": 8317,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9067,13 +9067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4593,
-          "rangeLow": 3445,
-          "rangeHigh": 5741
+          "monthlyTotal": 4263,
+          "rangeLow": 3197,
+          "rangeHigh": 5329
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1750,
+          "personalAccountPension": 1420,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9217,13 +9217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6470,
-          "rangeLow": 4853,
-          "rangeHigh": 8088
+          "monthlyTotal": 5921,
+          "rangeLow": 4441,
+          "rangeHigh": 7401
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2916,
+          "personalAccountPension": 2367,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9367,13 +9367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8817,
-          "rangeLow": 6613,
-          "rangeHigh": 11021
+          "monthlyTotal": 7993,
+          "rangeLow": 5995,
+          "rangeHigh": 9991
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 4374,
+          "personalAccountPension": 3550,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9517,13 +9517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15857,
-          "rangeLow": 11892,
-          "rangeHigh": 19821
+          "monthlyTotal": 14208,
+          "rangeLow": 10656,
+          "rangeHigh": 17761
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 8748,
+          "personalAccountPension": 7100,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9667,13 +9667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4606,
-          "rangeLow": 3455,
-          "rangeHigh": 5758
+          "monthlyTotal": 4273,
+          "rangeLow": 3205,
+          "rangeHigh": 5341
         },
         "breakdown": {
           "basicPension": 2852,
-          "personalAccountPension": 1755,
+          "personalAccountPension": 1422,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9817,13 +9817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6489,
-          "rangeLow": 4867,
-          "rangeHigh": 8111
+          "monthlyTotal": 5934,
+          "rangeLow": 4450,
+          "rangeHigh": 7417
         },
         "breakdown": {
           "basicPension": 3564,
-          "personalAccountPension": 2925,
+          "personalAccountPension": 2369,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -9967,13 +9967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8842,
-          "rangeLow": 6632,
-          "rangeHigh": 11053
+          "monthlyTotal": 8010,
+          "rangeLow": 6007,
+          "rangeHigh": 10012
         },
         "breakdown": {
           "basicPension": 4456,
-          "personalAccountPension": 4387,
+          "personalAccountPension": 3554,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10117,13 +10117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15903,
-          "rangeLow": 11927,
-          "rangeHigh": 19878
+          "monthlyTotal": 14237,
+          "rangeLow": 10678,
+          "rangeHigh": 17796
         },
         "breakdown": {
           "basicPension": 7129,
-          "personalAccountPension": 8774,
+          "personalAccountPension": 7108,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10267,13 +10267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5410,
-          "rangeLow": 4057,
-          "rangeHigh": 6762
+          "monthlyTotal": 4842,
+          "rangeLow": 3632,
+          "rangeHigh": 6053
         },
         "breakdown": {
           "basicPension": 3349,
-          "personalAccountPension": 2061,
+          "personalAccountPension": 1493,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10417,13 +10417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7621,
-          "rangeLow": 5716,
-          "rangeHigh": 9526
+          "monthlyTotal": 6675,
+          "rangeLow": 5006,
+          "rangeHigh": 8344
         },
         "breakdown": {
           "basicPension": 4186,
-          "personalAccountPension": 3435,
+          "personalAccountPension": 2489,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10567,13 +10567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10385,
-          "rangeLow": 7789,
-          "rangeHigh": 12981
+          "monthlyTotal": 8966,
+          "rangeLow": 6725,
+          "rangeHigh": 11208
         },
         "breakdown": {
           "basicPension": 5233,
-          "personalAccountPension": 5152,
+          "personalAccountPension": 3734,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10717,13 +10717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 18677,
-          "rangeLow": 14007,
-          "rangeHigh": 23346
+          "monthlyTotal": 15840,
+          "rangeLow": 11880,
+          "rangeHigh": 19800
         },
         "breakdown": {
           "basicPension": 8372,
-          "personalAccountPension": 10304,
+          "personalAccountPension": 7467,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -10867,13 +10867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7016,
-          "rangeLow": 5262,
-          "rangeHigh": 8771
+          "monthlyTotal": 5932,
+          "rangeLow": 4449,
+          "rangeHigh": 7415
         },
         "breakdown": {
           "basicPension": 4344,
-          "personalAccountPension": 2673,
+          "personalAccountPension": 1589,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11017,13 +11017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9884,
-          "rangeLow": 7413,
-          "rangeHigh": 12356
+          "monthlyTotal": 8077,
+          "rangeLow": 6058,
+          "rangeHigh": 10097
         },
         "breakdown": {
           "basicPension": 5430,
-          "personalAccountPension": 4455,
+          "personalAccountPension": 2648,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11167,13 +11167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13469,
-          "rangeLow": 10102,
-          "rangeHigh": 16837
+          "monthlyTotal": 10759,
+          "rangeLow": 8069,
+          "rangeHigh": 13448
         },
         "breakdown": {
           "basicPension": 6787,
-          "personalAccountPension": 6682,
+          "personalAccountPension": 3972,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11317,13 +11317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 24224,
-          "rangeLow": 18168,
-          "rangeHigh": 30280
+          "monthlyTotal": 18802,
+          "rangeLow": 14102,
+          "rangeHigh": 23503
         },
         "breakdown": {
           "basicPension": 10859,
-          "personalAccountPension": 13365,
+          "personalAccountPension": 7943,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11467,13 +11467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8623,
-          "rangeLow": 6467,
-          "rangeHigh": 10779
+          "monthlyTotal": 7007,
+          "rangeLow": 5255,
+          "rangeHigh": 8758
         },
         "breakdown": {
           "basicPension": 5338,
-          "personalAccountPension": 3285,
+          "personalAccountPension": 1668,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11617,13 +11617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 12148,
-          "rangeLow": 9111,
-          "rangeHigh": 15185
+          "monthlyTotal": 9454,
+          "rangeLow": 7090,
+          "rangeHigh": 11817
         },
         "breakdown": {
           "basicPension": 6673,
-          "personalAccountPension": 5475,
+          "personalAccountPension": 2781,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11767,13 +11767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 16554,
-          "rangeLow": 12415,
-          "rangeHigh": 20692
+          "monthlyTotal": 12512,
+          "rangeLow": 9384,
+          "rangeHigh": 15641
         },
         "breakdown": {
           "basicPension": 8341,
-          "personalAccountPension": 8213,
+          "personalAccountPension": 4171,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -11917,13 +11917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 29771,
-          "rangeLow": 22329,
-          "rangeHigh": 37214
+          "monthlyTotal": 21688,
+          "rangeLow": 16266,
+          "rangeHigh": 27110
         },
         "breakdown": {
           "basicPension": 13346,
-          "personalAccountPension": 16426,
+          "personalAccountPension": 8342,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12067,13 +12067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2112,
-          "rangeLow": 1584,
-          "rangeHigh": 2640
+          "monthlyTotal": 1885,
+          "rangeLow": 1414,
+          "rangeHigh": 2357
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 628,
+          "personalAccountPension": 402,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12217,13 +12217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2902,
-          "rangeLow": 2177,
-          "rangeHigh": 3628
+          "monthlyTotal": 2524,
+          "rangeLow": 1893,
+          "rangeHigh": 3155
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 1047,
+          "personalAccountPension": 669,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12367,13 +12367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3889,
-          "rangeLow": 2917,
-          "rangeHigh": 4862
+          "monthlyTotal": 3322,
+          "rangeLow": 2492,
+          "rangeHigh": 4153
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1571,
+          "personalAccountPension": 1004,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12517,13 +12517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6852,
-          "rangeLow": 5139,
-          "rangeHigh": 8565
+          "monthlyTotal": 5717,
+          "rangeLow": 4288,
+          "rangeHigh": 7147
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 3142,
+          "personalAccountPension": 2008,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12667,13 +12667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2124,
-          "rangeLow": 1593,
-          "rangeHigh": 2655
+          "monthlyTotal": 1895,
+          "rangeLow": 1421,
+          "rangeHigh": 2368
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 632,
+          "personalAccountPension": 403,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12817,13 +12817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2918,
-          "rangeLow": 2189,
-          "rangeHigh": 3648
+          "monthlyTotal": 2536,
+          "rangeLow": 1902,
+          "rangeHigh": 3170
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 1053,
+          "personalAccountPension": 671,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -12967,13 +12967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3911,
-          "rangeLow": 2933,
-          "rangeHigh": 4889
+          "monthlyTotal": 3338,
+          "rangeLow": 2504,
+          "rangeHigh": 4173
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1580,
+          "personalAccountPension": 1007,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13117,13 +13117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6890,
-          "rangeLow": 5167,
-          "rangeHigh": 8612
+          "monthlyTotal": 5744,
+          "rangeLow": 4308,
+          "rangeHigh": 7179
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 3160,
+          "personalAccountPension": 2013,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13267,13 +13267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2832,
-          "rangeLow": 2124,
-          "rangeHigh": 3540
+          "monthlyTotal": 2442,
+          "rangeLow": 1831,
+          "rangeHigh": 3052
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 843,
+          "personalAccountPension": 452,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13417,13 +13417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3891,
-          "rangeLow": 2918,
-          "rangeHigh": 4864
+          "monthlyTotal": 3240,
+          "rangeLow": 2430,
+          "rangeHigh": 4050
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1404,
+          "personalAccountPension": 753,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13567,13 +13567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5215,
-          "rangeLow": 3911,
-          "rangeHigh": 6519
+          "monthlyTotal": 4239,
+          "rangeLow": 3179,
+          "rangeHigh": 5298
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 2106,
+          "personalAccountPension": 1130,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13717,13 +13717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9187,
-          "rangeLow": 6890,
-          "rangeHigh": 11483
+          "monthlyTotal": 7234,
+          "rangeLow": 5426,
+          "rangeHigh": 9043
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 4213,
+          "personalAccountPension": 2260,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -13867,13 +13867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4248,
-          "rangeLow": 3186,
-          "rangeHigh": 5310
+          "monthlyTotal": 3502,
+          "rangeLow": 2626,
+          "rangeHigh": 4377
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1264,
+          "personalAccountPension": 518,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14017,13 +14017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5837,
-          "rangeLow": 4377,
-          "rangeHigh": 7296
+          "monthlyTotal": 4593,
+          "rangeLow": 3445,
+          "rangeHigh": 5741
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2106,
+          "personalAccountPension": 863,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14167,13 +14167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7822,
-          "rangeLow": 5867,
-          "rangeHigh": 9778
+          "monthlyTotal": 5957,
+          "rangeLow": 4468,
+          "rangeHigh": 7446
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 3160,
+          "personalAccountPension": 1294,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14317,13 +14317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13780,
-          "rangeLow": 10335,
-          "rangeHigh": 17225
+          "monthlyTotal": 10048,
+          "rangeLow": 7536,
+          "rangeHigh": 12561
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 6319,
+          "personalAccountPension": 2588,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14467,13 +14467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5664,
-          "rangeLow": 4248,
-          "rangeHigh": 7080
+          "monthlyTotal": 4551,
+          "rangeLow": 3414,
+          "rangeHigh": 5689
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 1685,
+          "personalAccountPension": 572,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14617,13 +14617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7782,
-          "rangeLow": 5837,
-          "rangeHigh": 9728
+          "monthlyTotal": 5928,
+          "rangeLow": 4446,
+          "rangeHigh": 7410
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 2809,
+          "personalAccountPension": 954,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14767,13 +14767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10430,
-          "rangeLow": 7822,
-          "rangeHigh": 13037
+          "monthlyTotal": 7648,
+          "rangeLow": 5736,
+          "rangeHigh": 9561
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 4213,
+          "personalAccountPension": 1431,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -14917,13 +14917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 18373,
-          "rangeLow": 13780,
-          "rangeHigh": 22966
+          "monthlyTotal": 12810,
+          "rangeLow": 9607,
+          "rangeHigh": 16012
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 8426,
+          "personalAccountPension": 2863,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15067,13 +15067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2112,
-          "rangeLow": 1584,
-          "rangeHigh": 2640
+          "monthlyTotal": 1885,
+          "rangeLow": 1414,
+          "rangeHigh": 2357
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 628,
+          "personalAccountPension": 402,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15217,13 +15217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2902,
-          "rangeLow": 2177,
-          "rangeHigh": 3628
+          "monthlyTotal": 2524,
+          "rangeLow": 1893,
+          "rangeHigh": 3155
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 1047,
+          "personalAccountPension": 669,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15367,13 +15367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3889,
-          "rangeLow": 2917,
-          "rangeHigh": 4862
+          "monthlyTotal": 3322,
+          "rangeLow": 2492,
+          "rangeHigh": 4153
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1571,
+          "personalAccountPension": 1004,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15517,13 +15517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6852,
-          "rangeLow": 5139,
-          "rangeHigh": 8565
+          "monthlyTotal": 5717,
+          "rangeLow": 4288,
+          "rangeHigh": 7147
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 3142,
+          "personalAccountPension": 2008,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15667,13 +15667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2124,
-          "rangeLow": 1593,
-          "rangeHigh": 2655
+          "monthlyTotal": 1895,
+          "rangeLow": 1421,
+          "rangeHigh": 2368
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 632,
+          "personalAccountPension": 403,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15817,13 +15817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2918,
-          "rangeLow": 2189,
-          "rangeHigh": 3648
+          "monthlyTotal": 2536,
+          "rangeLow": 1902,
+          "rangeHigh": 3170
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 1053,
+          "personalAccountPension": 671,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -15967,13 +15967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3911,
-          "rangeLow": 2933,
-          "rangeHigh": 4889
+          "monthlyTotal": 3338,
+          "rangeLow": 2504,
+          "rangeHigh": 4173
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1580,
+          "personalAccountPension": 1007,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16117,13 +16117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6890,
-          "rangeLow": 5167,
-          "rangeHigh": 8612
+          "monthlyTotal": 5744,
+          "rangeLow": 4308,
+          "rangeHigh": 7179
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 3160,
+          "personalAccountPension": 2013,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16267,13 +16267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2832,
-          "rangeLow": 2124,
-          "rangeHigh": 3540
+          "monthlyTotal": 2442,
+          "rangeLow": 1831,
+          "rangeHigh": 3052
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 843,
+          "personalAccountPension": 452,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16417,13 +16417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3891,
-          "rangeLow": 2918,
-          "rangeHigh": 4864
+          "monthlyTotal": 3240,
+          "rangeLow": 2430,
+          "rangeHigh": 4050
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1404,
+          "personalAccountPension": 753,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16567,13 +16567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5215,
-          "rangeLow": 3911,
-          "rangeHigh": 6519
+          "monthlyTotal": 4239,
+          "rangeLow": 3179,
+          "rangeHigh": 5298
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 2106,
+          "personalAccountPension": 1130,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16717,13 +16717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9187,
-          "rangeLow": 6890,
-          "rangeHigh": 11483
+          "monthlyTotal": 7234,
+          "rangeLow": 5426,
+          "rangeHigh": 9043
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 4213,
+          "personalAccountPension": 2260,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -16867,13 +16867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4248,
-          "rangeLow": 3186,
-          "rangeHigh": 5310
+          "monthlyTotal": 3502,
+          "rangeLow": 2626,
+          "rangeHigh": 4377
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1264,
+          "personalAccountPension": 518,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17017,13 +17017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5837,
-          "rangeLow": 4377,
-          "rangeHigh": 7296
+          "monthlyTotal": 4593,
+          "rangeLow": 3445,
+          "rangeHigh": 5741
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2106,
+          "personalAccountPension": 863,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17167,13 +17167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7822,
-          "rangeLow": 5867,
-          "rangeHigh": 9778
+          "monthlyTotal": 5957,
+          "rangeLow": 4468,
+          "rangeHigh": 7446
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 3160,
+          "personalAccountPension": 1294,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17317,13 +17317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13780,
-          "rangeLow": 10335,
-          "rangeHigh": 17225
+          "monthlyTotal": 10048,
+          "rangeLow": 7536,
+          "rangeHigh": 12561
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 6319,
+          "personalAccountPension": 2588,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17467,13 +17467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5664,
-          "rangeLow": 4248,
-          "rangeHigh": 7080
+          "monthlyTotal": 4551,
+          "rangeLow": 3414,
+          "rangeHigh": 5689
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 1685,
+          "personalAccountPension": 572,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17617,13 +17617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7782,
-          "rangeLow": 5837,
-          "rangeHigh": 9728
+          "monthlyTotal": 5928,
+          "rangeLow": 4446,
+          "rangeHigh": 7410
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 2809,
+          "personalAccountPension": 954,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17767,13 +17767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10430,
-          "rangeLow": 7822,
-          "rangeHigh": 13037
+          "monthlyTotal": 7648,
+          "rangeLow": 5736,
+          "rangeHigh": 9561
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 4213,
+          "personalAccountPension": 1431,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -17917,13 +17917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 18373,
-          "rangeLow": 13780,
-          "rangeHigh": 22966
+          "monthlyTotal": 12810,
+          "rangeLow": 9607,
+          "rangeHigh": 16012
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 8426,
+          "personalAccountPension": 2863,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18067,13 +18067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4178,
-          "rangeLow": 3133,
-          "rangeHigh": 5222
+          "monthlyTotal": 3924,
+          "rangeLow": 2943,
+          "rangeHigh": 4905
         },
         "breakdown": {
           "basicPension": 2835,
-          "personalAccountPension": 1343,
+          "personalAccountPension": 1089,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18217,13 +18217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5782,
-          "rangeLow": 4336,
-          "rangeHigh": 7227
+          "monthlyTotal": 5359,
+          "rangeLow": 4019,
+          "rangeHigh": 6699
         },
         "breakdown": {
           "basicPension": 3544,
-          "personalAccountPension": 2238,
+          "personalAccountPension": 1815,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18367,13 +18367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7787,
-          "rangeLow": 5840,
-          "rangeHigh": 9733
+          "monthlyTotal": 7153,
+          "rangeLow": 5364,
+          "rangeHigh": 8941
         },
         "breakdown": {
           "basicPension": 4430,
-          "personalAccountPension": 3357,
+          "personalAccountPension": 2723,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18517,13 +18517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13802,
-          "rangeLow": 10351,
-          "rangeHigh": 17252
+          "monthlyTotal": 12533,
+          "rangeLow": 9400,
+          "rangeHigh": 15666
         },
         "breakdown": {
           "basicPension": 7087,
-          "personalAccountPension": 6714,
+          "personalAccountPension": 5446,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18667,13 +18667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4190,
-          "rangeLow": 3142,
-          "rangeHigh": 5237
+          "monthlyTotal": 3934,
+          "rangeLow": 2950,
+          "rangeHigh": 4917
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1347,
+          "personalAccountPension": 1090,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18817,13 +18817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5799,
-          "rangeLow": 4349,
-          "rangeHigh": 7248
+          "monthlyTotal": 5371,
+          "rangeLow": 4029,
+          "rangeHigh": 6714
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2245,
+          "personalAccountPension": 1817,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -18967,13 +18967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7810,
-          "rangeLow": 5857,
-          "rangeHigh": 9762
+          "monthlyTotal": 7169,
+          "rangeLow": 5376,
+          "rangeHigh": 8961
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 3367,
+          "personalAccountPension": 2726,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19117,13 +19117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13842,
-          "rangeLow": 10382,
-          "rangeHigh": 17303
+          "monthlyTotal": 12560,
+          "rangeLow": 9420,
+          "rangeHigh": 15700
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 6734,
+          "personalAccountPension": 5452,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19267,13 +19267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4923,
-          "rangeLow": 3692,
-          "rangeHigh": 6154
+          "monthlyTotal": 4486,
+          "rangeLow": 3365,
+          "rangeHigh": 5608
         },
         "breakdown": {
           "basicPension": 3341,
-          "personalAccountPension": 1582,
+          "personalAccountPension": 1146,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19417,13 +19417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6813,
-          "rangeLow": 5110,
-          "rangeHigh": 8516
+          "monthlyTotal": 6085,
+          "rangeLow": 4564,
+          "rangeHigh": 7606
         },
         "breakdown": {
           "basicPension": 4176,
-          "personalAccountPension": 2637,
+          "personalAccountPension": 1909,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19567,13 +19567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9176,
-          "rangeLow": 6882,
-          "rangeHigh": 11470
+          "monthlyTotal": 8084,
+          "rangeLow": 6063,
+          "rangeHigh": 10105
         },
         "breakdown": {
           "basicPension": 5220,
-          "personalAccountPension": 3956,
+          "personalAccountPension": 2864,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19717,13 +19717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 16263,
-          "rangeLow": 12198,
-          "rangeHigh": 20329
+          "monthlyTotal": 14080,
+          "rangeLow": 10560,
+          "rangeHigh": 17600
         },
         "breakdown": {
           "basicPension": 8352,
-          "personalAccountPension": 7912,
+          "personalAccountPension": 5728,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -19867,13 +19867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6389,
-          "rangeLow": 4792,
-          "rangeHigh": 7986
+          "monthlyTotal": 5554,
+          "rangeLow": 4166,
+          "rangeHigh": 6943
         },
         "breakdown": {
           "basicPension": 4335,
-          "personalAccountPension": 2053,
+          "personalAccountPension": 1219,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20017,13 +20017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8842,
-          "rangeLow": 6631,
-          "rangeHigh": 11052
+          "monthlyTotal": 7451,
+          "rangeLow": 5588,
+          "rangeHigh": 9313
         },
         "breakdown": {
           "basicPension": 5419,
-          "personalAccountPension": 3423,
+          "personalAccountPension": 2032,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20167,13 +20167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11908,
-          "rangeLow": 8931,
-          "rangeHigh": 14885
+          "monthlyTotal": 9821,
+          "rangeLow": 7366,
+          "rangeHigh": 12277
         },
         "breakdown": {
           "basicPension": 6774,
-          "personalAccountPension": 5134,
+          "personalAccountPension": 3047,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20317,13 +20317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 21106,
-          "rangeLow": 15830,
-          "rangeHigh": 26383
+          "monthlyTotal": 16933,
+          "rangeLow": 12700,
+          "rangeHigh": 21166
         },
         "breakdown": {
           "basicPension": 10838,
-          "personalAccountPension": 10268,
+          "personalAccountPension": 6095,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20467,13 +20467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7855,
-          "rangeLow": 5891,
-          "rangeHigh": 9818
+          "monthlyTotal": 6610,
+          "rangeLow": 4958,
+          "rangeHigh": 8263
         },
         "breakdown": {
           "basicPension": 5330,
-          "personalAccountPension": 2525,
+          "personalAccountPension": 1280,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20617,13 +20617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10870,
-          "rangeLow": 8153,
-          "rangeHigh": 13588
+          "monthlyTotal": 8796,
+          "rangeLow": 6597,
+          "rangeHigh": 10996
         },
         "breakdown": {
           "basicPension": 6663,
-          "personalAccountPension": 4208,
+          "personalAccountPension": 2134,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20767,13 +20767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 14640,
-          "rangeLow": 10980,
-          "rangeHigh": 18300
+          "monthlyTotal": 11529,
+          "rangeLow": 8647,
+          "rangeHigh": 14412
         },
         "breakdown": {
           "basicPension": 8328,
-          "personalAccountPension": 6312,
+          "personalAccountPension": 3201,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -20917,13 +20917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 25949,
-          "rangeLow": 19462,
-          "rangeHigh": 32436
+          "monthlyTotal": 19727,
+          "rangeLow": 14795,
+          "rangeHigh": 24659
         },
         "breakdown": {
           "basicPension": 13325,
-          "personalAccountPension": 12624,
+          "personalAccountPension": 6402,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21067,13 +21067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4190,
-          "rangeLow": 3142,
-          "rangeHigh": 5237
+          "monthlyTotal": 3936,
+          "rangeLow": 2952,
+          "rangeHigh": 4920
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1347,
+          "personalAccountPension": 1093,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21217,13 +21217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5799,
-          "rangeLow": 4349,
-          "rangeHigh": 7248
+          "monthlyTotal": 5376,
+          "rangeLow": 4032,
+          "rangeHigh": 6720
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2245,
+          "personalAccountPension": 1822,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21367,13 +21367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7810,
-          "rangeLow": 5857,
-          "rangeHigh": 9762
+          "monthlyTotal": 7175,
+          "rangeLow": 5381,
+          "rangeHigh": 8969
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 3367,
+          "personalAccountPension": 2733,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21517,13 +21517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13842,
-          "rangeLow": 10382,
-          "rangeHigh": 17303
+          "monthlyTotal": 12573,
+          "rangeLow": 9430,
+          "rangeHigh": 15717
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 6734,
+          "personalAccountPension": 5465,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21667,13 +21667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4202,
-          "rangeLow": 3152,
-          "rangeHigh": 5253
+          "monthlyTotal": 3946,
+          "rangeLow": 2959,
+          "rangeHigh": 4932
         },
         "breakdown": {
           "basicPension": 2852,
-          "personalAccountPension": 1351,
+          "personalAccountPension": 1094,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21817,13 +21817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5816,
-          "rangeLow": 4362,
-          "rangeHigh": 7270
+          "monthlyTotal": 5388,
+          "rangeLow": 4041,
+          "rangeHigh": 6735
         },
         "breakdown": {
           "basicPension": 3564,
-          "personalAccountPension": 2251,
+          "personalAccountPension": 1824,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -21967,13 +21967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7832,
-          "rangeLow": 5874,
-          "rangeHigh": 9790
+          "monthlyTotal": 7191,
+          "rangeLow": 5393,
+          "rangeHigh": 8989
         },
         "breakdown": {
           "basicPension": 4456,
-          "personalAccountPension": 3377,
+          "personalAccountPension": 2736,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22117,13 +22117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13882,
-          "rangeLow": 10412,
-          "rangeHigh": 17353
+          "monthlyTotal": 12600,
+          "rangeLow": 9450,
+          "rangeHigh": 15750
         },
         "breakdown": {
           "basicPension": 7129,
-          "personalAccountPension": 6754,
+          "personalAccountPension": 5472,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22267,13 +22267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4935,
-          "rangeLow": 3701,
-          "rangeHigh": 6169
+          "monthlyTotal": 4498,
+          "rangeLow": 3374,
+          "rangeHigh": 5623
         },
         "breakdown": {
           "basicPension": 3349,
-          "personalAccountPension": 1586,
+          "personalAccountPension": 1150,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22417,13 +22417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6830,
-          "rangeLow": 5122,
-          "rangeHigh": 8537
+          "monthlyTotal": 6102,
+          "rangeLow": 4577,
+          "rangeHigh": 7628
         },
         "breakdown": {
           "basicPension": 4186,
-          "personalAccountPension": 2644,
+          "personalAccountPension": 1916,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22567,13 +22567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9198,
-          "rangeLow": 6899,
-          "rangeHigh": 11498
+          "monthlyTotal": 8107,
+          "rangeLow": 6080,
+          "rangeHigh": 10133
         },
         "breakdown": {
           "basicPension": 5233,
-          "personalAccountPension": 3966,
+          "personalAccountPension": 2874,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22717,13 +22717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 16304,
-          "rangeLow": 12228,
-          "rangeHigh": 20380
+          "monthlyTotal": 14120,
+          "rangeLow": 10590,
+          "rangeHigh": 17650
         },
         "breakdown": {
           "basicPension": 8372,
-          "personalAccountPension": 7932,
+          "personalAccountPension": 5748,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -22867,13 +22867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6401,
-          "rangeLow": 4801,
-          "rangeHigh": 8001
+          "monthlyTotal": 5566,
+          "rangeLow": 4175,
+          "rangeHigh": 6958
         },
         "breakdown": {
           "basicPension": 4344,
-          "personalAccountPension": 2057,
+          "personalAccountPension": 1223,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23017,13 +23017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8859,
-          "rangeLow": 6644,
-          "rangeHigh": 11073
+          "monthlyTotal": 7468,
+          "rangeLow": 5601,
+          "rangeHigh": 9335
         },
         "breakdown": {
           "basicPension": 5430,
-          "personalAccountPension": 3429,
+          "personalAccountPension": 2038,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23167,13 +23167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11931,
-          "rangeLow": 8948,
-          "rangeHigh": 14913
+          "monthlyTotal": 9844,
+          "rangeLow": 7383,
+          "rangeHigh": 12305
         },
         "breakdown": {
           "basicPension": 6787,
-          "personalAccountPension": 5144,
+          "personalAccountPension": 3057,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23317,13 +23317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 21147,
-          "rangeLow": 15860,
-          "rangeHigh": 26433
+          "monthlyTotal": 16973,
+          "rangeLow": 12730,
+          "rangeHigh": 21217
         },
         "breakdown": {
           "basicPension": 10859,
-          "personalAccountPension": 10287,
+          "personalAccountPension": 6114,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23467,13 +23467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7867,
-          "rangeLow": 5900,
-          "rangeHigh": 9834
+          "monthlyTotal": 6623,
+          "rangeLow": 4967,
+          "rangeHigh": 8278
         },
         "breakdown": {
           "basicPension": 5338,
-          "personalAccountPension": 2529,
+          "personalAccountPension": 1284,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23617,13 +23617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10887,
-          "rangeLow": 8166,
-          "rangeHigh": 13609
+          "monthlyTotal": 8813,
+          "rangeLow": 6610,
+          "rangeHigh": 11017
         },
         "breakdown": {
           "basicPension": 6673,
-          "personalAccountPension": 4214,
+          "personalAccountPension": 2140,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23767,13 +23767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 14663,
-          "rangeLow": 10997,
-          "rangeHigh": 18329
+          "monthlyTotal": 11552,
+          "rangeLow": 8664,
+          "rangeHigh": 14440
         },
         "breakdown": {
           "basicPension": 8341,
-          "personalAccountPension": 6322,
+          "personalAccountPension": 3211,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -23917,13 +23917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 25989,
-          "rangeLow": 19492,
-          "rangeHigh": 32487
+          "monthlyTotal": 19767,
+          "rangeLow": 14825,
+          "rangeHigh": 24709
         },
         "breakdown": {
           "basicPension": 13346,
-          "personalAccountPension": 12643,
+          "personalAccountPension": 6421,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24067,13 +24067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2032,
-          "rangeLow": 1524,
-          "rangeHigh": 2540
+          "monthlyTotal": 1834,
+          "rangeLow": 1375,
+          "rangeHigh": 2292
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 548,
+          "personalAccountPension": 350,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24217,13 +24217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2768,
-          "rangeLow": 2076,
-          "rangeHigh": 3460
+          "monthlyTotal": 2438,
+          "rangeLow": 1829,
+          "rangeHigh": 3048
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 913,
+          "personalAccountPension": 583,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24367,13 +24367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3688,
-          "rangeLow": 2766,
-          "rangeHigh": 4610
+          "monthlyTotal": 3194,
+          "rangeLow": 2395,
+          "rangeHigh": 3992
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1370,
+          "personalAccountPension": 875,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24517,13 +24517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6449,
-          "rangeLow": 4837,
-          "rangeHigh": 8061
+          "monthlyTotal": 5460,
+          "rangeLow": 4095,
+          "rangeHigh": 6825
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 2739,
+          "personalAccountPension": 1750,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24667,13 +24667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2043,
-          "rangeLow": 1532,
-          "rangeHigh": 2554
+          "monthlyTotal": 1843,
+          "rangeLow": 1382,
+          "rangeHigh": 2304
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 551,
+          "personalAccountPension": 351,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24817,13 +24817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2783,
-          "rangeLow": 2087,
-          "rangeHigh": 3479
+          "monthlyTotal": 2450,
+          "rangeLow": 1838,
+          "rangeHigh": 3063
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 918,
+          "personalAccountPension": 585,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -24967,13 +24967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3709,
-          "rangeLow": 2782,
-          "rangeHigh": 4636
+          "monthlyTotal": 3209,
+          "rangeLow": 2407,
+          "rangeHigh": 4011
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1377,
+          "personalAccountPension": 878,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25117,13 +25117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6485,
-          "rangeLow": 4864,
-          "rangeHigh": 8106
+          "monthlyTotal": 5485,
+          "rangeLow": 4114,
+          "rangeHigh": 6857
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2755,
+          "personalAccountPension": 1755,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25267,13 +25267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2724,
-          "rangeLow": 2043,
-          "rangeHigh": 3405
+          "monthlyTotal": 2384,
+          "rangeLow": 1788,
+          "rangeHigh": 2979
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 735,
+          "personalAccountPension": 394,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25417,13 +25417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3711,
-          "rangeLow": 2783,
-          "rangeHigh": 4639
+          "monthlyTotal": 3144,
+          "rangeLow": 2358,
+          "rangeHigh": 3930
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1224,
+          "personalAccountPension": 657,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25567,13 +25567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4945,
-          "rangeLow": 3709,
-          "rangeHigh": 6181
+          "monthlyTotal": 4094,
+          "rangeLow": 3070,
+          "rangeHigh": 5117
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 1836,
+          "personalAccountPension": 985,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25717,13 +25717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8646,
-          "rangeLow": 6485,
-          "rangeHigh": 10808
+          "monthlyTotal": 6944,
+          "rangeLow": 5208,
+          "rangeHigh": 8680
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3673,
+          "personalAccountPension": 1971,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -25867,13 +25867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4086,
-          "rangeLow": 3064,
-          "rangeHigh": 5107
+          "monthlyTotal": 3435,
+          "rangeLow": 2577,
+          "rangeHigh": 4294
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1102,
+          "personalAccountPension": 451,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26017,13 +26017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5567,
-          "rangeLow": 4175,
-          "rangeHigh": 6958
+          "monthlyTotal": 4482,
+          "rangeLow": 3362,
+          "rangeHigh": 5603
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 1836,
+          "personalAccountPension": 752,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26167,13 +26167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7417,
-          "rangeLow": 5563,
-          "rangeHigh": 9272
+          "monthlyTotal": 5791,
+          "rangeLow": 4343,
+          "rangeHigh": 7239
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 2755,
+          "personalAccountPension": 1128,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26317,13 +26317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 12970,
-          "rangeLow": 9727,
-          "rangeHigh": 16212
+          "monthlyTotal": 9717,
+          "rangeLow": 7287,
+          "rangeHigh": 12146
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 5509,
+          "personalAccountPension": 2256,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26467,13 +26467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5448,
-          "rangeLow": 4086,
-          "rangeHigh": 6810
+          "monthlyTotal": 4478,
+          "rangeLow": 3358,
+          "rangeHigh": 5597
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 1469,
+          "personalAccountPension": 499,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26617,13 +26617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7422,
-          "rangeLow": 5567,
-          "rangeHigh": 9278
+          "monthlyTotal": 5805,
+          "rangeLow": 4354,
+          "rangeHigh": 7257
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 2449,
+          "personalAccountPension": 832,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26767,13 +26767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9890,
-          "rangeLow": 7417,
-          "rangeHigh": 12362
+          "monthlyTotal": 7465,
+          "rangeLow": 5599,
+          "rangeHigh": 9331
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 3673,
+          "personalAccountPension": 1248,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -26917,13 +26917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 17293,
-          "rangeLow": 12970,
-          "rangeHigh": 21616
+          "monthlyTotal": 12443,
+          "rangeLow": 9332,
+          "rangeHigh": 15554
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 7346,
+          "personalAccountPension": 2496,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27067,13 +27067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2032,
-          "rangeLow": 1524,
-          "rangeHigh": 2540
+          "monthlyTotal": 1834,
+          "rangeLow": 1375,
+          "rangeHigh": 2292
         },
         "breakdown": {
           "basicPension": 1484,
-          "personalAccountPension": 548,
+          "personalAccountPension": 350,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27217,13 +27217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2768,
-          "rangeLow": 2076,
-          "rangeHigh": 3460
+          "monthlyTotal": 2438,
+          "rangeLow": 1829,
+          "rangeHigh": 3048
         },
         "breakdown": {
           "basicPension": 1855,
-          "personalAccountPension": 913,
+          "personalAccountPension": 583,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27367,13 +27367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3688,
-          "rangeLow": 2766,
-          "rangeHigh": 4610
+          "monthlyTotal": 3194,
+          "rangeLow": 2395,
+          "rangeHigh": 3992
         },
         "breakdown": {
           "basicPension": 2318,
-          "personalAccountPension": 1370,
+          "personalAccountPension": 875,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27517,13 +27517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6449,
-          "rangeLow": 4837,
-          "rangeHigh": 8061
+          "monthlyTotal": 5460,
+          "rangeLow": 4095,
+          "rangeHigh": 6825
         },
         "breakdown": {
           "basicPension": 3709,
-          "personalAccountPension": 2739,
+          "personalAccountPension": 1750,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27667,13 +27667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2043,
-          "rangeLow": 1532,
-          "rangeHigh": 2554
+          "monthlyTotal": 1843,
+          "rangeLow": 1382,
+          "rangeHigh": 2304
         },
         "breakdown": {
           "basicPension": 1492,
-          "personalAccountPension": 551,
+          "personalAccountPension": 351,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27817,13 +27817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2783,
-          "rangeLow": 2087,
-          "rangeHigh": 3479
+          "monthlyTotal": 2450,
+          "rangeLow": 1838,
+          "rangeHigh": 3063
         },
         "breakdown": {
           "basicPension": 1865,
-          "personalAccountPension": 918,
+          "personalAccountPension": 585,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -27967,13 +27967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3709,
-          "rangeLow": 2782,
-          "rangeHigh": 4636
+          "monthlyTotal": 3209,
+          "rangeLow": 2407,
+          "rangeHigh": 4011
         },
         "breakdown": {
           "basicPension": 2331,
-          "personalAccountPension": 1377,
+          "personalAccountPension": 878,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28117,13 +28117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6485,
-          "rangeLow": 4864,
-          "rangeHigh": 8106
+          "monthlyTotal": 5485,
+          "rangeLow": 4114,
+          "rangeHigh": 6857
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 2755,
+          "personalAccountPension": 1755,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28267,13 +28267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 2724,
-          "rangeLow": 2043,
-          "rangeHigh": 3405
+          "monthlyTotal": 2384,
+          "rangeLow": 1788,
+          "rangeHigh": 2979
         },
         "breakdown": {
           "basicPension": 1989,
-          "personalAccountPension": 735,
+          "personalAccountPension": 394,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28417,13 +28417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 3711,
-          "rangeLow": 2783,
-          "rangeHigh": 4639
+          "monthlyTotal": 3144,
+          "rangeLow": 2358,
+          "rangeHigh": 3930
         },
         "breakdown": {
           "basicPension": 2487,
-          "personalAccountPension": 1224,
+          "personalAccountPension": 657,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28567,13 +28567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4945,
-          "rangeLow": 3709,
-          "rangeHigh": 6181
+          "monthlyTotal": 4094,
+          "rangeLow": 3070,
+          "rangeHigh": 5117
         },
         "breakdown": {
           "basicPension": 3109,
-          "personalAccountPension": 1836,
+          "personalAccountPension": 985,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28717,13 +28717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8646,
-          "rangeLow": 6485,
-          "rangeHigh": 10808
+          "monthlyTotal": 6944,
+          "rangeLow": 5208,
+          "rangeHigh": 8680
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3673,
+          "personalAccountPension": 1971,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -28867,13 +28867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4086,
-          "rangeLow": 3064,
-          "rangeHigh": 5107
+          "monthlyTotal": 3435,
+          "rangeLow": 2577,
+          "rangeHigh": 4294
         },
         "breakdown": {
           "basicPension": 2984,
-          "personalAccountPension": 1102,
+          "personalAccountPension": 451,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29017,13 +29017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5567,
-          "rangeLow": 4175,
-          "rangeHigh": 6958
+          "monthlyTotal": 4482,
+          "rangeLow": 3362,
+          "rangeHigh": 5603
         },
         "breakdown": {
           "basicPension": 3730,
-          "personalAccountPension": 1836,
+          "personalAccountPension": 752,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29167,13 +29167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7417,
-          "rangeLow": 5563,
-          "rangeHigh": 9272
+          "monthlyTotal": 5791,
+          "rangeLow": 4343,
+          "rangeHigh": 7239
         },
         "breakdown": {
           "basicPension": 4663,
-          "personalAccountPension": 2755,
+          "personalAccountPension": 1128,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29317,13 +29317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 12970,
-          "rangeLow": 9727,
-          "rangeHigh": 16212
+          "monthlyTotal": 9717,
+          "rangeLow": 7287,
+          "rangeHigh": 12146
         },
         "breakdown": {
           "basicPension": 7460,
-          "personalAccountPension": 5509,
+          "personalAccountPension": 2256,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29467,13 +29467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5448,
-          "rangeLow": 4086,
-          "rangeHigh": 6810
+          "monthlyTotal": 4478,
+          "rangeLow": 3358,
+          "rangeHigh": 5597
         },
         "breakdown": {
           "basicPension": 3979,
-          "personalAccountPension": 1469,
+          "personalAccountPension": 499,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29617,13 +29617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7422,
-          "rangeLow": 5567,
-          "rangeHigh": 9278
+          "monthlyTotal": 5805,
+          "rangeLow": 4354,
+          "rangeHigh": 7257
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 2449,
+          "personalAccountPension": 832,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29767,13 +29767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 9890,
-          "rangeLow": 7417,
-          "rangeHigh": 12362
+          "monthlyTotal": 7465,
+          "rangeLow": 5599,
+          "rangeHigh": 9331
         },
         "breakdown": {
           "basicPension": 6217,
-          "personalAccountPension": 3673,
+          "personalAccountPension": 1248,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -29917,13 +29917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 17293,
-          "rangeLow": 12970,
-          "rangeHigh": 21616
+          "monthlyTotal": 12443,
+          "rangeLow": 9332,
+          "rangeHigh": 15554
         },
         "breakdown": {
           "basicPension": 9947,
-          "personalAccountPension": 7346,
+          "personalAccountPension": 2496,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30067,13 +30067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4036,
-          "rangeLow": 3027,
-          "rangeHigh": 5044
+          "monthlyTotal": 3809,
+          "rangeLow": 2857,
+          "rangeHigh": 4761
         },
         "breakdown": {
           "basicPension": 2835,
-          "personalAccountPension": 1201,
+          "personalAccountPension": 974,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30217,13 +30217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5545,
-          "rangeLow": 4159,
-          "rangeHigh": 6931
+          "monthlyTotal": 5167,
+          "rangeLow": 3875,
+          "rangeHigh": 6458
         },
         "breakdown": {
           "basicPension": 3544,
-          "personalAccountPension": 2001,
+          "personalAccountPension": 1623,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30367,13 +30367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7431,
-          "rangeLow": 5573,
-          "rangeHigh": 9289
+          "monthlyTotal": 6864,
+          "rangeLow": 5148,
+          "rangeHigh": 8580
         },
         "breakdown": {
           "basicPension": 4430,
-          "personalAccountPension": 3002,
+          "personalAccountPension": 2435,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30517,13 +30517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13091,
-          "rangeLow": 9818,
-          "rangeHigh": 16364
+          "monthlyTotal": 11957,
+          "rangeLow": 8967,
+          "rangeHigh": 14946
         },
         "breakdown": {
           "basicPension": 7087,
-          "personalAccountPension": 6003,
+          "personalAccountPension": 4869,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30667,13 +30667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4047,
-          "rangeLow": 3036,
-          "rangeHigh": 5059
+          "monthlyTotal": 3818,
+          "rangeLow": 2864,
+          "rangeHigh": 4773
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1204,
+          "personalAccountPension": 975,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30817,13 +30817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5561,
-          "rangeLow": 4171,
-          "rangeHigh": 6951
+          "monthlyTotal": 5179,
+          "rangeLow": 3884,
+          "rangeHigh": 6474
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2007,
+          "personalAccountPension": 1625,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -30967,13 +30967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7453,
-          "rangeLow": 5590,
-          "rangeHigh": 9316
+          "monthlyTotal": 6880,
+          "rangeLow": 5160,
+          "rangeHigh": 8600
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 3010,
+          "personalAccountPension": 2437,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31117,13 +31117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13129,
-          "rangeLow": 9847,
-          "rangeHigh": 16411
+          "monthlyTotal": 11983,
+          "rangeLow": 8987,
+          "rangeHigh": 14978
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 6021,
+          "personalAccountPension": 4875,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31267,13 +31267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4755,
-          "rangeLow": 3567,
-          "rangeHigh": 5944
+          "monthlyTotal": 4365,
+          "rangeLow": 3274,
+          "rangeHigh": 5456
         },
         "breakdown": {
           "basicPension": 3341,
-          "personalAccountPension": 1415,
+          "personalAccountPension": 1024,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31417,13 +31417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6534,
-          "rangeLow": 4900,
-          "rangeHigh": 8167
+          "monthlyTotal": 5883,
+          "rangeLow": 4412,
+          "rangeHigh": 7354
         },
         "breakdown": {
           "basicPension": 4176,
-          "personalAccountPension": 2358,
+          "personalAccountPension": 1707,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31567,13 +31567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8757,
-          "rangeLow": 6568,
-          "rangeHigh": 10946
+          "monthlyTotal": 7781,
+          "rangeLow": 5835,
+          "rangeHigh": 9726
         },
         "breakdown": {
           "basicPension": 5220,
-          "personalAccountPension": 3537,
+          "personalAccountPension": 2561,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31717,13 +31717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15426,
-          "rangeLow": 11569,
-          "rangeHigh": 19282
+          "monthlyTotal": 13473,
+          "rangeLow": 10105,
+          "rangeHigh": 16842
         },
         "breakdown": {
           "basicPension": 8352,
-          "personalAccountPension": 7074,
+          "personalAccountPension": 5122,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -31867,13 +31867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6171,
-          "rangeLow": 4629,
-          "rangeHigh": 7714
+          "monthlyTotal": 5425,
+          "rangeLow": 4069,
+          "rangeHigh": 6781
         },
         "breakdown": {
           "basicPension": 4335,
-          "personalAccountPension": 1836,
+          "personalAccountPension": 1090,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32017,13 +32017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8479,
-          "rangeLow": 6360,
-          "rangeHigh": 10599
+          "monthlyTotal": 7236,
+          "rangeLow": 5427,
+          "rangeHigh": 9044
         },
         "breakdown": {
           "basicPension": 5419,
-          "personalAccountPension": 3060,
+          "personalAccountPension": 1816,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32167,13 +32167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11364,
-          "rangeLow": 8523,
-          "rangeHigh": 14205
+          "monthlyTotal": 9499,
+          "rangeLow": 7124,
+          "rangeHigh": 11873
         },
         "breakdown": {
           "basicPension": 6774,
-          "personalAccountPension": 4590,
+          "personalAccountPension": 2725,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32317,13 +32317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 20019,
-          "rangeLow": 15014,
-          "rangeHigh": 25024
+          "monthlyTotal": 16288,
+          "rangeLow": 12216,
+          "rangeHigh": 20360
         },
         "breakdown": {
           "basicPension": 10838,
-          "personalAccountPension": 9181,
+          "personalAccountPension": 5449,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32467,13 +32467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7587,
-          "rangeLow": 5691,
-          "rangeHigh": 9484
+          "monthlyTotal": 6475,
+          "rangeLow": 4856,
+          "rangeHigh": 8093
         },
         "breakdown": {
           "basicPension": 5330,
-          "personalAccountPension": 2257,
+          "personalAccountPension": 1145,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32617,13 +32617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10425,
-          "rangeLow": 7819,
-          "rangeHigh": 13031
+          "monthlyTotal": 8571,
+          "rangeLow": 6428,
+          "rangeHigh": 10713
         },
         "breakdown": {
           "basicPension": 6663,
-          "personalAccountPension": 3762,
+          "personalAccountPension": 1908,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32767,13 +32767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13972,
-          "rangeLow": 10479,
-          "rangeHigh": 17465
+          "monthlyTotal": 11190,
+          "rangeLow": 8393,
+          "rangeHigh": 13988
         },
         "breakdown": {
           "basicPension": 8328,
-          "personalAccountPension": 5644,
+          "personalAccountPension": 2862,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -32917,13 +32917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 24612,
-          "rangeLow": 18459,
-          "rangeHigh": 30765
+          "monthlyTotal": 19049,
+          "rangeLow": 14287,
+          "rangeHigh": 23811
         },
         "breakdown": {
           "basicPension": 13325,
-          "personalAccountPension": 11287,
+          "personalAccountPension": 5724,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33067,13 +33067,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4047,
-          "rangeLow": 3036,
-          "rangeHigh": 5059
+          "monthlyTotal": 3821,
+          "rangeLow": 2865,
+          "rangeHigh": 4776
         },
         "breakdown": {
           "basicPension": 2843,
-          "personalAccountPension": 1204,
+          "personalAccountPension": 977,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33217,13 +33217,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5561,
-          "rangeLow": 4171,
-          "rangeHigh": 6951
+          "monthlyTotal": 5183,
+          "rangeLow": 3887,
+          "rangeHigh": 6479
         },
         "breakdown": {
           "basicPension": 3554,
-          "personalAccountPension": 2007,
+          "personalAccountPension": 1629,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33367,13 +33367,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7453,
-          "rangeLow": 5590,
-          "rangeHigh": 9316
+          "monthlyTotal": 6886,
+          "rangeLow": 5164,
+          "rangeHigh": 8607
         },
         "breakdown": {
           "basicPension": 4443,
-          "personalAccountPension": 3010,
+          "personalAccountPension": 2443,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33517,13 +33517,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13129,
-          "rangeLow": 9847,
-          "rangeHigh": 16411
+          "monthlyTotal": 11995,
+          "rangeLow": 8996,
+          "rangeHigh": 14994
         },
         "breakdown": {
           "basicPension": 7108,
-          "personalAccountPension": 6021,
+          "personalAccountPension": 4887,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33667,13 +33667,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4059,
-          "rangeLow": 3044,
-          "rangeHigh": 5074
+          "monthlyTotal": 3830,
+          "rangeLow": 2872,
+          "rangeHigh": 4787
         },
         "breakdown": {
           "basicPension": 2852,
-          "personalAccountPension": 1208,
+          "personalAccountPension": 978,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33817,13 +33817,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 5577,
-          "rangeLow": 4183,
-          "rangeHigh": 6972
+          "monthlyTotal": 5195,
+          "rangeLow": 3896,
+          "rangeHigh": 6494
         },
         "breakdown": {
           "basicPension": 3564,
-          "personalAccountPension": 2013,
+          "personalAccountPension": 1631,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -33967,13 +33967,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7475,
-          "rangeLow": 5606,
-          "rangeHigh": 9343
+          "monthlyTotal": 6902,
+          "rangeLow": 5176,
+          "rangeHigh": 8627
         },
         "breakdown": {
           "basicPension": 4456,
-          "personalAccountPension": 3019,
+          "personalAccountPension": 2446,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34117,13 +34117,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13167,
-          "rangeLow": 9876,
-          "rangeHigh": 16459
+          "monthlyTotal": 12021,
+          "rangeLow": 9016,
+          "rangeHigh": 15026
         },
         "breakdown": {
           "basicPension": 7129,
-          "personalAccountPension": 6039,
+          "personalAccountPension": 4892,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34267,13 +34267,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 4767,
-          "rangeLow": 3575,
-          "rangeHigh": 5959
+          "monthlyTotal": 4377,
+          "rangeLow": 3283,
+          "rangeHigh": 5471
         },
         "breakdown": {
           "basicPension": 3349,
-          "personalAccountPension": 1418,
+          "personalAccountPension": 1028,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34417,13 +34417,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6550,
-          "rangeLow": 4913,
-          "rangeHigh": 8188
+          "monthlyTotal": 5899,
+          "rangeLow": 4424,
+          "rangeHigh": 7374
         },
         "breakdown": {
           "basicPension": 4186,
-          "personalAccountPension": 2364,
+          "personalAccountPension": 1713,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34567,13 +34567,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8779,
-          "rangeLow": 6584,
-          "rangeHigh": 10973
+          "monthlyTotal": 7802,
+          "rangeLow": 5852,
+          "rangeHigh": 9753
         },
         "breakdown": {
           "basicPension": 5233,
-          "personalAccountPension": 3546,
+          "personalAccountPension": 2570,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34717,13 +34717,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 15464,
-          "rangeLow": 11598,
-          "rangeHigh": 19330
+          "monthlyTotal": 13512,
+          "rangeLow": 10134,
+          "rangeHigh": 16889
         },
         "breakdown": {
           "basicPension": 8372,
-          "personalAccountPension": 7092,
+          "personalAccountPension": 5139,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -34867,13 +34867,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 6183,
-          "rangeLow": 4637,
-          "rangeHigh": 7729
+          "monthlyTotal": 5437,
+          "rangeLow": 4078,
+          "rangeHigh": 6796
         },
         "breakdown": {
           "basicPension": 4344,
-          "personalAccountPension": 1840,
+          "personalAccountPension": 1093,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35017,13 +35017,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8496,
-          "rangeLow": 6372,
-          "rangeHigh": 10619
+          "monthlyTotal": 7252,
+          "rangeLow": 5439,
+          "rangeHigh": 9065
         },
         "breakdown": {
           "basicPension": 5430,
-          "personalAccountPension": 3066,
+          "personalAccountPension": 1822,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35167,13 +35167,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 11386,
-          "rangeLow": 8540,
-          "rangeHigh": 14233
+          "monthlyTotal": 9520,
+          "rangeLow": 7140,
+          "rangeHigh": 11900
         },
         "breakdown": {
           "basicPension": 6787,
-          "personalAccountPension": 4599,
+          "personalAccountPension": 2734,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35317,13 +35317,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 20057,
-          "rangeLow": 15043,
-          "rangeHigh": 25072
+          "monthlyTotal": 16326,
+          "rangeLow": 12244,
+          "rangeHigh": 20407
         },
         "breakdown": {
           "basicPension": 10859,
-          "personalAccountPension": 9198,
+          "personalAccountPension": 5467,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35467,13 +35467,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 7599,
-          "rangeLow": 5699,
-          "rangeHigh": 9499
+          "monthlyTotal": 6487,
+          "rangeLow": 4865,
+          "rangeHigh": 8108
         },
         "breakdown": {
           "basicPension": 5338,
-          "personalAccountPension": 2261,
+          "personalAccountPension": 1148,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35617,13 +35617,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 10441,
-          "rangeLow": 7831,
-          "rangeHigh": 13051
+          "monthlyTotal": 8587,
+          "rangeLow": 6440,
+          "rangeHigh": 10733
         },
         "breakdown": {
           "basicPension": 6673,
-          "personalAccountPension": 3768,
+          "personalAccountPension": 1914,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35767,13 +35767,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 13993,
-          "rangeLow": 10495,
-          "rangeHigh": 17492
+          "monthlyTotal": 11212,
+          "rangeLow": 8409,
+          "rangeHigh": 14015
         },
         "breakdown": {
           "basicPension": 8341,
-          "personalAccountPension": 5652,
+          "personalAccountPension": 2871,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -35917,13 +35917,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 24651,
-          "rangeLow": 18488,
-          "rangeHigh": 30813
+          "monthlyTotal": 19087,
+          "rangeLow": 14316,
+          "rangeHigh": 23859
         },
         "breakdown": {
           "basicPension": 13346,
-          "personalAccountPension": 11305,
+          "personalAccountPension": 5742,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -36065,13 +36065,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8409,
-          "rangeLow": 6306,
-          "rangeHigh": 10511
+          "monthlyTotal": 6141,
+          "rangeLow": 4605,
+          "rangeHigh": 7676
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3435,
+          "personalAccountPension": 1167,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"
@@ -36138,13 +36138,13 @@
       },
       "expected": {
         "amount": {
-          "monthlyTotal": 8409,
-          "rangeLow": 6306,
-          "rangeHigh": 10511
+          "monthlyTotal": 6141,
+          "rangeLow": 4605,
+          "rangeHigh": 7676
         },
         "breakdown": {
           "basicPension": 4974,
-          "personalAccountPension": 3435,
+          "personalAccountPension": 1167,
           "transitionPension": {
             "included": false,
             "label": "暂未纳入"

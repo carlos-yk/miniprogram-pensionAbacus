@@ -1,5 +1,16 @@
 const storage = require('../../utils/storage');
 const { calculatePensionEstimate } = require('../../utils/pensionCalculator');
+const { canUseCachedEstimate } = require('../../utils/dataGate');
+const features = require('../../config/features');
+
+const MAX_REASONABLE_ACCOUNT_BALANCE = 1000000;
+
+function getGateOptions() {
+  return {
+    internalPreview: features.internalPreviewEnabled,
+    previewCities: features.previewCities
+  };
+}
 
 Page({
   data: {
@@ -42,6 +53,12 @@ Page({
       wx.showToast({ title: '请输入个人账户余额', icon: 'none' });
       return;
     }
+    if (value > MAX_REASONABLE_ACCOUNT_BALANCE) {
+      const error = '个人账户余额看起来偏高，请核对是否多输入了 0。';
+      this.setData({ error });
+      wx.showToast({ title: error, icon: 'none' });
+      return;
+    }
 
     storage.set(this.getAccountKey(this.data.scenario), value);
     this.recalculateLastResult(value);
@@ -52,8 +69,16 @@ Page({
   },
 
   recalculateLastResult(value) {
-    const lastInput = storage.get(this.getLastInputKey(this.data.scenario), null);
+    const lastInputKey = this.getLastInputKey(this.data.scenario);
+    const lastResultKey = this.getLastResultKey(this.data.scenario);
+    const lastInput = storage.get(lastInputKey, null);
     if (!lastInput) return;
+
+    if (!canUseCachedEstimate(lastInput, getGateOptions())) {
+      storage.remove(lastInputKey);
+      storage.remove(lastResultKey);
+      return;
+    }
 
     const nextInput = {
       ...lastInput,
@@ -63,8 +88,8 @@ Page({
       }
     };
     const result = calculatePensionEstimate(nextInput);
-    storage.set(this.getLastInputKey(this.data.scenario), nextInput);
-    storage.set(this.getLastResultKey(this.data.scenario), result);
+    storage.set(lastInputKey, nextInput);
+    storage.set(lastResultKey, result);
   },
 
   skip() {

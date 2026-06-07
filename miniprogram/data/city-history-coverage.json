@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "coverageVersion": "2026.05.28-shanghai-2015-2025",
+  "coverageVersion": "2026.05.28-shanghai-2000-2025",
   "lastUpdated": "2026-05-28",
   "targetYearRange": {
     "from": 2000,
@@ -10,7 +10,7 @@
     "file": "city-key-params-2015-2025.json",
     "scope": "2015-2025 key parameters workspace, not yet canonical production data",
     "summary": {
-      "shanghai": "上海 2015-2025 已归并正式历史参数；2020、2021、2024、2025 有官方来源记录，2015-2019、2022-2023 仍为候选或待复核。",
+      "shanghai": "上海 2015-2025 已完成 production ready 复核，作为公开测算支持范围；2000-2007、2013 仍保留为历史补齐 backlog。普通提交会按本次已缴年限检查实际触达年份，触达未复核年份时不开放该组测算。",
       "beijing": "2015-2025 缴费基数已有官方历史表记录；2025 待遇计发基数已记录。",
       "shenzhen": "2024-2025 已有深圳/广东官方来源记录；2015-2023 仍为部分回补。"
     }
@@ -18,8 +18,13 @@
   "cities": {
     "shanghai": {
       "name": "上海",
-      "officialCompleteYears": [],
-      "partialYears": [
+      "officialCompleteYears": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2014,
         2015,
         2016,
         2017,
@@ -32,7 +37,7 @@
         2024,
         2025
       ],
-      "missingYears": [
+      "partialYears": [
         2000,
         2001,
         2002,
@@ -41,16 +46,16 @@
         2005,
         2006,
         2007,
-        2008,
-        2009,
-        2010,
-        2011,
-        2012,
-        2013,
-        2014
+        2013
       ],
-      "nextBackfillBatch": "2000-2014",
-      "notes": "2015-2025 已有关键养老金输入参数；仍缺个人账户记账利率，且部分年份缺官方来源 URL，故标为 partial。"
+      "missingYears": [],
+      "nextBackfillBatch": "source-and-field-review",
+      "notes": "上海 2015-2025 已完成 production ready 复核，作为公开测算支持范围；2000-2007、2013 仍保留为历史补齐 backlog。普通提交会按本次已缴年限检查实际触达年份，触达未复核年份时不开放该组测算。",
+      "publicSupportedYearRange": {
+        "from": 2015,
+        "to": 2025
+      },
+      "releaseGate": "public_supported_range_ready_with_input_level_history_check"
     },
     "beijing": {
       "name": "北京",

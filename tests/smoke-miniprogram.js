@@ -47,6 +47,12 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function resetStore() {
+  for (const key of Object.keys(store)) {
+    delete store[key];
+  }
+}
+
 function resetCalls() {
   calls.navigateTo.length = 0;
   calls.navigateBack.length = 0;
@@ -96,19 +102,29 @@ function inputValue(value) {
 }
 
 function runHomeSmoke() {
+  resetStore();
   resetCalls();
   const storage = require('../miniprogram/utils/storage');
-  wx.setStorageSync(storage.LAST_RESULT_KEY, { amount: { monthlyTotal: 5200 } });
+  wx.setStorageSync(storage.LAST_RESULT_KEY, {
+    city: 'shanghai',
+    releaseMode: 'public',
+    amount: { monthlyTotal: 5200 }
+  });
   wx.setStorageSync(storage.LAST_INPUT_KEY, {
     city: 'shanghai',
     workerType: 'male',
-    paidMonths: 360
+    paidMonths: 360,
+    mode: 'public'
   });
   const page = loadPage('miniprogram/pages/home/home.js');
   page.onShow();
 
-  assert.equal(page.data.hasLastResult, true);
-  assert.match(page.data.lastResultSummary, /上海/);
+  assert.equal(page.data.hasLastResult, false);
+  assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY), '');
+  assert.equal(wx.getStorageSync(storage.LAST_INPUT_KEY), '');
+  assert.equal(page.data.employeeActionText, '开始');
+  assert.equal(page.data.employeeModuleAvailable, true);
+  assert.equal(page.data.familyActionDesc, '用同一流程为父母或伴侣先算个大概');
 
   page.onModuleTap(tapDataset({ key: 'employee' }));
   assert.equal(calls.navigateTo.at(-1).url, '/pages/calculate/calculate');
@@ -116,14 +132,12 @@ function runHomeSmoke() {
   page.onModuleTap(tapDataset({ key: 'resident' }));
   assert.equal(calls.showToast.at(-1).title, '该模块正在规划中，敬请期待');
 
-  page.openLastResult();
-  assert.equal(calls.navigateTo.at(-1).url, '/pages/result/result');
-
   page.startFamilyEstimate();
   assert.equal(calls.navigateTo.at(-1).url, '/pages/calculate/calculate?scenario=family');
 }
 
 function runCalculateSmoke() {
+  resetStore();
   resetCalls();
   const page = loadPage('miniprogram/pages/calculate/calculate.js');
   page.onLoad({ scenario: 'family' });
@@ -132,7 +146,7 @@ function runCalculateSmoke() {
   assert.equal(page.data.scenario, 'family');
   assert.equal(page.data.scenarioTitle, '正在帮家人测算');
   assert.equal(page.data.cityOptions.length, 3);
-  assert.equal(page.data.submitLabel, '开始试算');
+  assert.equal(page.data.submitLabel, '立即测算');
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), false);
   page.toggleContributionOptions();
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), true);
@@ -144,15 +158,67 @@ function runCalculateSmoke() {
   page.selectContribution(tapDataset({ key: 'ratio_150' }));
   page.onSubmitTap();
 
-  assert.equal(calls.navigateTo.at(-1).url, '/pages/result/result?scenario=family');
+  assert.equal(calls.navigateTo.length, 0);
+  assert.match(calls.showToast.at(-1).title, /历史年份/);
   const storage = require('../miniprogram/utils/storage');
-  assert.ok(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY).amount.monthlyTotal > 0);
-  assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY).amount.monthlyTotal, 5200);
+  assert.equal(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY), '');
+  assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY), '');
+
+  page.onPaidYearsInput(inputValue('10'));
+  page.onSubmitTap();
+
+  assert.equal(calls.navigateTo.at(-1).url, '/pages/result/result?scenario=family');
+  assert.notEqual(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY), '');
+}
+
+function runCalculateValidationSmoke() {
+  resetStore();
+  resetCalls();
+  const page = loadPage('miniprogram/pages/calculate/calculate.js');
+  page.onLoad({});
+  page.setData({
+    cityOptions: [
+      {
+        city: 'shanghai',
+        name: '上海',
+        canSubmit: true,
+        canPreview: false,
+        message: ''
+      }
+    ],
+    birthMonth: '2099-01',
+    birthMonthLabel: '2099-01',
+    workerType: 'male',
+    city: 'shanghai',
+    paidYears: '30',
+    selectedContributionKey: 'ratio_100',
+    contributionAmount: ''
+  });
+
+  assert.equal(page.validate(), '出生年月不能晚于当前测算月份。');
+
+  page.setData({
+    birthMonth: '1980-01',
+    birthMonthLabel: '1980-01',
+    paidYears: '80'
+  });
+
+  assert.equal(page.validate(), '已缴费年限看起来偏高，请核对后再测算。');
+
+  page.setData({
+    birthMonth: '1940-01',
+    birthMonthLabel: '1940-01',
+    paidYears: '40'
+  });
+
+  assert.equal(page.validate(), '这个工具更适合估算未退休或刚接近退休的情况，已退休人员建议直接查询实际待遇。');
 }
 
 function runResultSmoke() {
+  resetStore();
   resetCalls();
   const { calculatePensionEstimate, buildDefaultSharePayload } = require('../miniprogram/utils/pensionCalculator');
+  const features = require('../miniprogram/config/features');
   const storage = require('../miniprogram/utils/storage');
   const result = calculatePensionEstimate({
     city: 'shanghai',
@@ -165,8 +231,14 @@ function runResultSmoke() {
   });
   wx.setStorageSync(storage.LAST_RESULT_KEY, result);
 
+  features.internalPreviewEnabled = true;
   const page = loadPage('miniprogram/pages/result/result.js');
-  page.onShow();
+  try {
+    page.onShow();
+  } finally {
+    features.internalPreviewEnabled = false;
+  }
+
   assert.ok(page.data.result.retirementMonthText.includes(' - '));
   assert.equal(page.data.result.canShare, false);
   assert.equal(calls.hideShareMenu.length, 1);
@@ -176,7 +248,34 @@ function runResultSmoke() {
   assert.doesNotMatch(JSON.stringify(share), /1978|360|个人账户|缴费年限|元/);
 }
 
+function runResultRejectsStalePublicCacheSmoke() {
+  resetStore();
+  resetCalls();
+  const { calculatePensionEstimate } = require('../miniprogram/utils/pensionCalculator');
+  const storage = require('../miniprogram/utils/storage');
+  const result = calculatePensionEstimate({
+    city: 'shanghai',
+    workerType: 'male',
+    birthMonth: '1968-06',
+    paidMonths: 360,
+    contributionInput: { type: 'ratio', contributionIndex: 1 },
+    personalAccount: { known: false, balance: null },
+    mode: 'public'
+  });
+  wx.setStorageSync(storage.LAST_RESULT_KEY, result);
+
+  const page = loadPage('miniprogram/pages/result/result.js');
+  page.onShow();
+
+  assert.equal(page.data.result, null);
+  assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY), '');
+  assert.equal(calls.showShareMenu.length, 0);
+  assert.equal(calls.hideShareMenu.length, 1);
+  assert.match(calls.showToast.at(-1).title, /暂未开放/);
+}
+
 function runAccountSmoke() {
+  resetStore();
   resetCalls();
   const storage = require('../miniprogram/utils/storage');
   wx.setStorageSync(storage.LAST_INPUT_KEY, {
@@ -185,7 +284,13 @@ function runAccountSmoke() {
     birthMonth: '1968-06',
     paidMonths: 360,
     contributionInput: { type: 'ratio', contributionIndex: 1 },
-    personalAccount: { known: false, balance: null }
+    personalAccount: { known: false, balance: null },
+    mode: 'public'
+  });
+  wx.setStorageSync(storage.LAST_RESULT_KEY, {
+    city: 'shanghai',
+    releaseMode: 'public',
+    amount: { monthlyTotal: 5200 }
   });
 
   const page = loadPage('miniprogram/pages/account/account.js');
@@ -194,13 +299,32 @@ function runAccountSmoke() {
   page.save();
 
   assert.equal(wx.getStorageSync(storage.ACCOUNT_BALANCE_KEY), 180000);
-  assert.ok(wx.getStorageSync(storage.LAST_RESULT_KEY).amount.monthlyTotal > 0);
+  assert.equal(wx.getStorageSync(storage.LAST_INPUT_KEY), '');
+  assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY), '');
   assert.equal(calls.navigateBack.length, 1);
+}
+
+function runAccountValidationSmoke() {
+  resetStore();
+  resetCalls();
+  const storage = require('../miniprogram/utils/storage');
+  const page = loadPage('miniprogram/pages/account/account.js');
+  page.onLoad({});
+  page.onInput(inputValue('1800000'));
+  page.save();
+
+  assert.equal(wx.getStorageSync(storage.ACCOUNT_BALANCE_KEY), '');
+  assert.match(page.data.error, /偏高/);
+  assert.match(calls.showToast.at(-1).title, /偏高/);
+  assert.equal(calls.navigateBack.length, 0);
 }
 
 runHomeSmoke();
 runCalculateSmoke();
+runCalculateValidationSmoke();
 runResultSmoke();
+runResultRejectsStalePublicCacheSmoke();
 runAccountSmoke();
+runAccountValidationSmoke();
 
 console.log('OK mini program page smoke interactions');

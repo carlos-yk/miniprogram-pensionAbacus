@@ -57,6 +57,14 @@ test('home page includes retention hooks for returning and family-assisted use',
   assert.match(js, /startFamilyEstimate/);
 });
 
+test('home page references the managed logo asset', () => {
+  const wxml = read('miniprogram/pages/home/home.wxml');
+  const logoPath = path.join(root, 'miniprogram/assets/logo-pension-abacus.png');
+
+  assert.match(wxml, /logo-pension-abacus\.png/);
+  assert.equal(fs.existsSync(logoPath), true);
+});
+
 test('home page avoids stacked trust badges and redundant option marks', () => {
   const homeWxml = read('miniprogram/pages/home/home.wxml');
   const homeWxss = read('miniprogram/pages/home/home.wxss');
@@ -96,6 +104,48 @@ test('result page keeps the report focused and does not render internal placehol
   assert.match(js, /canShare/);
   assert.doesNotMatch(wxml, /退休金竞争力/);
   assert.doesNotMatch(wxml, /benchmark 闸门/);
+});
+
+test('public release profile keeps internal preview disabled by default', () => {
+  const featuresJs = read('miniprogram/config/features.js');
+  const aboutJs = read('miniprogram/pages/about/about.js');
+  const calculateJs = read('miniprogram/pages/calculate/calculate.js');
+
+  assert.match(featuresJs, /releaseProfile:\s*'public'/);
+  assert.match(featuresJs, /internalPreviewEnabled:\s*false/);
+  assert.match(featuresJs, /competitionEnabled:\s*false/);
+  assert.match(featuresJs, /previewCities:\s*\[\s*'shanghai'\s*\]/);
+  assert.doesNotMatch(aboutJs, /internalPreview:\s*true/);
+  assert.match(aboutJs, /features\.internalPreviewEnabled/);
+  assert.match(calculateJs, /features\.previewCities/);
+});
+
+test('result page explains why the amount was estimated', () => {
+  const wxml = read('miniprogram/pages/result/result.wxml');
+  const js = read('miniprogram/pages/result/result.js');
+
+  assert.match(wxml, /为什么是这个数/);
+  assert.match(wxml, /result\.explainers/);
+  assert.match(js, /explainers/);
+  assert.match(js, /缴费年限/);
+  assert.match(js, /缴费水平/);
+  assert.match(js, /个人账户/);
+});
+
+test('result page shows a user-facing data explanation without internal labels', () => {
+  const wxml = read('miniprogram/pages/result/result.wxml');
+  const js = read('miniprogram/pages/result/result.js');
+  const calculatorJs = read('miniprogram/utils/pensionCalculator.js');
+
+  assert.match(wxml, /数据说明/);
+  assert.match(wxml, /result\.dataStatusText/);
+  assert.match(wxml, /result\.dataImpactText/);
+  assert.match(wxml, /bindtap="openAbout"/);
+  assert.match(wxml, /查看数据来源和免责声明/);
+  assert.match(js, /dataStatusText/);
+  assert.match(js, /dataImpactText/);
+  assert.doesNotMatch(wxml, /数据复核中|待补字段|参数版本/);
+  assert.doesNotMatch(calculatorJs, /上线门槛/);
 });
 
 test('family estimate and contribution choices are presented as user-friendly flows', () => {
@@ -141,11 +191,21 @@ test('account page reassures users who cannot find account balance', () => {
   assert.match(accountWxml, /继续使用系统估算/);
 });
 
+test('account page gives Shanghai users a concrete account balance lookup path', () => {
+  const accountWxml = read('miniprogram/pages/account/account.wxml');
+
+  assert.match(accountWxml, /随申办/);
+  assert.match(accountWxml, /上海人社/);
+  assert.match(accountWxml, /养老保险个人账户/);
+  assert.match(accountWxml, /个人账户累计储存额/);
+});
+
 test('about page uses user-facing city progress copy', () => {
   const aboutJs = read('miniprogram/pages/about/about.js');
 
-  assert.match(aboutJs, /可先试算/);
+  assert.match(aboutJs, /可测算/);
   assert.match(aboutJs, /暂未开放测算/);
+  assert.doesNotMatch(aboutJs, /可试算|可先试算/);
   assert.doesNotMatch(aboutJs, /已归集/);
   assert.doesNotMatch(aboutJs, /补齐中/);
   assert.doesNotMatch(aboutJs, /个完整年份/);

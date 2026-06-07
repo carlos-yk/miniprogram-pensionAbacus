@@ -1,0 +1,3694 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-06-05T03:34:15.229Z",
+  "firstLaunchCity": "shanghai",
+  "sourceFiles": [
+    "data/official/city-history-coverage.json",
+    "data/official/city-history-params.json",
+    "data/official/city-params.json",
+    "data/official/sources.json",
+    "data/official/source-backlog-2026-05-28.json"
+  ],
+  "summary": {
+    "totalTasks": 90,
+    "byPriority": {
+      "P1": 72,
+      "P2": 18
+    },
+    "byCity": {
+      "shanghai": 18,
+      "beijing": 36,
+      "shenzhen": 32,
+      "guangdong": 4
+    }
+  },
+  "tasks": [
+    {
+      "id": "data:shanghai:2000:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2000,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2000 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate",
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/stadata/dfzf/84.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2000〕19号 上海市1999年度职工平均工资 上海人社",
+            "上海市1999年度职工平均工资 沪劳保综发〔2000〕19号 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/stadata/dfzf/84.html",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388537.html"
+          ],
+          "searchQueries": [
+            "2000年度上海市社会保险费缴费标准 上海人社 原文",
+            "2000年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2000年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2000:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2000,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2000 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shanghai:2001:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2001,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2001 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate",
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL",
+        "养老保险费率原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/stadata/dfzf/85.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2001〕17号 上海市2000年度职工平均工资 上海人社",
+            "上海市2000年度职工平均工资 沪劳保综发〔2001〕17号 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/stadata/dfzf/85.html",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388537.html"
+          ],
+          "searchQueries": [
+            "2001年度上海市社会保险费缴费标准 上海人社 原文",
+            "2001年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2001年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        },
+        "养老保险费率原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814564",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388490.html",
+            "https://www.gov.cn/zwgk/2005-12/14/content_127311.htm"
+          ],
+          "searchQueries": [
+            "2001年度上海养老保险费率 单位缴费比例 个人缴费比例 原文",
+            "2001年度上海城镇从业人员养老保险缴费比例 沪劳保养发",
+            "2001年度上海社会保险费缴费比例 养老保险"
+          ],
+          "notes": "已有 2000 年单位费率调整、2003 年个人费率调整和 2005 年国务院统账规则来源，仍需定位对应年度上海原始费率页。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2001:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2001,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2001 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shanghai:2002:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2002,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2002 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate",
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL",
+        "养老保险费率原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/hot/6873.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2002〕13号 上海市2001年度职工平均工资 上海人社",
+            "上海市2001年度职工平均工资 沪劳保综发〔2002〕13号 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/hot/6873.html",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388537.html"
+          ],
+          "searchQueries": [
+            "2002年度上海市社会保险费缴费标准 上海人社 原文",
+            "2002年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2002年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        },
+        "养老保险费率原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814564",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388490.html",
+            "https://www.gov.cn/zwgk/2005-12/14/content_127311.htm"
+          ],
+          "searchQueries": [
+            "2002年度上海养老保险费率 单位缴费比例 个人缴费比例 原文",
+            "2002年度上海城镇从业人员养老保险缴费比例 沪劳保养发",
+            "2002年度上海社会保险费缴费比例 养老保险"
+          ],
+          "notes": "已有 2000 年单位费率调整、2003 年个人费率调整和 2005 年国务院统账规则来源，仍需定位对应年度上海原始费率页。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2002:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2002,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2002 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shanghai:2003:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2003,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2003 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate",
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL",
+        "养老保险费率原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/hot/6874.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2003〕8号 上海市2002年度职工平均工资 上海人社",
+            "上海市2002年度职工平均工资 沪劳保综发〔2003〕8号 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://max.book118.com/html/2017/0503/104008070.shtm"
+          ],
+          "searchQueries": [
+            "2003年度上海市社会保险费缴费标准 上海人社 原文",
+            "2003年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2003年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        },
+        "养老保险费率原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814564",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388490.html",
+            "https://www.gov.cn/zwgk/2005-12/14/content_127311.htm"
+          ],
+          "searchQueries": [
+            "2003年度上海养老保险费率 单位缴费比例 个人缴费比例 原文",
+            "2003年度上海城镇从业人员养老保险缴费比例 沪劳保养发",
+            "2003年度上海社会保险费缴费比例 养老保险"
+          ],
+          "notes": "已有 2000 年单位费率调整、2003 年个人费率调整和 2005 年国务院统账规则来源，仍需定位对应年度上海原始费率页。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2003:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2003,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2003 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shanghai:2004:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2004,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2004 年缺失字段补齐",
+      "requiredFields": [
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.laodongfa.com/stadata/dfzf/3052.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2004〕12号 上海市2003年度职工平均工资 上海人社",
+            "上海市2003年度职工平均工资 沪劳保综发〔2004〕12号 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://max.book118.com/html/2017/0503/104008070.shtm"
+          ],
+          "searchQueries": [
+            "2004年度上海市社会保险费缴费标准 上海人社 原文",
+            "2004年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2004年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "data:shanghai:2004:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2004,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2004 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible。"
+    },
+    {
+      "id": "data:shanghai:2005:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2005,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2005 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate",
+        "平均工资原始官方页面URL",
+        "社保缴费标准原始官方页面URL",
+        "养老保险费率原始官方页面URL"
+      ],
+      "sourceLeads": {
+        "accountInterestRate": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814603",
+            "https://m.110.com/fagui/302392.html"
+          ],
+          "searchQueries": [
+            "上海市劳动和社会保障局 关于公布2005年度本市养老保险个人账户记账利率的通知",
+            "2005年度本市养老保险个人账户记账利率 沪劳保基发 上海",
+            "2005年度本市城镇养老保险个人账户记账利率 上海"
+          ],
+          "notes": "优先定位上海劳动保障局原文或法规库转载全文；相邻 2004、2008 年已在法规库中找到正文。"
+        },
+        "平均工资原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://www.110.com/fagui/law_224832.html"
+          ],
+          "searchQueries": [
+            "沪劳保综发〔2005〕10号 本市职工平均工资 2005年度城镇养老保险缴费基数 上海人社",
+            "关于确定本市职工平均工资及2005年度城镇养老保险缴费基数上下限 原文"
+          ],
+          "notes": "已有法规库或公开转载来源，下一步优先定位上海人社原始页面或政府信息公开原文。"
+        },
+        "社保缴费标准原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://finance.sina.com.cn/roll/20050325/03241458714.shtml"
+          ],
+          "searchQueries": [
+            "2005年度上海市社会保险费缴费标准 上海人社 原文",
+            "2005年上海市社会保险费缴费标准 缴费基数 下限 上限",
+            "2005年度城镇养老保险缴费基数上下限 上海"
+          ],
+          "notes": "已有工资或公开报道来源可交叉核对，仍需定位原始官方标准页后才能移除缺失字段。"
+        },
+        "养老保险费率原始官方页面URL": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814564",
+            "https://rsj.sh.gov.cn/txgszfgz_17262/20200617/t0035_1388490.html",
+            "https://www.gov.cn/zwgk/2005-12/14/content_127311.htm"
+          ],
+          "searchQueries": [
+            "2005年度上海养老保险费率 单位缴费比例 个人缴费比例 原文",
+            "2005年度上海城镇从业人员养老保险缴费比例 沪劳保养发",
+            "2005年度上海社会保险费缴费比例 养老保险"
+          ],
+          "notes": "已有 2000 年单位费率调整、2003 年个人费率调整和 2005 年国务院统账规则来源，仍需定位对应年度上海原始费率页。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2005:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2005,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2005 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shanghai:2006:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2006,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2006 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate"
+      ],
+      "sourceLeads": {
+        "accountInterestRate": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814603",
+            "https://m.110.com/fagui/302392.html"
+          ],
+          "searchQueries": [
+            "上海市劳动和社会保障局 关于公布2006年度本市养老保险个人账户记账利率的通知",
+            "2006年度本市养老保险个人账户记账利率 沪劳保基发 上海",
+            "2006年度本市城镇养老保险个人账户记账利率 上海"
+          ],
+          "notes": "重点核对 2006 年是否存在独立记账利率通知，以及是否和 2006-04 至 2007-03 社保年度口径一致。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2006:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2006,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2006 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase。"
+    },
+    {
+      "id": "data:shanghai:2007:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2007,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2007 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate"
+      ],
+      "sourceLeads": {
+        "accountInterestRate": {
+          "knownRelatedUrls": [
+            "https://zc.51shebao.com/detail/814603",
+            "https://m.110.com/fagui/302392.html"
+          ],
+          "searchQueries": [
+            "上海市劳动和社会保障局 关于公布2007年度本市养老保险个人账户记账利率的通知",
+            "2007年度本市养老保险个人账户记账利率 沪劳保基发 上海",
+            "2007年度本市城镇养老保险个人账户记账利率 上海"
+          ],
+          "notes": "2008 年记账利率通知已定位，继续沿同一法规库、上海人社失效文件目录和沪劳保基发文号追溯上一年度。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2007:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2007,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2007 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase。"
+    },
+    {
+      "id": "data:shanghai:2013:fill-missing-fields",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2013,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "上海 2013 年缺失字段补齐",
+      "requiredFields": [
+        "accountInterestRate"
+      ],
+      "sourceLeads": {
+        "accountInterestRate": {
+          "knownRelatedUrls": [
+            "https://www.chinanews.com.cn/sh/2014/06-27/6327411.shtml",
+            "https://www.laodongfa.com/hot/7360.html",
+            "https://m.21jingji.com/article/20150416/b35524a457fd394f010ff277920de866.html"
+          ],
+          "searchQueries": [
+            "上海市人力资源和社会保障局 关于公布2013年度本市养老保险个人账户记账利率的通知",
+            "2013年度本市养老保险个人账户记账利率 沪人社基发 上海",
+            "2013年度上海市养老保险个人权益记录单 记账利率"
+          ],
+          "notes": "已定位 2013 年度权益记录单寄发报道，但未找到利率数值；可结合上海人社失效文件目录和 2014 年相邻通知继续追溯。"
+        }
+      },
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shanghai:2013:production-ready-review",
+      "city": "shanghai",
+      "cityName": "上海",
+      "year": 2013,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "上海 2013 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:beijing:city-status-review",
+      "city": "beijing",
+      "cityName": "北京",
+      "type": "city-status-review",
+      "priority": "P2",
+      "title": "北京城市状态复核为 ready",
+      "requiredFields": [],
+      "sourceLeads": {},
+      "sourceStatus": "partial_pending_second_review",
+      "targetFiles": [
+        "data/official/city-params.json",
+        "data/official/city-history-coverage.json"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-params.json 中城市 status 调整为 ready 前，所有年份参数必须完成 production ready 复核",
+        "release gate 可确认该城市允许普通用户测算"
+      ],
+      "notes": "后续城市开放前处理。"
+    },
+    {
+      "id": "data:beijing:2000:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2000,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2000 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2001:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2001,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2001 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2002:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2002,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2002 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2003:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2003,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2003 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2004:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2004,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2004 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2005:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2005,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2005 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2006:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2006,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2006 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2007:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2007,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2007 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2008:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2008,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2008 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2009:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2009,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2009 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2010:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2010,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2010 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2011:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2011,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2011 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2012:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2012,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2012 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2013:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2013,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2013 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2014:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2014,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2014 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2015:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2015,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2015 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2016:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2016,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2016 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2017:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2017,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2017 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2018:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2018,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2018 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2019:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2019,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2019 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2020:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2020,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2020 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2021:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2021,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2021 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2022:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2022,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2022 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2023:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2023,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2023 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2024:backfill-year-params",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2024,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "北京 2024 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:beijing:2025:fill-missing-fields",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2025,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "北京 2025 年缺失字段补齐",
+      "requiredFields": [
+        "averageWage",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:beijing:2025:production-ready-review",
+      "city": "beijing",
+      "cityName": "北京",
+      "year": 2025,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "北京 2025 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:beijing:beijing-benefit-calculation-base-2025:source-production-review",
+      "city": "beijing",
+      "cityName": "北京",
+      "sourceId": "beijing-benefit-calculation-base-2025",
+      "type": "source-production-review",
+      "priority": "P2",
+      "title": "北京引用来源 beijing-benefit-calculation-base-2025 production ready 复核",
+      "requiredFields": [
+        "sourceReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "sources.json 中该 sourceId 的 review.status 标记为 production_ready",
+        "reviewedBy 和 reviewedAt 已填写",
+        "引用该 sourceId 的城市历史参数仍通过 verify:data-readiness"
+      ],
+      "notes": "关于2025年本市参保人员社会保险待遇有关问题的通告"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2025:source-production-review",
+      "city": "beijing",
+      "cityName": "北京",
+      "sourceId": "beijing-contribution-base-2025",
+      "type": "source-production-review",
+      "priority": "P2",
+      "title": "北京引用来源 beijing-contribution-base-2025 production ready 复核",
+      "requiredFields": [
+        "sourceReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "sources.json 中该 sourceId 的 review.status 标记为 production_ready",
+        "reviewedBy 和 reviewedAt 已填写",
+        "引用该 sourceId 的城市历史参数仍通过 verify:data-readiness"
+      ],
+      "notes": "关于2025年度各项社会保险缴费工资基数上下限的通告"
+    },
+    {
+      "id": "data:shenzhen:city-status-review",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "type": "city-status-review",
+      "priority": "P2",
+      "title": "深圳城市状态复核为 ready",
+      "requiredFields": [],
+      "sourceLeads": {},
+      "sourceStatus": "partial_pending_city_applicability_review",
+      "targetFiles": [
+        "data/official/city-params.json",
+        "data/official/city-history-coverage.json"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-params.json 中城市 status 调整为 ready 前，所有年份参数必须完成 production ready 复核",
+        "release gate 可确认该城市允许普通用户测算"
+      ],
+      "notes": "后续城市开放前处理。"
+    },
+    {
+      "id": "data:shenzhen:2000:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2000,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2000 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2001:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2001,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2001 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2002:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2002,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2002 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2003:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2003,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2003 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2004:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2004,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2004 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2005:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2005,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2005 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2006:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2006,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2006 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2007:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2007,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2007 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2008:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2008,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2008 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2009:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2009,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2009 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2010:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2010,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2010 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2011:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2011,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2011 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2012:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2012,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2012 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2013:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2013,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2013 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2014:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2014,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2014 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2015:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2015,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2015 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2016:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2016,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2016 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2017:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2017,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2017 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2018:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2018,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2018 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2019:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2019,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2019 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2020:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2020,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2020 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2021:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2021,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2021 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2022:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2022,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2022 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2023:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2023,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2023 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2024:backfill-year-params",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2024,
+      "type": "backfill-year-params",
+      "priority": "P1",
+      "title": "深圳 2024 年历史参数回补",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee.floor",
+        "contributionBase.employee.ceiling",
+        "contributionBase.flexible.floor",
+        "contributionBase.flexible.ceiling",
+        "rates.employeePersonalRate",
+        "rates.employerRate",
+        "rates.personalAccountCreditRate",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "missing",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "city-history-params.json 存在该年份 yearlyParams 记录",
+        "字段有官方来源 sourceIds 或明确降级策略",
+        "dataQuality.level 不再是 missing",
+        "coverage.missingYears 移除该年份"
+      ],
+      "notes": "2015-2024 回补任务。"
+    },
+    {
+      "id": "data:shenzhen:2025:fill-missing-fields",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2025,
+      "type": "fill-missing-fields",
+      "priority": "P1",
+      "title": "深圳 2025 年缺失字段补齐",
+      "requiredFields": [
+        "averageWage",
+        "flexibleContributionBase",
+        "accountInterestRate"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_city_applicability_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "缺失字段从 dataQuality.missingFields 移除",
+        "字段值、来源、采集说明和复核状态同步更新",
+        "金额 expected values 重新生成并通过测试"
+      ],
+      "notes": "个人账户记账利率缺失会扩大未知账户余额用户的估算误差。"
+    },
+    {
+      "id": "data:shenzhen:2025:production-ready-review",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "year": 2025,
+      "type": "production-ready-review",
+      "priority": "P1",
+      "title": "深圳 2025 年参数 production ready 复核",
+      "requiredFields": [
+        "averageWage",
+        "pensionCalculationBase",
+        "contributionBase.employee",
+        "contributionBase.flexible",
+        "rates"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_city_applicability_review",
+      "targetFiles": [
+        "data/official/city-history-params.json",
+        "data/official/city-history-coverage.json",
+        "data/official/sources.json",
+        "data/generated/shanghai-amount-expected-values.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "关键字段来源已二次复核",
+        "候选来源或空 sourceIds 已补齐",
+        "dataQuality.reviewStatus 标记为 production_ready",
+        "coverage.partialYears 移除该年份并进入 officialCompleteYears"
+      ],
+      "notes": "需优先复核来源字段：averageWage, pensionCalculationBase, contributionBase.employee, contributionBase.flexible, rates。"
+    },
+    {
+      "id": "data:shenzhen:guangdong-pension-base-and-contribution-base-2025:source-production-review",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "sourceId": "guangdong-pension-base-and-contribution-base-2025",
+      "type": "source-production-review",
+      "priority": "P2",
+      "title": "深圳引用来源 guangdong-pension-base-and-contribution-base-2025 production ready 复核",
+      "requiredFields": [
+        "sourceReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_city_applicability_review",
+      "targetFiles": [
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "sources.json 中该 sourceId 的 review.status 标记为 production_ready",
+        "reviewedBy 和 reviewedAt 已填写",
+        "引用该 sourceId 的城市历史参数仍通过 verify:data-readiness"
+      ],
+      "notes": "关于公布2025年职工基本养老保险缴费基数上下限和基本养老金计发基数有关问题的通知"
+    },
+    {
+      "id": "data:shenzhen:shenzhen-pension-calculation-base-2025:source-production-review",
+      "city": "shenzhen",
+      "cityName": "深圳",
+      "sourceId": "shenzhen-pension-calculation-base-2025",
+      "type": "source-production-review",
+      "priority": "P2",
+      "title": "深圳引用来源 shenzhen-pension-calculation-base-2025 production ready 复核",
+      "requiredFields": [
+        "sourceReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "sources.json 中该 sourceId 的 review.status 标记为 production_ready",
+        "reviewedBy 和 reviewedAt 已填写",
+        "引用该 sourceId 的城市历史参数仍通过 verify:data-readiness"
+      ],
+      "notes": "深圳市2025年职工基本养老金计发基数是多少？"
+    },
+    {
+      "id": "data:beijing:beijing-historical-contribution-base-table:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-historical-contribution-base-table",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "历年养老、失业、工伤保险缴费基数上下限、缴费比例一览表",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "北京 2015-2025 缴费基数工作台主要来源。需确认是否为北京人社原始页面镜像或区政府转发页面。"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2020:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-contribution-base-2020",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "2020年度各项社会保险缴费工资基数上下限",
+      "requiredFields": [
+        "sourceUrl",
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_source_url",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "已从北京历年表和公开通告口径录入，待补北京人社原始 URL。"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2021:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-contribution-base-2021",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "2021年度各项社会保险缴费工资基数上下限",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于 2021.07-2022.06 缴费基数。"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2022:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-contribution-base-2022",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "2022年度各项社会保险缴费工资基数上下限",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于 2022.07-2023.06 缴费基数。"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2023:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-contribution-base-2023",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "2023年度各项社会保险缴费工资基数上下限",
+      "requiredFields": [
+        "sourceUrl",
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_source_url",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "已从北京历年表录入，待补北京人社原始 URL。"
+    },
+    {
+      "id": "data:beijing:beijing-contribution-base-2024:source-backlog-review",
+      "city": "beijing",
+      "cityName": "beijing",
+      "sourceId": "beijing-contribution-base-2024",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "关于2024年度各项社会保险缴费工资基数上下限的通告",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于 2024.07-2025.06 缴费基数。"
+    },
+    {
+      "id": "data:guangdong:guangdong-contribution-base-2016:source-backlog-review",
+      "city": "guangdong",
+      "cityName": "guangdong",
+      "sourceId": "guangdong-contribution-base-2016",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "广东省2016社保年度企业职工基本养老保险缴费基数上下限",
+      "requiredFields": [
+        "sourceUrl",
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_source_url",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于深圳早期候选参数映射，需确认深圳适用口径。"
+    },
+    {
+      "id": "data:guangdong:guangdong-contribution-base-2020:source-backlog-review",
+      "city": "guangdong",
+      "cityName": "guangdong",
+      "sourceId": "guangdong-contribution-base-2020",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "广东省2020社保年度企业职工基本养老保险缴费基数上下限",
+      "requiredFields": [
+        "sourceUrl",
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_source_url",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于深圳 2020.07-2021.06 部分参数，需继续复核。"
+    },
+    {
+      "id": "data:guangdong:guangdong-contribution-base-2022:source-backlog-review",
+      "city": "guangdong",
+      "cityName": "guangdong",
+      "sourceId": "guangdong-contribution-base-2022",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "广东省2022社保年度企业职工基本养老保险缴费基数上下限",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于深圳 2022.07-2023.06 部分参数，需继续复核深圳分区口径。"
+    },
+    {
+      "id": "data:guangdong:guangdong-contribution-base-2024:source-backlog-review",
+      "city": "guangdong",
+      "cityName": "guangdong",
+      "sourceId": "guangdong-contribution-base-2024",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "广东省2024年职工基本养老保险缴费基数上下限和基本养老金计发基数有关问题",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于深圳 2024.07-2025.06 缴费基数。"
+    },
+    {
+      "id": "data:shenzhen:shenzhen-contribution-base-lower-adjustment-2024:source-backlog-review",
+      "city": "shenzhen",
+      "cityName": "shenzhen",
+      "sourceId": "shenzhen-contribution-base-lower-adjustment-2024",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "深圳企业职工基本养老保险缴费基数下限有关调整政策解读",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "用于确认深圳 2024-07 起缴费基数下限随广东省最低缴费基数标准调整。"
+    },
+    {
+      "id": "data:shenzhen:shenzhen-pension-calculation-base-2024:source-backlog-review",
+      "city": "shenzhen",
+      "cityName": "shenzhen",
+      "sourceId": "shenzhen-pension-calculation-base-2024",
+      "type": "source-backlog-review",
+      "priority": "P2",
+      "title": "深圳市2024年职工基本养老金计发基数是多少？",
+      "requiredFields": [
+        "secondReview"
+      ],
+      "sourceLeads": {},
+      "sourceStatus": "pending_second_review",
+      "targetFiles": [
+        "data/official/source-backlog-2026-05-28.json",
+        "data/official/sources.json",
+        "data/official/city-history-params.json",
+        "miniprogram/data/runtime-data.js"
+      ],
+      "verificationCommands": [
+        "npm run data:backfill-tasks",
+        "npm run verify:data",
+        "npm run verify:data-readiness"
+      ],
+      "acceptance": [
+        "补齐或确认官方 URL",
+        "source-backlog 状态不再是 pending_source_url / pending_second_review",
+        "必要时并入 data/official/sources.json",
+        "关联到 city-history-params.json 中引用该来源的 sourceIds 并同步 runtime-data.js"
+      ],
+      "notes": "官方问答页面。"
+    }
+  ]
+}
