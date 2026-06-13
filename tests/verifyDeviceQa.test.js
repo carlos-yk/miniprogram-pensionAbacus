@@ -22,6 +22,7 @@ test('device QA verifier prints actionable evidence instructions when evidence i
   assert.equal(result.status, 1);
   assert.match(output, /Device QA evidence blockers/);
   assert.match(output, /Device QA next steps/);
+  assert.match(output, /npm run qa:devtools-login/);
   assert.match(output, /npm run qa:device-evidence:init/);
   assert.match(output, /npm run verify:devtools:preview/);
   assert.match(output, /qa\/device-qa-evidence\.example\.json/);
@@ -154,9 +155,13 @@ test('device QA evidence initializer creates a conservative draft without overwr
   assert.match(secondOutput, /--force/);
 });
 
-test('package exposes a device QA evidence initializer command', () => {
+test('package exposes device QA helper commands', () => {
   const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
+  assert.equal(
+    packageJson.scripts['qa:devtools-login'],
+    'node tests/devtools-login.js'
+  );
   assert.equal(
     packageJson.scripts['qa:device-evidence:init'],
     'node tests/init-device-qa-evidence.js'

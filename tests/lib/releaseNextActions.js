@@ -107,6 +107,7 @@ function buildReleaseNextActions({
       blockers: qaBlockers,
       warnings: qaWarnings,
       commands: ['npm run verify:devtools:preview', 'npm run verify:device-qa'],
+      loginHelperCommand: 'npm run qa:devtools-login',
       loginCommand: devtoolsIssues && devtoolsIssues.loginCommand,
       previewCommand: devtoolsIssues && devtoolsIssues.previewCommand,
       draftCommand: 'npm run qa:device-evidence:init',
@@ -143,6 +144,9 @@ function printReleaseNextActions(actions, logger = console.error) {
     }
     if (action.commands && action.commands.length > 0) {
       logger(`  Commands: ${action.commands.join(' && ')}`);
+    }
+    if (action.loginHelperCommand) {
+      logger(`  Login helper: ${action.loginHelperCommand}`);
     }
     if (action.loginCommand) {
       logger(`  Login command: ${action.loginCommand}`);

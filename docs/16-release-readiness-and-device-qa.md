@@ -108,6 +108,12 @@ npm run verify:data-backfill-tasks
 npm run verify:devtools
 ```
 
+生成登录二维码：
+
+```bash
+npm run qa:devtools-login
+```
+
 生成预览二维码：
 
 ```bash

@@ -81,6 +81,7 @@ npm run verify:devtools
 npm run verify:assets
 npm run verify:data-readiness
 npm run verify:data-backfill-tasks
+npm run qa:devtools-login
 npm run qa:device-evidence:init
 npm run verify:qa-privacy
 npm run verify:device-qa

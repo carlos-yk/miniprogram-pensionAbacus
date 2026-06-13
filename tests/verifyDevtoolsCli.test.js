@@ -28,11 +28,43 @@ function createFailingPreviewCli() {
   return cliPath;
 }
 
+function createLoginCli() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-devtools-cli-'));
+  const cliPath = path.join(dir, 'cli');
+  fs.writeFileSync(cliPath, [
+    '#!/bin/sh',
+    'if [ "$1" = "--help" ]; then exit 0; fi',
+    'output=""',
+    'result=""',
+    'while [ "$#" -gt 0 ]; do',
+    '  case "$1" in',
+    '    --qr-output) output="$2"; shift 2 ;;',
+    '    --result-output) result="$2"; shift 2 ;;',
+    '    *) shift ;;',
+    '  esac',
+    'done',
+    'mkdir -p "$(dirname "$output")"',
+    'printf "fake login qr" > "$output"',
+    'printf "{\\"login\\":true}" > "$result"',
+    'exit 0'
+  ].join('\n'));
+  fs.chmodSync(cliPath, 0o755);
+  return cliPath;
+}
+
 function createPreviewOutputEnv() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-devtools-preview-'));
   return {
     PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT: path.join(dir, 'preview.png'),
     PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT: path.join(dir, 'preview.json')
+  };
+}
+
+function createLoginOutputEnv() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-devtools-login-'));
+  return {
+    PENSION_DEVTOOLS_LOGIN_QR_OUTPUT: path.join(dir, 'login.png'),
+    PENSION_DEVTOOLS_LOGIN_RESULT_OUTPUT: path.join(dir, 'login-result.json')
   };
 }
 
@@ -120,6 +152,26 @@ test('devtools preview verifier preserves existing artifacts when preview genera
   assert.match(output, /WeChat DevTools preview failed/);
   assert.equal(fs.readFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT, 'utf8'), 'existing qr');
   assert.equal(fs.readFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT, 'utf8'), '{"existing":true}');
+});
+
+test('devtools login helper generates a local QR and result file', () => {
+  const fakeCli = createLoginCli();
+  const loginEnv = createLoginOutputEnv();
+  const result = spawnSync(process.execPath, ['tests/devtools-login.js'], {
+    cwd: root,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      WECHAT_DEVTOOLS_CLI: fakeCli,
+      ...loginEnv
+    }
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 0, output);
+  assert.match(output, /OK WeChat DevTools login QR generated/);
+  assert.equal(fs.readFileSync(loginEnv.PENSION_DEVTOOLS_LOGIN_QR_OUTPUT, 'utf8'), 'fake login qr');
+  assert.equal(fs.readFileSync(loginEnv.PENSION_DEVTOOLS_LOGIN_RESULT_OUTPUT, 'utf8'), '{"login":true}');
 });
 
 test('devtools diagnostics report stale IDE port file', () => {

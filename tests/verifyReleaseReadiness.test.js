@@ -56,6 +56,7 @@ test('release status json exposes owner-based next actions', () => {
   ));
   assert.ok(dataBackfillSection.passed.some((item) => /no P0 data backfill tasks/.test(item)));
   assert.equal(qaAction.evidencePath, 'qa/device-qa-evidence.json');
+  assert.equal(qaAction.loginHelperCommand, 'npm run qa:devtools-login');
   assert.equal(qaAction.draftCommand, 'npm run qa:device-evidence:init');
   assert.ok(qaAction.artifactRequirements.includes('devtools.qrOutput'));
   assert.ok(qaAction.artifactRequirements.includes('device.screenshot'));

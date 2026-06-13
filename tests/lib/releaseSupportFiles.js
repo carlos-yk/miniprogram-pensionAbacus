@@ -12,6 +12,7 @@ const fixedRequiredReleaseSupportFiles = [
   'qa/device-qa-evidence.example.json',
   'data/generated/city-data-backfill-tasks.json',
   'data/generated/generate-city-data-backfill-tasks.mjs',
+  'tests/devtools-login.js',
   'tests/init-device-qa-evidence.js',
   'tests/print-release-status.js',
   'tests/verify-assets.js',

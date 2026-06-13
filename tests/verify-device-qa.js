@@ -13,6 +13,7 @@ function printNextSteps() {
 
   console.error('Device QA next steps:');
   console.error('- Run npm run verify:devtools to confirm the CLI path.');
+  console.error('- If DevTools is not logged in, run npm run qa:devtools-login and scan the generated QR code.');
   console.error('- Run npm run qa:device-evidence:init to create a conservative evidence draft.');
   console.error('- Run npm run verify:devtools:preview on a non-sandboxed, logged-in WeChat DevTools desktop.');
   console.error(`- Use ${examplePath} as the template and fill ${evidencePath} after real device QA.`);
