@@ -4,6 +4,10 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const {
+  collectIdePortDiagnostics,
+  readIdePort
+} = require('./lib/devtoolsPreconditions');
 
 const root = path.resolve(__dirname, '..');
 
@@ -71,4 +75,37 @@ test('devtools preview verifier fails when preview artifacts are not generated',
   assert.match(output, /pension-abacus-preview\.png/);
   assert.match(output, /pension-abacus-preview\.json/);
   assert.match(output, /DevTools is logged in/);
+});
+
+test('devtools diagnostics report stale IDE port file', () => {
+  const diagnostics = collectIdePortDiagnostics({
+    idePortFile: '/tmp/fake-devtools/.ide',
+    readIdePortFn: () => 9420,
+    isPortListening: () => false
+  });
+
+  assert.equal(diagnostics.idePort, 9420);
+  assert.ok(diagnostics.warnings.some((warning) => /no local service is listening/.test(warning)));
+});
+
+test('devtools diagnostics report listening IDE port', () => {
+  const diagnostics = collectIdePortDiagnostics({
+    idePortFile: '/tmp/fake-devtools/.ide',
+    readIdePortFn: () => 9420,
+    isPortListening: () => true
+  });
+
+  assert.equal(diagnostics.idePort, 9420);
+  assert.ok(diagnostics.passed.some((item) => /IDE service port is listening/.test(item)));
+  assert.deepEqual(diagnostics.warnings, []);
+});
+
+test('devtools diagnostics handle missing IDE port file', () => {
+  const missingFile = path.join(os.tmpdir(), `missing-devtools-${Date.now()}.ide`);
+
+  assert.equal(readIdePort({ idePortFile: missingFile }), null);
+  const diagnostics = collectIdePortDiagnostics({ idePortFile: missingFile });
+
+  assert.equal(diagnostics.idePort, null);
+  assert.ok(diagnostics.warnings.some((warning) => /port file is missing or invalid/.test(warning)));
 });

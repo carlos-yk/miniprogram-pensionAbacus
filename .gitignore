@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log*
 .env
 .env.*
+project.private.config.json
 miniprogram/project.private.config.json
 qa/device-qa-evidence.json
 qa/artifacts/

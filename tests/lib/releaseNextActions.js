@@ -1,5 +1,5 @@
 const {
-  getLatestWatchedFileChange,
+  getLatestWatchedContentChange,
   requiredCheckLabels,
   requiredChecks,
   requiredPlatforms
@@ -97,7 +97,7 @@ function buildReleaseNextActions({
   ];
 
   if (qaBlockers.length > 0 || qaWarnings.length > 0) {
-    const latestChange = getLatestWatchedFileChange();
+    const latestChange = getLatestWatchedContentChange();
 
     actions.push({
       owner: 'qa',

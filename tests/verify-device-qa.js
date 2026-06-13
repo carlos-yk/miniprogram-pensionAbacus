@@ -1,6 +1,6 @@
 const {
   collectDeviceQaEvidenceIssues,
-  getLatestWatchedFileChange,
+  getLatestWatchedContentChange,
   requiredCheckLabels,
   requiredChecks,
   requiredPlatforms
@@ -9,7 +9,7 @@ const {
 const { evidencePath, examplePath, blockers, warnings } = collectDeviceQaEvidenceIssues();
 
 function printNextSteps() {
-  const latestChange = getLatestWatchedFileChange();
+  const latestChange = getLatestWatchedContentChange();
 
   console.error('Device QA next steps:');
   console.error('- Run npm run verify:devtools to confirm the CLI path.');

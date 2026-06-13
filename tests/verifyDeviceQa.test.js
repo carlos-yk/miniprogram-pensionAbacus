@@ -6,6 +6,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   collectDeviceQaEvidenceContentIssues,
+  getLatestWatchedContentChange,
   requiredChecks
 } = require('./lib/deviceQaEvidence');
 
@@ -160,6 +161,28 @@ test('package exposes a device QA evidence initializer command', () => {
     packageJson.scripts['qa:device-evidence:init'],
     'node tests/init-device-qa-evidence.js'
   );
+});
+
+test('device QA freshness uses committed content time for clean watched files', () => {
+  const latestChange = getLatestWatchedContentChange({
+    hasDiff: () => false,
+    getCommittedChangeMs: (file) => file === 'project.config.json'
+      ? Date.parse('2026-06-01T00:00:00.000Z')
+      : Date.parse('2026-05-01T00:00:00.000Z')
+  });
+
+  assert.equal(latestChange.path, 'project.config.json');
+  assert.equal(latestChange.mtimeMs, Date.parse('2026-06-01T00:00:00.000Z'));
+});
+
+test('device QA freshness uses filesystem mtime when watched file has content diff', () => {
+  const latestChange = getLatestWatchedContentChange({
+    hasDiff: (file) => file === 'project.config.json',
+    getCommittedChangeMs: () => Date.parse('2020-01-01T00:00:00.000Z')
+  });
+
+  assert.equal(latestChange.path, 'project.config.json');
+  assert.ok(latestChange.mtimeMs > Date.parse('2020-01-01T00:00:00.000Z'));
 });
 
 test('QA privacy verifier protects local evidence while keeping release assets trackable', () => {

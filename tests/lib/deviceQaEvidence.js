@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 
 const { defaultReleaseCity } = require('./cityDataReadiness');
 
@@ -119,6 +120,64 @@ function getLatestWatchedFileChange() {
   return latest;
 }
 
+function hasGitDiff(relativePath) {
+  try {
+    execFileSync('git', ['diff', '--quiet', '--', relativePath], {
+      cwd: root,
+      stdio: 'ignore'
+    });
+    execFileSync('git', ['diff', '--cached', '--quiet', '--', relativePath], {
+      cwd: root,
+      stdio: 'ignore'
+    });
+    return false;
+  } catch (error) {
+    return true;
+  }
+}
+
+function getLastCommittedChangeMs(relativePath) {
+  try {
+    const output = execFileSync('git', ['log', '-1', '--format=%cI', '--', relativePath], {
+      cwd: root,
+      encoding: 'utf8'
+    }).trim();
+    const timestamp = Date.parse(output);
+    return Number.isFinite(timestamp) ? timestamp : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function getLatestWatchedContentChange({
+  hasDiff = hasGitDiff,
+  getCommittedChangeMs = getLastCommittedChangeMs
+} = {}) {
+  const files = [];
+  for (const watchedPath of watchedPaths) {
+    walkFiles(watchedPath, files);
+  }
+
+  let latest = null;
+  for (const file of files) {
+    const stat = fs.statSync(path.join(root, file));
+    const committedChangeMs = getCommittedChangeMs(file);
+    const contentChangeMs = hasDiff(file) || committedChangeMs === null
+      ? stat.mtimeMs
+      : committedChangeMs;
+
+    if (!latest || contentChangeMs > latest.mtimeMs) {
+      latest = {
+        path: file,
+        mtimeMs: contentChangeMs,
+        mtimeIso: new Date(contentChangeMs).toISOString()
+      };
+    }
+  }
+
+  return latest;
+}
+
 function addArtifactBlockers(blockers, label, artifactPath, artifactExists) {
   if (!isFilled(artifactPath) || hasPlaceholder(artifactPath)) {
     blockers.push(`Device QA evidence must include ${label}`);
@@ -133,7 +192,7 @@ function addArtifactBlockers(blockers, label, artifactPath, artifactExists) {
 function collectDeviceQaEvidenceContentIssues(
   evidence,
   {
-    latestChange = getLatestWatchedFileChange(),
+    latestChange = getLatestWatchedContentChange(),
     artifactExists = defaultArtifactExists
   } = {}
 ) {
@@ -242,6 +301,7 @@ module.exports = {
   collectDeviceQaEvidenceIssues,
   evidencePath,
   examplePath,
+  getLatestWatchedContentChange,
   getLatestWatchedFileChange,
   requiredCheckLabels,
   requiredChecks,
