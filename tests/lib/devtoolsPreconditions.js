@@ -9,6 +9,14 @@ const defaultIdePortFile = path.join(
   os.homedir(),
   'Library/Application Support/微信开发者工具/50a7d9210159a32f006158795f893857/Default/.ide'
 );
+const defaultPreviewQrOutput = process.env.PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT
+  || path.join(root, 'qa/artifacts/devtools/preview.png');
+const defaultPreviewInfoOutput = process.env.PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT
+  || path.join(root, 'qa/artifacts/devtools/preview.json');
+const defaultLoginQrOutput = process.env.PENSION_DEVTOOLS_LOGIN_QR_OUTPUT
+  || path.join(root, 'qa/artifacts/devtools/login.png');
+const defaultLoginResultOutput = process.env.PENSION_DEVTOOLS_LOGIN_RESULT_OUTPUT
+  || path.join(root, 'qa/artifacts/devtools/login-result.json');
 
 function getPreviewArgs() {
   return [
@@ -18,9 +26,24 @@ function getPreviewArgs() {
     '--qr-format',
     'image',
     '--qr-output',
-    '/tmp/pension-abacus-preview.png',
+    defaultPreviewQrOutput,
     '--info-output',
-    '/tmp/pension-abacus-preview.json',
+    defaultPreviewInfoOutput,
+    '--port',
+    '9420',
+    '--disable-gpu'
+  ];
+}
+
+function getLoginArgs() {
+  return [
+    'login',
+    '--qr-format',
+    'image',
+    '--qr-output',
+    defaultLoginQrOutput,
+    '--result-output',
+    defaultLoginResultOutput,
     '--port',
     '9420',
     '--disable-gpu'
@@ -33,6 +56,10 @@ function shellQuote(value) {
 
 function buildPreviewCommand(cliPath = defaultDevtoolsCliPath) {
   return [cliPath, ...getPreviewArgs()].map(shellQuote).join(' ');
+}
+
+function buildLoginCommand(cliPath = defaultDevtoolsCliPath) {
+  return [cliPath, ...getLoginArgs()].map(shellQuote).join(' ');
 }
 
 function hasCommand(command) {
@@ -103,11 +130,65 @@ function collectIdePortDiagnostics({
   return { idePort, idePortFile, warnings, passed };
 }
 
+function collectLoginDiagnostics({ cliPath = defaultDevtoolsCliPath, execFile = execFileSync } = {}) {
+  try {
+    const output = execFile(cliPath, ['islogin', '--port', '9420', '--disable-gpu'], {
+      cwd: root,
+      encoding: 'utf8',
+      timeout: 8000,
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
+    const jsonLine = String(output)
+      .trim()
+      .split(/\r?\n/)
+      .find((line) => line.trim().startsWith('{') && line.includes('"login"'));
+
+    if (!jsonLine) {
+      return {
+        isLoggedIn: null,
+        warnings: ['Unable to confirm WeChat DevTools login status from CLI output'],
+        blockers: [],
+        passed: []
+      };
+    }
+
+    const status = JSON.parse(jsonLine);
+    if (status.login === true) {
+      return {
+        isLoggedIn: true,
+        warnings: [],
+        blockers: [],
+        passed: ['WeChat DevTools login status is active']
+      };
+    }
+
+    return {
+      isLoggedIn: false,
+      warnings: [],
+      blockers: ['WeChat DevTools is not logged in; run the login command and scan the QR code before preview/device QA'],
+      passed: []
+    };
+  } catch (error) {
+    return {
+      isLoggedIn: null,
+      warnings: [`Unable to confirm WeChat DevTools login status: ${error.message}`],
+      blockers: [],
+      passed: []
+    };
+  }
+}
+
 function collectDevtoolsPreconditionIssues({ cliPath = defaultDevtoolsCliPath } = {}) {
   const blockers = [];
   const warnings = [];
   const passed = [];
   const idePortDiagnostics = collectIdePortDiagnostics();
+  let loginDiagnostics = {
+    isLoggedIn: null,
+    blockers: [],
+    warnings: [],
+    passed: []
+  };
 
   if (!fs.existsSync(cliPath)) {
     blockers.push(`WeChat DevTools CLI missing: ${cliPath}`);
@@ -118,6 +199,7 @@ function collectDevtoolsPreconditionIssues({ cliPath = defaultDevtoolsCliPath } 
         stdio: 'ignore'
       });
       passed.push(`WeChat DevTools CLI exists: ${cliPath}`);
+      loginDiagnostics = collectLoginDiagnostics({ cliPath });
     } catch (error) {
       blockers.push(`WeChat DevTools CLI exists but cannot run --help: ${cliPath}`);
     }
@@ -129,13 +211,19 @@ function collectDevtoolsPreconditionIssues({ cliPath = defaultDevtoolsCliPath } 
     warnings.push('gstack is not available in this environment');
   }
   passed.push(...idePortDiagnostics.passed);
+  passed.push(...loginDiagnostics.passed);
   warnings.push(...idePortDiagnostics.warnings);
+  warnings.push(...loginDiagnostics.warnings);
+  blockers.push(...loginDiagnostics.blockers);
   warnings.push('preview and real-device QA must run on a non-sandboxed logged-in desktop');
 
   return {
     cliPath,
     idePort: idePortDiagnostics.idePort,
     idePortFile: idePortDiagnostics.idePortFile,
+    isLoggedIn: loginDiagnostics.isLoggedIn,
+    loginArgs: getLoginArgs(),
+    loginCommand: buildLoginCommand(cliPath),
     previewArgs: getPreviewArgs(),
     previewCommand: buildPreviewCommand(cliPath),
     blockers,
@@ -145,11 +233,18 @@ function collectDevtoolsPreconditionIssues({ cliPath = defaultDevtoolsCliPath } 
 }
 
 module.exports = {
+  buildLoginCommand,
   buildPreviewCommand,
+  collectLoginDiagnostics,
   collectIdePortDiagnostics,
   collectDevtoolsPreconditionIssues,
   defaultDevtoolsCliPath,
   defaultIdePortFile,
+  defaultLoginQrOutput,
+  defaultLoginResultOutput,
+  defaultPreviewInfoOutput,
+  defaultPreviewQrOutput,
+  getLoginArgs,
   getPreviewArgs,
   isTcpPortListeningSync,
   readIdePort,

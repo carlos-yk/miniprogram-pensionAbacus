@@ -132,8 +132,8 @@ test('device QA evidence initializer creates a conservative draft without overwr
   assert.equal(draft.releaseCity, 'shanghai');
   assert.equal(draft.testedAt, '2026-06-05T08:00:00.000Z');
   assert.equal(draft.devtools.previewGenerated, false);
-  assert.equal(draft.devtools.qrOutput, '/tmp/pension-abacus-preview.png');
-  assert.equal(draft.devtools.infoOutput, '/tmp/pension-abacus-preview.json');
+  assert.match(draft.devtools.qrOutput, /qa\/artifacts\/devtools\/preview\.png$/);
+  assert.match(draft.devtools.infoOutput, /qa\/artifacts\/devtools\/preview\.json$/);
   assert.deepEqual(Object.keys(draft.checks).sort(), requiredChecks.slice().sort());
   for (const check of requiredChecks) {
     assert.equal(draft.checks[check], false, `${check} should default to false`);

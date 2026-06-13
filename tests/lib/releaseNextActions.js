@@ -107,6 +107,7 @@ function buildReleaseNextActions({
       blockers: qaBlockers,
       warnings: qaWarnings,
       commands: ['npm run verify:devtools:preview', 'npm run verify:device-qa'],
+      loginCommand: devtoolsIssues && devtoolsIssues.loginCommand,
       previewCommand: devtoolsIssues && devtoolsIssues.previewCommand,
       draftCommand: 'npm run qa:device-evidence:init',
       evidencePath: deviceQaIssues.evidencePath,
@@ -142,6 +143,9 @@ function printReleaseNextActions(actions, logger = console.error) {
     }
     if (action.commands && action.commands.length > 0) {
       logger(`  Commands: ${action.commands.join(' && ')}`);
+    }
+    if (action.loginCommand) {
+      logger(`  Login command: ${action.loginCommand}`);
     }
     if (action.previewCommand) {
       logger(`  Preview command: ${action.previewCommand}`);

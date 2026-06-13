@@ -115,6 +115,8 @@ npm run verify:devtools:preview
 ```
 
 `verify:devtools:preview` 需要在非沙箱、微信开发者工具已登录且允许本地自动化监听端口的桌面环境执行。
+若 `release:status` 提示微信开发者工具未登录，先执行输出中的 `Login command` 并扫码登录，再重新生成预览。
+预览二维码和预览信息会生成到 `qa/artifacts/devtools/preview.png` 与 `qa/artifacts/devtools/preview.json`；该目录被 git 忽略，只作为本机 QA 证据使用。
 
 真机验收证据检查：
 

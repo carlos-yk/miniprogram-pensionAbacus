@@ -6,8 +6,8 @@
   "devtools": {
     "cliPath": "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
     "previewGenerated": false,
-    "qrOutput": "/tmp/pension-abacus-preview.png",
-    "infoOutput": "/tmp/pension-abacus-preview.json"
+    "qrOutput": "qa/artifacts/devtools/preview.png",
+    "infoOutput": "qa/artifacts/devtools/preview.json"
   },
   "devices": [
     {

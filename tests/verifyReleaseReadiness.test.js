@@ -59,8 +59,10 @@ test('release status json exposes owner-based next actions', () => {
   assert.equal(qaAction.draftCommand, 'npm run qa:device-evidence:init');
   assert.ok(qaAction.artifactRequirements.includes('devtools.qrOutput'));
   assert.ok(qaAction.artifactRequirements.includes('device.screenshot'));
+  assert.match(qaAction.loginCommand, /login/);
+  assert.match(qaAction.loginCommand, /qa\/artifacts\/devtools\/login\.png/);
   assert.match(qaAction.previewCommand, /preview/);
-  assert.match(qaAction.previewCommand, /pension-abacus-preview\.png/);
+  assert.match(qaAction.previewCommand, /qa\/artifacts\/devtools\/preview\.png/);
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'noForbiddenCompetitionCopy'));
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'shanghaiAccountLookupGuideVisible'));
   assert.ok(qaAction.requiredChecks.some((check) => check.key === 'aboutDataSourceAndDisclaimerVisible'));
@@ -82,7 +84,7 @@ test('release next actions include git command when release files are not clean'
       remainingHiddenTasks: 0,
       reportPath: 'data/generated/city-data-backfill-tasks.json'
     },
-    devtoolsIssues: { blockers: [], warnings: [], previewCommand: 'preview command' },
+    devtoolsIssues: { blockers: [], warnings: [], loginCommand: 'login command', previewCommand: 'preview command' },
     deviceQaIssues: {
       blockers: [],
       warnings: [],

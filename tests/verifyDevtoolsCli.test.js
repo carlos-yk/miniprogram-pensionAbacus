@@ -6,6 +6,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   collectIdePortDiagnostics,
+  collectLoginDiagnostics,
   readIdePort
 } = require('./lib/devtoolsPreconditions');
 
@@ -19,6 +20,22 @@ function createFakeCli() {
   return cliPath;
 }
 
+function createFailingPreviewCli() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-devtools-cli-'));
+  const cliPath = path.join(dir, 'cli');
+  fs.writeFileSync(cliPath, '#!/bin/sh\nif [ "$1" = "--help" ]; then exit 0; fi\necho "preview failed" >&2\nexit 1\n');
+  fs.chmodSync(cliPath, 0o755);
+  return cliPath;
+}
+
+function createPreviewOutputEnv() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-devtools-preview-'));
+  return {
+    PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT: path.join(dir, 'preview.png'),
+    PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT: path.join(dir, 'preview.json')
+  };
+}
+
 test('devtools verifier prints a copyable preview command without launching preview', () => {
   const fakeCli = createFakeCli();
   const result = spawnSync(process.execPath, ['tests/verify-devtools-cli.js'], {
@@ -26,7 +43,8 @@ test('devtools verifier prints a copyable preview command without launching prev
     encoding: 'utf8',
     env: {
       ...process.env,
-      WECHAT_DEVTOOLS_CLI: fakeCli
+      WECHAT_DEVTOOLS_CLI: fakeCli,
+      ...createPreviewOutputEnv()
     }
   });
   const output = `${result.stdout}\n${result.stderr}`;
@@ -36,8 +54,9 @@ test('devtools verifier prints a copyable preview command without launching prev
   assert.match(output, /Preview command/);
   assert.match(output, /preview/);
   assert.match(output, /--project/);
-  assert.match(output, /pension-abacus-preview\.png/);
-  assert.match(output, /pension-abacus-preview\.json/);
+  assert.match(output, /pension-devtools-preview-/);
+  assert.match(output, /preview\.png/);
+  assert.match(output, /preview\.json/);
   assert.match(output, /non-sandboxed, logged-in desktop/);
 });
 
@@ -65,16 +84,42 @@ test('devtools preview verifier fails when preview artifacts are not generated',
     encoding: 'utf8',
     env: {
       ...process.env,
-      WECHAT_DEVTOOLS_CLI: fakeCli
+      WECHAT_DEVTOOLS_CLI: fakeCli,
+      ...createPreviewOutputEnv()
     }
   });
   const output = `${result.stdout}\n${result.stderr}`;
 
   assert.equal(result.status, 1);
   assert.match(output, /WeChat DevTools preview artifacts missing/);
-  assert.match(output, /pension-abacus-preview\.png/);
-  assert.match(output, /pension-abacus-preview\.json/);
+  assert.match(output, /pension-devtools-preview-/);
+  assert.match(output, /preview\.png/);
+  assert.match(output, /preview\.json/);
   assert.match(output, /DevTools is logged in/);
+});
+
+test('devtools preview verifier preserves existing artifacts when preview generation fails', () => {
+  const fakeCli = createFailingPreviewCli();
+  const previewEnv = createPreviewOutputEnv();
+  fs.mkdirSync(path.dirname(previewEnv.PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT), { recursive: true });
+  fs.writeFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT, 'existing qr');
+  fs.writeFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT, '{"existing":true}');
+
+  const result = spawnSync(process.execPath, ['tests/verify-devtools-cli.js', '--preview'], {
+    cwd: root,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      WECHAT_DEVTOOLS_CLI: fakeCli,
+      ...previewEnv
+    }
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 1);
+  assert.match(output, /WeChat DevTools preview failed/);
+  assert.equal(fs.readFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_QR_OUTPUT, 'utf8'), 'existing qr');
+  assert.equal(fs.readFileSync(previewEnv.PENSION_DEVTOOLS_PREVIEW_INFO_OUTPUT, 'utf8'), '{"existing":true}');
 });
 
 test('devtools diagnostics report stale IDE port file', () => {
@@ -108,4 +153,15 @@ test('devtools diagnostics handle missing IDE port file', () => {
 
   assert.equal(diagnostics.idePort, null);
   assert.ok(diagnostics.warnings.some((warning) => /port file is missing or invalid/.test(warning)));
+});
+
+test('devtools diagnostics block release when CLI login is expired', () => {
+  const cliPath = process.execPath;
+  const diagnostics = collectLoginDiagnostics({
+    cliPath,
+    execFile: () => '- preparing\n{"login":false}\n✔ islogin\n'
+  });
+
+  assert.equal(diagnostics.isLoggedIn, false);
+  assert.ok(diagnostics.blockers.some((item) => /not logged in/.test(item)));
 });
