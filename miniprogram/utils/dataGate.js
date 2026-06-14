@@ -31,6 +31,9 @@ const CITY_STATUS_META = {
 };
 
 const REQUIRED_REVIEW_STATUS = 'production_ready';
+const NON_BLOCKING_HISTORY_MISSING_FIELDS = new Set([
+  'accountInterestRate'
+]);
 
 const HISTORY_BACKFILL_META = {
   status: 'history_backfilling',
@@ -90,6 +93,28 @@ function rangeYears(range) {
   return years;
 }
 
+function formatYearRange(years) {
+  if (!years || years.length === 0) return '';
+  const sorted = years.slice().sort((a, b) => a - b);
+  const ranges = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+
+  for (let index = 1; index < sorted.length; index += 1) {
+    const year = sorted[index];
+    if (year === prev + 1) {
+      prev = year;
+      continue;
+    }
+    ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+    start = year;
+    prev = year;
+  }
+
+  ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+  return ranges.join('、');
+}
+
 function getCityYearlyParams(city) {
   const history = cityHistoryParams.cities[city];
   if (!history || !Array.isArray(history.yearlyParams)) return [];
@@ -144,16 +169,46 @@ function isYearParamProductionReady(yearParam) {
   return dataQuality.reviewStatus === REQUIRED_REVIEW_STATUS && missingFields.length === 0;
 }
 
-function getUnsupportedPaidHistoryYears({
+function getYearParamHistoryRisk(yearParam) {
+  if (!yearParam) {
+    return {
+      blocking: true,
+      missingFields: ['yearParam']
+    };
+  }
+
+  const dataQuality = yearParam.dataQuality || {};
+  const missingFields = dataQuality.missingFields || [];
+  const reviewStatus = dataQuality.reviewStatus || 'pending_review';
+  const hasBlockingMissingField = missingFields.some((field) => !NON_BLOCKING_HISTORY_MISSING_FIELDS.has(field));
+
+  return {
+    blocking: hasBlockingMissingField,
+    missingFields,
+    reviewStatus
+  };
+}
+
+function collectPaidHistoryRisk({
   city,
   paidMonths,
   currentMonth = features.calculationAsOfMonth
 }) {
   const months = Math.max(0, Number(paidMonths || 0));
   const currentParam = getCityCurrentYearParam(city);
-  if (!city || months === 0 || !currentParam) return [];
+  const riskByYear = new Map();
 
-  const unsupportedYears = new Set();
+  if (!city || months === 0 || !currentParam) {
+    return {
+      hasRisk: false,
+      blocking: false,
+      softYears: [],
+      blockingYears: [],
+      years: [],
+      message: ''
+    };
+  }
+
   const currentMonthIndex = monthIndex(currentMonth);
 
   for (let offset = months; offset > 0; offset -= 1) {
@@ -161,15 +216,60 @@ function getUnsupportedPaidHistoryYears({
     const yearParam = getYearParamForMonth(city, paidMonth, currentParam);
 
     if (!isYearParamProductionReady(yearParam)) {
-      unsupportedYears.add(yearParam ? yearParam.year : yearFromMonthIndex(monthIndex(paidMonth)));
+      const year = yearParam ? yearParam.year : yearFromMonthIndex(monthIndex(paidMonth));
+      const risk = getYearParamHistoryRisk(yearParam);
+      const existing = riskByYear.get(year) || {
+        year,
+        blocking: false,
+        missingFields: new Set(),
+        reviewStatuses: new Set()
+      };
+
+      existing.blocking = existing.blocking || risk.blocking;
+      for (const field of risk.missingFields) existing.missingFields.add(field);
+      existing.reviewStatuses.add(risk.reviewStatus);
+      riskByYear.set(year, existing);
     }
   }
 
-  return Array.from(unsupportedYears).sort((a, b) => a - b);
+  const risks = Array.from(riskByYear.values())
+    .map((item) => ({
+      year: item.year,
+      blocking: item.blocking,
+      missingFields: Array.from(item.missingFields),
+      reviewStatuses: Array.from(item.reviewStatuses)
+    }))
+    .sort((a, b) => a.year - b.year);
+  const blockingYears = risks.filter((item) => item.blocking).map((item) => item.year);
+  const softYears = risks.filter((item) => !item.blocking).map((item) => item.year);
+
+  return {
+    hasRisk: risks.length > 0,
+    blocking: blockingYears.length > 0,
+    softYears,
+    blockingYears,
+    years: risks.map((item) => item.year),
+    risks,
+    message: risks.length > 0
+      ? `这组缴费年限会用到 ${formatYearRange(risks.map((item) => item.year))} 年历史参数，部分数据仍在核对。`
+      : ''
+  };
+}
+
+function getUnsupportedPaidHistoryYears(args) {
+  return collectPaidHistoryRisk(args).years;
+}
+
+function getBlockingPaidHistoryYears(args) {
+  return collectPaidHistoryRisk(args).blockingYears;
+}
+
+function getPaidHistoryRisk(args) {
+  return collectPaidHistoryRisk(args);
 }
 
 function isPaidHistorySupported(args) {
-  return getUnsupportedPaidHistoryYears(args).length === 0;
+  return getBlockingPaidHistoryYears(args).length === 0;
 }
 
 function getPaidMonthsFromRecord(record) {
@@ -331,10 +431,12 @@ module.exports = {
   canUseCachedEstimate,
   evaluateCityGate,
   getBenchmarkGate,
+  getBlockingPaidHistoryYears,
   getCityCurrentYearParam,
   getCityGateOption,
   getCityGateOptions,
   getDisabledCitySubmitLabel,
+  getPaidHistoryRisk,
   getUnsupportedPaidHistoryYears,
   isPaidHistorySupported
 };

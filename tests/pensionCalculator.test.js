@@ -105,6 +105,26 @@ test('Shanghai estimates use available yearly params for historical paid months'
   assert.ok(result.assumptions.some((item) => item.includes('分段估算')));
 });
 
+test('Shanghai long contribution estimates continue with non-core historical parameter warning', () => {
+  const result = calculatePensionEstimate({
+    city: 'shanghai',
+    workerType: 'male',
+    birthMonth: '1968-06',
+    paidMonths: 20 * 12,
+    contributionInput: { type: 'ratio', contributionIndex: 1 },
+    personalAccount: { known: false, balance: null },
+    currentMonth: '2026-05'
+  });
+
+  assert.equal(result.statusLabel, '含历史参数估算');
+  assert.deepEqual(result.historicalDataRisk.softYears, [2006, 2007, 2013]);
+  assert.deepEqual(result.historicalDataRisk.blockingYears, []);
+  assert.ok(result.warnings.some((warning) => warning.includes('2006-2007、2013')));
+  assert.ok(result.assumptions.some((item) => item.includes('历史参数仍在核对')));
+  assert.ok(result.amount.rangeLow < result.amount.monthlyTotal * 0.7);
+  assert.ok(result.amount.rangeHigh > result.amount.monthlyTotal * 1.3);
+});
+
 test('Shanghai historical params are selected by effective month instead of calendar year', () => {
   assert.equal(_getYearParamForMonth('shanghai', '2025-06').year, 2024);
   assert.equal(_getYearParamForMonth('shanghai', '2025-07').year, 2025);

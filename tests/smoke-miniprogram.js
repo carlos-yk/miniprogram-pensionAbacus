@@ -7,6 +7,7 @@ const calls = {
   hideShareMenu: [],
   navigateTo: [],
   navigateBack: [],
+  showModal: [],
   showShareMenu: [],
   showToast: []
 };
@@ -25,6 +26,12 @@ global.wx = {
   },
   showToast(options) {
     calls.showToast.push(options);
+  },
+  showModal(options) {
+    calls.showModal.push(options);
+    if (options && typeof options.success === 'function') {
+      options.success({ confirm: true, cancel: false });
+    }
   },
   hideShareMenu(options) {
     calls.hideShareMenu.push(options);
@@ -57,6 +64,7 @@ function resetCalls() {
   calls.navigateTo.length = 0;
   calls.navigateBack.length = 0;
   calls.showToast.length = 0;
+  calls.showModal.length = 0;
   calls.hideShareMenu.length = 0;
   calls.showShareMenu.length = 0;
 }
@@ -154,14 +162,15 @@ function runCalculateSmoke() {
   page.onBirthMonthChange(inputValue('1968-06'));
   page.selectWorkerType(tapDataset({ key: 'male' }));
   page.selectCity(tapDataset({ city: 'shanghai' }));
-  page.onPaidYearsInput(inputValue('30'));
+  page.onPaidYearsInput(inputValue('20'));
   page.selectContribution(tapDataset({ key: 'ratio_150' }));
   page.onSubmitTap();
 
-  assert.equal(calls.navigateTo.length, 0);
-  assert.match(calls.showToast.at(-1).title, /历史年份/);
   const storage = require('../miniprogram/utils/storage');
-  assert.equal(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY), '');
+  assert.match(calls.showModal.at(-1).content, /2006-2007、2013/);
+  assert.equal(calls.navigateTo.at(-1).url, '/pages/result/result?scenario=family');
+  assert.notEqual(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY), '');
+  assert.match(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY).statusLabel, /历史参数/);
   assert.equal(wx.getStorageSync(storage.LAST_RESULT_KEY), '');
 
   page.onPaidYearsInput(inputValue('10'));

@@ -1,7 +1,7 @@
 const {
   getCityGateOptions,
   getDisabledCitySubmitLabel,
-  getUnsupportedPaidHistoryYears
+  getPaidHistoryRisk
 } = require('../../utils/dataGate');
 const { calculatePensionEstimate } = require('../../utils/pensionCalculator');
 const { calculateRetirement } = require('../../utils/retirement');
@@ -128,13 +128,31 @@ function formatYearRange(years) {
 function getHistorySupportError(city, paidYears) {
   if (!city || !(Number(paidYears) > 0)) return '';
 
-  const unsupportedYears = getUnsupportedPaidHistoryYears({
+  const historyRisk = getPaidHistoryRisk({
     city,
     paidMonths: Math.round(Number(paidYears) * 12)
   });
-  if (unsupportedYears.length === 0) return '';
+  if (!historyRisk.blocking) return '';
 
-  return `这组缴费年限会用到 ${formatYearRange(unsupportedYears)} 年历史年份，数据还在核对，暂未开放这组测算。`;
+  return `这组缴费年限会用到 ${formatYearRange(historyRisk.blockingYears)} 年核心历史参数，数据还在核对，暂未开放这组测算。`;
+}
+
+function getHistoricalDataRisk(city, paidYears) {
+  if (!city || !(Number(paidYears) > 0)) {
+    return {
+      hasRisk: false,
+      blocking: false,
+      softYears: [],
+      blockingYears: [],
+      years: [],
+      message: ''
+    };
+  }
+
+  return getPaidHistoryRisk({
+    city,
+    paidMonths: Math.round(Number(paidYears) * 12)
+  });
 }
 
 function getScenarioCopy(scenario) {
@@ -399,6 +417,7 @@ Page({
       return;
     }
 
+    const historyRisk = getHistoricalDataRisk(this.data.city, this.data.paidYears);
     const selectedCity = this.data.cityOptions.find((item) => item.city === this.data.city);
     const input = {
       city: this.data.city,
@@ -411,7 +430,8 @@ Page({
       personalAccount: {
         known: this.data.hasAccountBalance,
         balance: this.data.hasAccountBalance ? Number(this.data.accountBalance) : null
-      }
+      },
+      historicalDataRisk: historyRisk.hasRisk && !historyRisk.blocking ? historyRisk : null
     };
 
     const result = calculatePensionEstimate(input);
@@ -427,6 +447,22 @@ Page({
       const message = error || this.data.cityMessage || '请先补全信息后再测算。';
       this.setData({ formError: message });
       wx.showToast({ title: message, icon: 'none' });
+      return;
+    }
+
+    const historyRisk = getHistoricalDataRisk(this.data.city, this.data.paidYears);
+    if (historyRisk.hasRisk && !historyRisk.blocking && wx.showModal) {
+      wx.showModal({
+        title: '历史参数仍在核对',
+        content: `本次会用到 ${formatYearRange(historyRisk.softYears)} 年部分历史参数，结果会按更宽区间估算，仅供参考。`,
+        confirmText: '继续估算',
+        cancelText: '返回调整',
+        success: (res) => {
+          if (res.confirm) {
+            this.submit();
+          }
+        }
+      });
       return;
     }
 

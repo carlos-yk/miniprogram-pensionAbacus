@@ -23,6 +23,10 @@ function buildExplainers(result) {
 }
 
 function buildDataStatusText(result) {
+  if (result.historicalDataRisk && result.historicalDataRisk.hasRisk) {
+    return '含历史参数估算';
+  }
+
   if (result.releaseMode === 'internal_preview') {
     return '城市数据还在核对';
   }
@@ -31,6 +35,10 @@ function buildDataStatusText(result) {
 }
 
 function buildDataImpactText(result) {
+  if (result.historicalDataRisk && result.historicalDataRisk.hasRisk) {
+    return '部分历史年份参数仍在核对，当前结果已按更宽区间估算。';
+  }
+
   const missingFields = result.dataQuality.missingFieldLabels || [];
   if (missingFields.length > 0 || result.releaseMode === 'internal_preview') {
     return '当前结果适合先看大概，补充个人账户余额后区间会更稳。';

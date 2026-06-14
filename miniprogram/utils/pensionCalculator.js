@@ -1,4 +1,9 @@
-const { getBenchmarkGate, getCityCurrentYearParam, getCityGateOption } = require('./dataGate');
+const {
+  getBenchmarkGate,
+  getCityCurrentYearParam,
+  getCityGateOption,
+  getPaidHistoryRisk
+} = require('./dataGate');
 const { calculateRetirement, getRequiredContributionMonths } = require('./retirement');
 const { cityHistoryParams } = require('../data/runtime-data');
 const features = require('../config/features');
@@ -220,6 +225,28 @@ function buildWarnings(cityParam, personalAccountKnown, releaseMode) {
   return warnings;
 }
 
+function formatYearRange(years) {
+  if (!years || years.length === 0) return '';
+  const sorted = years.slice().sort((a, b) => a - b);
+  const ranges = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+
+  for (let index = 1; index < sorted.length; index += 1) {
+    const year = sorted[index];
+    if (year === prev + 1) {
+      prev = year;
+      continue;
+    }
+    ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+    start = year;
+    prev = year;
+  }
+
+  ranges.push(start === prev ? `${start}` : `${start}-${prev}`);
+  return ranges.join('、');
+}
+
 function buildDataQuality(cityParam) {
   const raw = cityParam.dataQuality || {};
   const reviewStatus = raw.reviewStatus || 'pending_review';
@@ -273,8 +300,34 @@ function calculateKnownWorkerEstimate(input) {
   const personalAccountPension = accountAtRetirement / retirement.payoutMonths;
   const monthlyTotal = basicPension + personalAccountPension;
   const rangeFactor = personalAccountKnown ? 0.15 : 0.25;
+  const historicalDataRisk = input.historicalDataRisk || getPaidHistoryRisk({
+    city: input.city,
+    paidMonths: input.paidMonths,
+    currentMonth
+  });
+  const historicalRiskYearsText = formatYearRange(historicalDataRisk.softYears || historicalDataRisk.years || []);
+  const finalRangeFactor = historicalDataRisk.hasRisk && !historicalDataRisk.blocking
+    ? Math.max(rangeFactor, 0.35)
+    : rangeFactor;
   const benchmarkGate = getBenchmarkGate();
   const releaseMode = input.mode === 'internal_preview' ? 'internal_preview' : 'public';
+  const statusLabel = historicalDataRisk.hasRisk && !historicalDataRisk.blocking
+    ? '含历史参数估算'
+    : (personalAccountKnown ? '账户余额已补充' : '快速估算');
+  const assumptions = [
+    '未来按当前缴费水平持续到退休。',
+    historicalContribution.usedYearlyParams
+      ? '历史缴费已按当前可用年度参数分段估算，适合先看大概。'
+      : '历史缴费按当前可用城市参数估算，适合先看大概。',
+    '个人账户按当前可用规则估算，不代表官方核定。',
+    '实际养老金以当地社保经办机构核定为准。'
+  ];
+  const warnings = buildWarnings(cityParam, personalAccountKnown, releaseMode);
+
+  if (historicalDataRisk.hasRisk && !historicalDataRisk.blocking) {
+    assumptions.splice(2, 0, `部分历史参数仍在核对，已按更宽区间估算 ${historicalRiskYearsText} 年影响。`);
+    warnings.push(`${historicalRiskYearsText} 年部分个人账户记账利率仍在核对，本次结果已扩大估算范围。`);
+  }
 
   return {
     city: input.city,
@@ -301,8 +354,8 @@ function calculateKnownWorkerEstimate(input) {
     },
     amount: {
       monthlyTotal: roundCurrency(monthlyTotal),
-      rangeLow: roundCurrency(monthlyTotal * (1 - rangeFactor)),
-      rangeHigh: roundCurrency(monthlyTotal * (1 + rangeFactor))
+      rangeLow: roundCurrency(monthlyTotal * (1 - finalRangeFactor)),
+      rangeHigh: roundCurrency(monthlyTotal * (1 + finalRangeFactor))
     },
     breakdown: {
       basicPension: roundCurrency(basicPension),
@@ -312,18 +365,12 @@ function calculateKnownWorkerEstimate(input) {
         label: '暂未纳入'
       }
     },
-    statusLabel: personalAccountKnown ? '账户余额已补充' : '快速估算',
+    statusLabel,
     releaseMode,
-    assumptions: [
-      '未来按当前缴费水平持续到退休。',
-      historicalContribution.usedYearlyParams
-        ? '历史缴费已按当前可用年度参数分段估算，适合先看大概。'
-        : '历史缴费按当前可用城市参数估算，适合先看大概。',
-      '个人账户按当前可用规则估算，不代表官方核定。',
-      '实际养老金以当地社保经办机构核定为准。'
-    ],
+    historicalDataRisk,
+    assumptions,
     dataQuality: buildDataQuality(cityParam),
-    warnings: buildWarnings(cityParam, personalAccountKnown, releaseMode),
+    warnings,
     competition: {
       visible: benchmarkGate.enabled,
       ...benchmarkGate
@@ -353,7 +400,8 @@ function combineUnknownFemaleEstimate(input) {
       rangeLow: low,
       rangeHigh: high
     },
-    statusLabel: input.personalAccount && input.personalAccount.known ? '账户余额已补充' : '快速估算',
+    statusLabel: tracks[0].statusLabel,
+    historicalDataRisk: tracks[0].historicalDataRisk,
     assumptions: [
       '退休类型可能影响退休时间和养老金金额，当前已按可能规则给出区间估算。',
       ...tracks[0].assumptions

@@ -9,6 +9,7 @@ const {
   getDisabledCitySubmitLabel,
   evaluateCityGate,
   getCityGateOption,
+  getPaidHistoryRisk,
   getUnsupportedPaidHistoryYears
 } = require('../miniprogram/utils/dataGate');
 const { benchmarkMeta } = require('../miniprogram/data/runtime-data');
@@ -114,6 +115,33 @@ test('paid history support blocks only inputs that touch unreviewed Shanghai yea
   );
 });
 
+test('paid history risk allows non-core missing years while keeping them visible', () => {
+  const risk = getPaidHistoryRisk({
+    city: 'shanghai',
+    paidMonths: 15 * 12,
+    currentMonth: '2026-05'
+  });
+
+  assert.equal(risk.hasRisk, true);
+  assert.equal(risk.blocking, false);
+  assert.deepEqual(risk.softYears, [2013]);
+  assert.deepEqual(risk.blockingYears, []);
+  assert.match(risk.message, /2013/);
+});
+
+test('paid history risk still blocks years with core historical parameter gaps', () => {
+  const risk = getPaidHistoryRisk({
+    city: 'shanghai',
+    paidMonths: 30 * 12,
+    currentMonth: '2026-05'
+  });
+
+  assert.equal(risk.hasRisk, true);
+  assert.equal(risk.blocking, true);
+  assert.deepEqual(risk.blockingYears, [2000, 2001, 2002, 2003, 2004, 2005]);
+  assert.deepEqual(risk.softYears, [2006, 2007, 2013]);
+});
+
 test('cached estimates must pass the current city gate before reuse', () => {
   assert.equal(
     canUseCachedEstimate({
@@ -121,7 +149,7 @@ test('cached estimates must pass the current city gate before reuse', () => {
       releaseMode: 'public',
       contribution: { paidMonths: 15 * 12 }
     }),
-    false
+    true
   );
 
   assert.equal(

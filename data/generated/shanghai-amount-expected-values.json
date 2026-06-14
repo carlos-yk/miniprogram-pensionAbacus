@@ -68,8 +68,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1975,
-          "rangeLow": 1481,
-          "rangeHigh": 2469
+          "rangeLow": 1284,
+          "rangeHigh": 2666
         },
         "breakdown": {
           "basicPension": 1484,
@@ -143,8 +143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2779,
-          "rangeLow": 2362,
-          "rangeHigh": 3196
+          "rangeLow": 1806,
+          "rangeHigh": 3751
         },
         "breakdown": {
           "basicPension": 1484,
@@ -218,8 +218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2673,
-          "rangeLow": 2005,
-          "rangeHigh": 3342
+          "rangeLow": 1738,
+          "rangeHigh": 3609
         },
         "breakdown": {
           "basicPension": 1855,
@@ -293,8 +293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3150,
-          "rangeLow": 2677,
-          "rangeHigh": 3622
+          "rangeLow": 2047,
+          "rangeHigh": 4252
         },
         "breakdown": {
           "basicPension": 1855,
@@ -368,8 +368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3546,
-          "rangeLow": 2660,
-          "rangeHigh": 4433
+          "rangeLow": 2305,
+          "rangeHigh": 4787
         },
         "breakdown": {
           "basicPension": 2318,
@@ -443,8 +443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3613,
-          "rangeLow": 3071,
-          "rangeHigh": 4155
+          "rangeLow": 2349,
+          "rangeHigh": 4878
         },
         "breakdown": {
           "basicPension": 2318,
@@ -518,8 +518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6165,
-          "rangeLow": 4624,
-          "rangeHigh": 7706
+          "rangeLow": 4007,
+          "rangeHigh": 8323
         },
         "breakdown": {
           "basicPension": 3709,
@@ -593,8 +593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5004,
-          "rangeLow": 4254,
-          "rangeHigh": 5755
+          "rangeLow": 3253,
+          "rangeHigh": 6756
         },
         "breakdown": {
           "basicPension": 3709,
@@ -668,8 +668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1985,
-          "rangeLow": 1488,
-          "rangeHigh": 2481
+          "rangeLow": 1290,
+          "rangeHigh": 2679
         },
         "breakdown": {
           "basicPension": 1492,
@@ -743,8 +743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2787,
-          "rangeLow": 2369,
-          "rangeHigh": 3205
+          "rangeLow": 1812,
+          "rangeHigh": 3763
         },
         "breakdown": {
           "basicPension": 1492,
@@ -818,8 +818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2686,
-          "rangeLow": 2014,
-          "rangeHigh": 3357
+          "rangeLow": 1746,
+          "rangeHigh": 3626
         },
         "breakdown": {
           "basicPension": 1865,
@@ -893,8 +893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3160,
-          "rangeLow": 2686,
-          "rangeHigh": 3634
+          "rangeLow": 2054,
+          "rangeHigh": 4266
         },
         "breakdown": {
           "basicPension": 1865,
@@ -968,8 +968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3563,
-          "rangeLow": 2672,
-          "rangeHigh": 4453
+          "rangeLow": 2316,
+          "rangeHigh": 4810
         },
         "breakdown": {
           "basicPension": 2331,
@@ -1043,8 +1043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3626,
-          "rangeLow": 3082,
-          "rangeHigh": 4170
+          "rangeLow": 2357,
+          "rangeHigh": 4896
         },
         "breakdown": {
           "basicPension": 2331,
@@ -1118,8 +1118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6193,
-          "rangeLow": 4644,
-          "rangeHigh": 7741
+          "rangeLow": 4025,
+          "rangeHigh": 8360
         },
         "breakdown": {
           "basicPension": 3730,
@@ -1193,8 +1193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5025,
-          "rangeLow": 4271,
-          "rangeHigh": 5779
+          "rangeLow": 3266,
+          "rangeHigh": 6784
         },
         "breakdown": {
           "basicPension": 3730,
@@ -1268,8 +1268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2542,
-          "rangeLow": 1907,
-          "rangeHigh": 3178
+          "rangeLow": 1653,
+          "rangeHigh": 3432
         },
         "breakdown": {
           "basicPension": 1989,
@@ -1343,8 +1343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3284,
-          "rangeLow": 2792,
-          "rangeHigh": 3777
+          "rangeLow": 2135,
+          "rangeHigh": 4434
         },
         "breakdown": {
           "basicPension": 1989,
@@ -1418,8 +1418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3408,
-          "rangeLow": 2556,
-          "rangeHigh": 4260
+          "rangeLow": 2215,
+          "rangeHigh": 4601
         },
         "breakdown": {
           "basicPension": 2487,
@@ -1493,8 +1493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3782,
-          "rangeLow": 3214,
-          "rangeHigh": 4349
+          "rangeLow": 2458,
+          "rangeHigh": 5105
         },
         "breakdown": {
           "basicPension": 2487,
@@ -1568,8 +1568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4491,
-          "rangeLow": 3368,
-          "rangeHigh": 5614
+          "rangeLow": 2919,
+          "rangeHigh": 6063
         },
         "breakdown": {
           "basicPension": 3109,
@@ -1643,8 +1643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4403,
-          "rangeLow": 3743,
-          "rangeHigh": 5064
+          "rangeLow": 2862,
+          "rangeHigh": 5945
         },
         "breakdown": {
           "basicPension": 3109,
@@ -1718,8 +1718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7738,
-          "rangeLow": 5804,
-          "rangeHigh": 9673
+          "rangeLow": 5030,
+          "rangeHigh": 10447
         },
         "breakdown": {
           "basicPension": 4974,
@@ -1793,8 +1793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6269,
-          "rangeLow": 5328,
-          "rangeHigh": 7209
+          "rangeLow": 4075,
+          "rangeHigh": 8463
         },
         "breakdown": {
           "basicPension": 4974,
@@ -3068,8 +3068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1975,
-          "rangeLow": 1481,
-          "rangeHigh": 2469
+          "rangeLow": 1284,
+          "rangeHigh": 2666
         },
         "breakdown": {
           "basicPension": 1484,
@@ -3143,8 +3143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2779,
-          "rangeLow": 2362,
-          "rangeHigh": 3196
+          "rangeLow": 1806,
+          "rangeHigh": 3751
         },
         "breakdown": {
           "basicPension": 1484,
@@ -3218,8 +3218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2673,
-          "rangeLow": 2005,
-          "rangeHigh": 3342
+          "rangeLow": 1738,
+          "rangeHigh": 3609
         },
         "breakdown": {
           "basicPension": 1855,
@@ -3293,8 +3293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3150,
-          "rangeLow": 2677,
-          "rangeHigh": 3622
+          "rangeLow": 2047,
+          "rangeHigh": 4252
         },
         "breakdown": {
           "basicPension": 1855,
@@ -3368,8 +3368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3546,
-          "rangeLow": 2660,
-          "rangeHigh": 4433
+          "rangeLow": 2305,
+          "rangeHigh": 4787
         },
         "breakdown": {
           "basicPension": 2318,
@@ -3443,8 +3443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3613,
-          "rangeLow": 3071,
-          "rangeHigh": 4155
+          "rangeLow": 2349,
+          "rangeHigh": 4878
         },
         "breakdown": {
           "basicPension": 2318,
@@ -3518,8 +3518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6165,
-          "rangeLow": 4624,
-          "rangeHigh": 7706
+          "rangeLow": 4007,
+          "rangeHigh": 8323
         },
         "breakdown": {
           "basicPension": 3709,
@@ -3593,8 +3593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5004,
-          "rangeLow": 4254,
-          "rangeHigh": 5755
+          "rangeLow": 3253,
+          "rangeHigh": 6756
         },
         "breakdown": {
           "basicPension": 3709,
@@ -3668,8 +3668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1985,
-          "rangeLow": 1488,
-          "rangeHigh": 2481
+          "rangeLow": 1290,
+          "rangeHigh": 2679
         },
         "breakdown": {
           "basicPension": 1492,
@@ -3743,8 +3743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2787,
-          "rangeLow": 2369,
-          "rangeHigh": 3205
+          "rangeLow": 1812,
+          "rangeHigh": 3763
         },
         "breakdown": {
           "basicPension": 1492,
@@ -3818,8 +3818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2686,
-          "rangeLow": 2014,
-          "rangeHigh": 3357
+          "rangeLow": 1746,
+          "rangeHigh": 3626
         },
         "breakdown": {
           "basicPension": 1865,
@@ -3893,8 +3893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3160,
-          "rangeLow": 2686,
-          "rangeHigh": 3634
+          "rangeLow": 2054,
+          "rangeHigh": 4266
         },
         "breakdown": {
           "basicPension": 1865,
@@ -3968,8 +3968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3563,
-          "rangeLow": 2672,
-          "rangeHigh": 4453
+          "rangeLow": 2316,
+          "rangeHigh": 4810
         },
         "breakdown": {
           "basicPension": 2331,
@@ -4043,8 +4043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3626,
-          "rangeLow": 3082,
-          "rangeHigh": 4170
+          "rangeLow": 2357,
+          "rangeHigh": 4896
         },
         "breakdown": {
           "basicPension": 2331,
@@ -4118,8 +4118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6193,
-          "rangeLow": 4644,
-          "rangeHigh": 7741
+          "rangeLow": 4025,
+          "rangeHigh": 8360
         },
         "breakdown": {
           "basicPension": 3730,
@@ -4193,8 +4193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5025,
-          "rangeLow": 4271,
-          "rangeHigh": 5779
+          "rangeLow": 3266,
+          "rangeHigh": 6784
         },
         "breakdown": {
           "basicPension": 3730,
@@ -4268,8 +4268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2542,
-          "rangeLow": 1907,
-          "rangeHigh": 3178
+          "rangeLow": 1653,
+          "rangeHigh": 3432
         },
         "breakdown": {
           "basicPension": 1989,
@@ -4343,8 +4343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3284,
-          "rangeLow": 2792,
-          "rangeHigh": 3777
+          "rangeLow": 2135,
+          "rangeHigh": 4434
         },
         "breakdown": {
           "basicPension": 1989,
@@ -4418,8 +4418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3408,
-          "rangeLow": 2556,
-          "rangeHigh": 4260
+          "rangeLow": 2215,
+          "rangeHigh": 4601
         },
         "breakdown": {
           "basicPension": 2487,
@@ -4493,8 +4493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3782,
-          "rangeLow": 3214,
-          "rangeHigh": 4349
+          "rangeLow": 2458,
+          "rangeHigh": 5105
         },
         "breakdown": {
           "basicPension": 2487,
@@ -4568,8 +4568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4491,
-          "rangeLow": 3368,
-          "rangeHigh": 5614
+          "rangeLow": 2919,
+          "rangeHigh": 6063
         },
         "breakdown": {
           "basicPension": 3109,
@@ -4643,8 +4643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4403,
-          "rangeLow": 3743,
-          "rangeHigh": 5064
+          "rangeLow": 2862,
+          "rangeHigh": 5945
         },
         "breakdown": {
           "basicPension": 3109,
@@ -4718,8 +4718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7738,
-          "rangeLow": 5804,
-          "rangeHigh": 9673
+          "rangeLow": 5030,
+          "rangeHigh": 10447
         },
         "breakdown": {
           "basicPension": 4974,
@@ -4793,8 +4793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6269,
-          "rangeLow": 5328,
-          "rangeHigh": 7209
+          "rangeLow": 4075,
+          "rangeHigh": 8463
         },
         "breakdown": {
           "basicPension": 4974,
@@ -6068,8 +6068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4250,
-          "rangeLow": 3187,
-          "rangeHigh": 5312
+          "rangeLow": 2762,
+          "rangeHigh": 5737
         },
         "breakdown": {
           "basicPension": 2835,
@@ -6143,8 +6143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5205,
-          "rangeLow": 4424,
-          "rangeHigh": 5986
+          "rangeLow": 3383,
+          "rangeHigh": 7027
         },
         "breakdown": {
           "basicPension": 2835,
@@ -6218,8 +6218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5902,
-          "rangeLow": 4426,
-          "rangeHigh": 7377
+          "rangeLow": 3836,
+          "rangeHigh": 7968
         },
         "breakdown": {
           "basicPension": 3544,
@@ -6293,8 +6293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6468,
-          "rangeLow": 5498,
-          "rangeHigh": 7438
+          "rangeLow": 4204,
+          "rangeHigh": 8732
         },
         "breakdown": {
           "basicPension": 3544,
@@ -6368,8 +6368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7967,
-          "rangeLow": 5975,
-          "rangeHigh": 9959
+          "rangeLow": 5179,
+          "rangeHigh": 10756
         },
         "breakdown": {
           "basicPension": 4430,
@@ -6443,8 +6443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8047,
-          "rangeLow": 6840,
-          "rangeHigh": 9254
+          "rangeLow": 5230,
+          "rangeHigh": 10863
         },
         "breakdown": {
           "basicPension": 4430,
@@ -6518,8 +6518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14162,
-          "rangeLow": 10622,
-          "rangeHigh": 17703
+          "rangeLow": 9205,
+          "rangeHigh": 19119
         },
         "breakdown": {
           "basicPension": 7087,
@@ -6593,8 +6593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12783,
-          "rangeLow": 10866,
-          "rangeHigh": 14701
+          "rangeLow": 8309,
+          "rangeHigh": 17257
         },
         "breakdown": {
           "basicPension": 7087,
@@ -6668,8 +6668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4260,
-          "rangeLow": 3195,
-          "rangeHigh": 5325
+          "rangeLow": 2769,
+          "rangeHigh": 5751
         },
         "breakdown": {
           "basicPension": 2843,
@@ -6743,8 +6743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5213,
-          "rangeLow": 4431,
-          "rangeHigh": 5995
+          "rangeLow": 3389,
+          "rangeHigh": 7038
         },
         "breakdown": {
           "basicPension": 2843,
@@ -6818,8 +6818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5915,
-          "rangeLow": 4436,
-          "rangeHigh": 7394
+          "rangeLow": 3845,
+          "rangeHigh": 7985
         },
         "breakdown": {
           "basicPension": 3554,
@@ -6893,8 +6893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6478,
-          "rangeLow": 5507,
-          "rangeHigh": 7450
+          "rangeLow": 4211,
+          "rangeHigh": 8746
         },
         "breakdown": {
           "basicPension": 3554,
@@ -6968,8 +6968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7984,
-          "rangeLow": 5988,
-          "rangeHigh": 9980
+          "rangeLow": 5190,
+          "rangeHigh": 10778
         },
         "breakdown": {
           "basicPension": 4443,
@@ -7043,8 +7043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8060,
-          "rangeLow": 6851,
-          "rangeHigh": 9269
+          "rangeLow": 5239,
+          "rangeHigh": 10881
         },
         "breakdown": {
           "basicPension": 4443,
@@ -7118,8 +7118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14191,
-          "rangeLow": 10643,
-          "rangeHigh": 17739
+          "rangeLow": 9224,
+          "rangeHigh": 19158
         },
         "breakdown": {
           "basicPension": 7108,
@@ -7193,8 +7193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12804,
-          "rangeLow": 10883,
-          "rangeHigh": 14725
+          "rangeLow": 8323,
+          "rangeHigh": 17285
         },
         "breakdown": {
           "basicPension": 7108,
@@ -7268,8 +7268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4829,
-          "rangeLow": 3622,
-          "rangeHigh": 6036
+          "rangeLow": 3139,
+          "rangeHigh": 6519
         },
         "breakdown": {
           "basicPension": 3341,
@@ -7343,8 +7343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5711,
-          "rangeLow": 4854,
-          "rangeHigh": 6567
+          "rangeLow": 3712,
+          "rangeHigh": 7709
         },
         "breakdown": {
           "basicPension": 3341,
@@ -7418,8 +7418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6656,
-          "rangeLow": 4992,
-          "rangeHigh": 8320
+          "rangeLow": 4327,
+          "rangeHigh": 8986
         },
         "breakdown": {
           "basicPension": 4176,
@@ -7493,8 +7493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7100,
-          "rangeLow": 6035,
-          "rangeHigh": 8165
+          "rangeLow": 4615,
+          "rangeHigh": 9585
         },
         "breakdown": {
           "basicPension": 4176,
@@ -7568,8 +7568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8941,
-          "rangeLow": 6706,
-          "rangeHigh": 11176
+          "rangeLow": 5811,
+          "rangeHigh": 12070
         },
         "breakdown": {
           "basicPension": 5220,
@@ -7643,8 +7643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8837,
-          "rangeLow": 7511,
-          "rangeHigh": 10162
+          "rangeLow": 5744,
+          "rangeHigh": 11930
         },
         "breakdown": {
           "basicPension": 5220,
@@ -7718,8 +7718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 15793,
-          "rangeLow": 11845,
-          "rangeHigh": 19742
+          "rangeLow": 10266,
+          "rangeHigh": 21321
         },
         "breakdown": {
           "basicPension": 8352,
@@ -7793,8 +7793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14047,
-          "rangeLow": 11940,
-          "rangeHigh": 16154
+          "rangeLow": 9131,
+          "rangeHigh": 18964
         },
         "breakdown": {
           "basicPension": 8352,
@@ -9068,8 +9068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4263,
-          "rangeLow": 3197,
-          "rangeHigh": 5329
+          "rangeLow": 2771,
+          "rangeHigh": 5755
         },
         "breakdown": {
           "basicPension": 2843,
@@ -9143,8 +9143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5218,
-          "rangeLow": 4436,
-          "rangeHigh": 6001
+          "rangeLow": 3392,
+          "rangeHigh": 7045
         },
         "breakdown": {
           "basicPension": 2843,
@@ -9218,8 +9218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5921,
-          "rangeLow": 4441,
-          "rangeHigh": 7401
+          "rangeLow": 3849,
+          "rangeHigh": 7993
         },
         "breakdown": {
           "basicPension": 3554,
@@ -9293,8 +9293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6487,
-          "rangeLow": 5514,
-          "rangeHigh": 7460
+          "rangeLow": 4216,
+          "rangeHigh": 8757
         },
         "breakdown": {
           "basicPension": 3554,
@@ -9368,8 +9368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7993,
-          "rangeLow": 5995,
-          "rangeHigh": 9991
+          "rangeLow": 5195,
+          "rangeHigh": 10790
         },
         "breakdown": {
           "basicPension": 4443,
@@ -9443,8 +9443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8072,
-          "rangeLow": 6862,
-          "rangeHigh": 9283
+          "rangeLow": 5247,
+          "rangeHigh": 10898
         },
         "breakdown": {
           "basicPension": 4443,
@@ -9518,8 +9518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14208,
-          "rangeLow": 10656,
-          "rangeHigh": 17761
+          "rangeLow": 9235,
+          "rangeHigh": 19181
         },
         "breakdown": {
           "basicPension": 7108,
@@ -9593,8 +9593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12829,
-          "rangeLow": 10905,
-          "rangeHigh": 14754
+          "rangeLow": 8339,
+          "rangeHigh": 17320
         },
         "breakdown": {
           "basicPension": 7108,
@@ -9668,8 +9668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4273,
-          "rangeLow": 3205,
-          "rangeHigh": 5341
+          "rangeLow": 2778,
+          "rangeHigh": 5769
         },
         "breakdown": {
           "basicPension": 2852,
@@ -9743,8 +9743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5227,
-          "rangeLow": 4443,
-          "rangeHigh": 6011
+          "rangeLow": 3397,
+          "rangeHigh": 7056
         },
         "breakdown": {
           "basicPension": 2852,
@@ -9818,8 +9818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5934,
-          "rangeLow": 4450,
-          "rangeHigh": 7417
+          "rangeLow": 3857,
+          "rangeHigh": 8011
         },
         "breakdown": {
           "basicPension": 3564,
@@ -9893,8 +9893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6497,
-          "rangeLow": 5523,
-          "rangeHigh": 7472
+          "rangeLow": 4223,
+          "rangeHigh": 8771
         },
         "breakdown": {
           "basicPension": 3564,
@@ -9968,8 +9968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8010,
-          "rangeLow": 6007,
-          "rangeHigh": 10012
+          "rangeLow": 5206,
+          "rangeHigh": 10813
         },
         "breakdown": {
           "basicPension": 4456,
@@ -10043,8 +10043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8085,
-          "rangeLow": 6873,
-          "rangeHigh": 9298
+          "rangeLow": 5256,
+          "rangeHigh": 10915
         },
         "breakdown": {
           "basicPension": 4456,
@@ -10118,8 +10118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14237,
-          "rangeLow": 10678,
-          "rangeHigh": 17796
+          "rangeLow": 9254,
+          "rangeHigh": 19220
         },
         "breakdown": {
           "basicPension": 7129,
@@ -10193,8 +10193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12850,
-          "rangeLow": 10923,
-          "rangeHigh": 14778
+          "rangeLow": 8353,
+          "rangeHigh": 17348
         },
         "breakdown": {
           "basicPension": 7129,
@@ -10268,8 +10268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4842,
-          "rangeLow": 3632,
-          "rangeHigh": 6053
+          "rangeLow": 3148,
+          "rangeHigh": 6537
         },
         "breakdown": {
           "basicPension": 3349,
@@ -10343,8 +10343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5724,
-          "rangeLow": 4865,
-          "rangeHigh": 6582
+          "rangeLow": 3721,
+          "rangeHigh": 7727
         },
         "breakdown": {
           "basicPension": 3349,
@@ -10418,8 +10418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6675,
-          "rangeLow": 5006,
-          "rangeHigh": 8344
+          "rangeLow": 4339,
+          "rangeHigh": 9012
         },
         "breakdown": {
           "basicPension": 4186,
@@ -10493,8 +10493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7119,
-          "rangeLow": 6051,
-          "rangeHigh": 8187
+          "rangeLow": 4627,
+          "rangeHigh": 9610
         },
         "breakdown": {
           "basicPension": 4186,
@@ -10568,8 +10568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8966,
-          "rangeLow": 6725,
-          "rangeHigh": 11208
+          "rangeLow": 5828,
+          "rangeHigh": 12105
         },
         "breakdown": {
           "basicPension": 5233,
@@ -10643,8 +10643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8863,
-          "rangeLow": 7533,
-          "rangeHigh": 10192
+          "rangeLow": 5761,
+          "rangeHigh": 11964
         },
         "breakdown": {
           "basicPension": 5233,
@@ -10718,8 +10718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 15840,
-          "rangeLow": 11880,
-          "rangeHigh": 19800
+          "rangeLow": 10296,
+          "rangeHigh": 21384
         },
         "breakdown": {
           "basicPension": 8372,
@@ -10793,8 +10793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14094,
-          "rangeLow": 11980,
-          "rangeHigh": 16208
+          "rangeLow": 9161,
+          "rangeHigh": 19026
         },
         "breakdown": {
           "basicPension": 8372,
@@ -12068,8 +12068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1885,
-          "rangeLow": 1414,
-          "rangeHigh": 2357
+          "rangeLow": 1225,
+          "rangeHigh": 2545
         },
         "breakdown": {
           "basicPension": 1484,
@@ -12143,8 +12143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2543,
-          "rangeLow": 2161,
-          "rangeHigh": 2924
+          "rangeLow": 1653,
+          "rangeHigh": 3433
         },
         "breakdown": {
           "basicPension": 1484,
@@ -12218,8 +12218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2524,
-          "rangeLow": 1893,
-          "rangeHigh": 3155
+          "rangeLow": 1641,
+          "rangeHigh": 3407
         },
         "breakdown": {
           "basicPension": 1855,
@@ -12293,8 +12293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2914,
-          "rangeLow": 2477,
-          "rangeHigh": 3351
+          "rangeLow": 1894,
+          "rangeHigh": 3933
         },
         "breakdown": {
           "basicPension": 1855,
@@ -12368,8 +12368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3322,
-          "rangeLow": 2492,
-          "rangeHigh": 4153
+          "rangeLow": 2160,
+          "rangeHigh": 4485
         },
         "breakdown": {
           "basicPension": 2318,
@@ -12443,8 +12443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3377,
-          "rangeLow": 2871,
-          "rangeHigh": 3884
+          "rangeLow": 2195,
+          "rangeHigh": 4559
         },
         "breakdown": {
           "basicPension": 2318,
@@ -12518,8 +12518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5717,
-          "rangeLow": 4288,
-          "rangeHigh": 7147
+          "rangeLow": 3716,
+          "rangeHigh": 7718
         },
         "breakdown": {
           "basicPension": 3709,
@@ -12593,8 +12593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4768,
-          "rangeLow": 4053,
-          "rangeHigh": 5484
+          "rangeLow": 3099,
+          "rangeHigh": 6437
         },
         "breakdown": {
           "basicPension": 3709,
@@ -12668,8 +12668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1895,
-          "rangeLow": 1421,
-          "rangeHigh": 2368
+          "rangeLow": 1232,
+          "rangeHigh": 2558
         },
         "breakdown": {
           "basicPension": 1492,
@@ -12743,8 +12743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2551,
-          "rangeLow": 2168,
-          "rangeHigh": 2934
+          "rangeLow": 1658,
+          "rangeHigh": 3444
         },
         "breakdown": {
           "basicPension": 1492,
@@ -12818,8 +12818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2536,
-          "rangeLow": 1902,
-          "rangeHigh": 3170
+          "rangeLow": 1649,
+          "rangeHigh": 3424
         },
         "breakdown": {
           "basicPension": 1865,
@@ -12893,8 +12893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2924,
-          "rangeLow": 2485,
-          "rangeHigh": 3363
+          "rangeLow": 1901,
+          "rangeHigh": 3947
         },
         "breakdown": {
           "basicPension": 1865,
@@ -12968,8 +12968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3338,
-          "rangeLow": 2504,
-          "rangeHigh": 4173
+          "rangeLow": 2170,
+          "rangeHigh": 4506
         },
         "breakdown": {
           "basicPension": 2331,
@@ -13043,8 +13043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3390,
-          "rangeLow": 2882,
-          "rangeHigh": 3899
+          "rangeLow": 2204,
+          "rangeHigh": 4577
         },
         "breakdown": {
           "basicPension": 2331,
@@ -13118,8 +13118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5744,
-          "rangeLow": 4308,
-          "rangeHigh": 7179
+          "rangeLow": 3733,
+          "rangeHigh": 7754
         },
         "breakdown": {
           "basicPension": 3730,
@@ -13193,8 +13193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4789,
-          "rangeLow": 4071,
-          "rangeHigh": 5507
+          "rangeLow": 3113,
+          "rangeHigh": 6465
         },
         "breakdown": {
           "basicPension": 3730,
@@ -13268,8 +13268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2442,
-          "rangeLow": 1831,
-          "rangeHigh": 3052
+          "rangeLow": 1587,
+          "rangeHigh": 3296
         },
         "breakdown": {
           "basicPension": 1989,
@@ -13343,8 +13343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3048,
-          "rangeLow": 2591,
-          "rangeHigh": 3506
+          "rangeLow": 1981,
+          "rangeHigh": 4115
         },
         "breakdown": {
           "basicPension": 1989,
@@ -13418,8 +13418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3240,
-          "rangeLow": 2430,
-          "rangeHigh": 4050
+          "rangeLow": 2106,
+          "rangeHigh": 4374
         },
         "breakdown": {
           "basicPension": 2487,
@@ -13493,8 +13493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3546,
-          "rangeLow": 3014,
-          "rangeHigh": 4077
+          "rangeLow": 2305,
+          "rangeHigh": 4787
         },
         "breakdown": {
           "basicPension": 2487,
@@ -13568,8 +13568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4239,
-          "rangeLow": 3179,
-          "rangeHigh": 5298
+          "rangeLow": 2755,
+          "rangeHigh": 5722
         },
         "breakdown": {
           "basicPension": 3109,
@@ -13643,8 +13643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4167,
-          "rangeLow": 3542,
-          "rangeHigh": 4792
+          "rangeLow": 2709,
+          "rangeHigh": 5626
         },
         "breakdown": {
           "basicPension": 3109,
@@ -13718,8 +13718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7234,
-          "rangeLow": 5426,
-          "rangeHigh": 9043
+          "rangeLow": 4702,
+          "rangeHigh": 9766
         },
         "breakdown": {
           "basicPension": 4974,
@@ -13793,8 +13793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6032,
-          "rangeLow": 5128,
-          "rangeHigh": 6937
+          "rangeLow": 3921,
+          "rangeHigh": 8144
         },
         "breakdown": {
           "basicPension": 4974,
@@ -15068,8 +15068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1885,
-          "rangeLow": 1414,
-          "rangeHigh": 2357
+          "rangeLow": 1225,
+          "rangeHigh": 2545
         },
         "breakdown": {
           "basicPension": 1484,
@@ -15143,8 +15143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2543,
-          "rangeLow": 2161,
-          "rangeHigh": 2924
+          "rangeLow": 1653,
+          "rangeHigh": 3433
         },
         "breakdown": {
           "basicPension": 1484,
@@ -15218,8 +15218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2524,
-          "rangeLow": 1893,
-          "rangeHigh": 3155
+          "rangeLow": 1641,
+          "rangeHigh": 3407
         },
         "breakdown": {
           "basicPension": 1855,
@@ -15293,8 +15293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2914,
-          "rangeLow": 2477,
-          "rangeHigh": 3351
+          "rangeLow": 1894,
+          "rangeHigh": 3933
         },
         "breakdown": {
           "basicPension": 1855,
@@ -15368,8 +15368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3322,
-          "rangeLow": 2492,
-          "rangeHigh": 4153
+          "rangeLow": 2160,
+          "rangeHigh": 4485
         },
         "breakdown": {
           "basicPension": 2318,
@@ -15443,8 +15443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3377,
-          "rangeLow": 2871,
-          "rangeHigh": 3884
+          "rangeLow": 2195,
+          "rangeHigh": 4559
         },
         "breakdown": {
           "basicPension": 2318,
@@ -15518,8 +15518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5717,
-          "rangeLow": 4288,
-          "rangeHigh": 7147
+          "rangeLow": 3716,
+          "rangeHigh": 7718
         },
         "breakdown": {
           "basicPension": 3709,
@@ -15593,8 +15593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4768,
-          "rangeLow": 4053,
-          "rangeHigh": 5484
+          "rangeLow": 3099,
+          "rangeHigh": 6437
         },
         "breakdown": {
           "basicPension": 3709,
@@ -15668,8 +15668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1895,
-          "rangeLow": 1421,
-          "rangeHigh": 2368
+          "rangeLow": 1232,
+          "rangeHigh": 2558
         },
         "breakdown": {
           "basicPension": 1492,
@@ -15743,8 +15743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2551,
-          "rangeLow": 2168,
-          "rangeHigh": 2934
+          "rangeLow": 1658,
+          "rangeHigh": 3444
         },
         "breakdown": {
           "basicPension": 1492,
@@ -15818,8 +15818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2536,
-          "rangeLow": 1902,
-          "rangeHigh": 3170
+          "rangeLow": 1649,
+          "rangeHigh": 3424
         },
         "breakdown": {
           "basicPension": 1865,
@@ -15893,8 +15893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2924,
-          "rangeLow": 2485,
-          "rangeHigh": 3363
+          "rangeLow": 1901,
+          "rangeHigh": 3947
         },
         "breakdown": {
           "basicPension": 1865,
@@ -15968,8 +15968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3338,
-          "rangeLow": 2504,
-          "rangeHigh": 4173
+          "rangeLow": 2170,
+          "rangeHigh": 4506
         },
         "breakdown": {
           "basicPension": 2331,
@@ -16043,8 +16043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3390,
-          "rangeLow": 2882,
-          "rangeHigh": 3899
+          "rangeLow": 2204,
+          "rangeHigh": 4577
         },
         "breakdown": {
           "basicPension": 2331,
@@ -16118,8 +16118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5744,
-          "rangeLow": 4308,
-          "rangeHigh": 7179
+          "rangeLow": 3733,
+          "rangeHigh": 7754
         },
         "breakdown": {
           "basicPension": 3730,
@@ -16193,8 +16193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4789,
-          "rangeLow": 4071,
-          "rangeHigh": 5507
+          "rangeLow": 3113,
+          "rangeHigh": 6465
         },
         "breakdown": {
           "basicPension": 3730,
@@ -16268,8 +16268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2442,
-          "rangeLow": 1831,
-          "rangeHigh": 3052
+          "rangeLow": 1587,
+          "rangeHigh": 3296
         },
         "breakdown": {
           "basicPension": 1989,
@@ -16343,8 +16343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3048,
-          "rangeLow": 2591,
-          "rangeHigh": 3506
+          "rangeLow": 1981,
+          "rangeHigh": 4115
         },
         "breakdown": {
           "basicPension": 1989,
@@ -16418,8 +16418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3240,
-          "rangeLow": 2430,
-          "rangeHigh": 4050
+          "rangeLow": 2106,
+          "rangeHigh": 4374
         },
         "breakdown": {
           "basicPension": 2487,
@@ -16493,8 +16493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3546,
-          "rangeLow": 3014,
-          "rangeHigh": 4077
+          "rangeLow": 2305,
+          "rangeHigh": 4787
         },
         "breakdown": {
           "basicPension": 2487,
@@ -16568,8 +16568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4239,
-          "rangeLow": 3179,
-          "rangeHigh": 5298
+          "rangeLow": 2755,
+          "rangeHigh": 5722
         },
         "breakdown": {
           "basicPension": 3109,
@@ -16643,8 +16643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4167,
-          "rangeLow": 3542,
-          "rangeHigh": 4792
+          "rangeLow": 2709,
+          "rangeHigh": 5626
         },
         "breakdown": {
           "basicPension": 3109,
@@ -16718,8 +16718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7234,
-          "rangeLow": 5426,
-          "rangeHigh": 9043
+          "rangeLow": 4702,
+          "rangeHigh": 9766
         },
         "breakdown": {
           "basicPension": 4974,
@@ -16793,8 +16793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6032,
-          "rangeLow": 5128,
-          "rangeHigh": 6937
+          "rangeLow": 3921,
+          "rangeHigh": 8144
         },
         "breakdown": {
           "basicPension": 4974,
@@ -18068,8 +18068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3924,
-          "rangeLow": 2943,
-          "rangeHigh": 4905
+          "rangeLow": 2551,
+          "rangeHigh": 5298
         },
         "breakdown": {
           "basicPension": 2835,
@@ -18143,8 +18143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4659,
-          "rangeLow": 3960,
-          "rangeHigh": 5358
+          "rangeLow": 3028,
+          "rangeHigh": 6290
         },
         "breakdown": {
           "basicPension": 2835,
@@ -18218,8 +18218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5359,
-          "rangeLow": 4019,
-          "rangeHigh": 6699
+          "rangeLow": 3483,
+          "rangeHigh": 7235
         },
         "breakdown": {
           "basicPension": 3544,
@@ -18293,8 +18293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5795,
-          "rangeLow": 4925,
-          "rangeHigh": 6664
+          "rangeLow": 3766,
+          "rangeHigh": 7823
         },
         "breakdown": {
           "basicPension": 3544,
@@ -18368,8 +18368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7153,
-          "rangeLow": 5364,
-          "rangeHigh": 8941
+          "rangeLow": 4649,
+          "rangeHigh": 9656
         },
         "breakdown": {
           "basicPension": 4430,
@@ -18443,8 +18443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7214,
-          "rangeLow": 6132,
-          "rangeHigh": 8296
+          "rangeLow": 4689,
+          "rangeHigh": 9739
         },
         "breakdown": {
           "basicPension": 4430,
@@ -18518,8 +18518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12533,
-          "rangeLow": 9400,
-          "rangeHigh": 15666
+          "rangeLow": 8147,
+          "rangeHigh": 16920
         },
         "breakdown": {
           "basicPension": 7087,
@@ -18593,8 +18593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11472,
-          "rangeLow": 9751,
-          "rangeHigh": 13192
+          "rangeLow": 7457,
+          "rangeHigh": 15487
         },
         "breakdown": {
           "basicPension": 7087,
@@ -18668,8 +18668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3934,
-          "rangeLow": 2950,
-          "rangeHigh": 4917
+          "rangeLow": 2557,
+          "rangeHigh": 5310
         },
         "breakdown": {
           "basicPension": 2843,
@@ -18743,8 +18743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4667,
-          "rangeLow": 3967,
-          "rangeHigh": 5368
+          "rangeLow": 3034,
+          "rangeHigh": 6301
         },
         "breakdown": {
           "basicPension": 2843,
@@ -18818,8 +18818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5371,
-          "rangeLow": 4029,
-          "rangeHigh": 6714
+          "rangeLow": 3491,
+          "rangeHigh": 7251
         },
         "breakdown": {
           "basicPension": 3554,
@@ -18893,8 +18893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5805,
-          "rangeLow": 4934,
-          "rangeHigh": 6676
+          "rangeLow": 3773,
+          "rangeHigh": 7837
         },
         "breakdown": {
           "basicPension": 3554,
@@ -18968,8 +18968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7169,
-          "rangeLow": 5376,
-          "rangeHigh": 8961
+          "rangeLow": 4660,
+          "rangeHigh": 9678
         },
         "breakdown": {
           "basicPension": 4443,
@@ -19043,8 +19043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7227,
-          "rangeLow": 6143,
-          "rangeHigh": 8311
+          "rangeLow": 4697,
+          "rangeHigh": 9756
         },
         "breakdown": {
           "basicPension": 4443,
@@ -19118,8 +19118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12560,
-          "rangeLow": 9420,
-          "rangeHigh": 15700
+          "rangeLow": 8164,
+          "rangeHigh": 16956
         },
         "breakdown": {
           "basicPension": 7108,
@@ -19193,8 +19193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11492,
-          "rangeLow": 9769,
-          "rangeHigh": 13216
+          "rangeLow": 7470,
+          "rangeHigh": 15515
         },
         "breakdown": {
           "basicPension": 7108,
@@ -19268,8 +19268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4486,
-          "rangeLow": 3365,
-          "rangeHigh": 5608
+          "rangeLow": 2916,
+          "rangeHigh": 6056
         },
         "breakdown": {
           "basicPension": 3341,
@@ -19343,8 +19343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5165,
-          "rangeLow": 4390,
-          "rangeHigh": 5940
+          "rangeLow": 3357,
+          "rangeHigh": 6972
         },
         "breakdown": {
           "basicPension": 3341,
@@ -19418,8 +19418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6085,
-          "rangeLow": 4564,
-          "rangeHigh": 7606
+          "rangeLow": 3955,
+          "rangeHigh": 8215
         },
         "breakdown": {
           "basicPension": 4176,
@@ -19493,8 +19493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6427,
-          "rangeLow": 5463,
-          "rangeHigh": 7391
+          "rangeLow": 4177,
+          "rangeHigh": 8676
         },
         "breakdown": {
           "basicPension": 4176,
@@ -19568,8 +19568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8084,
-          "rangeLow": 6063,
-          "rangeHigh": 10105
+          "rangeLow": 5255,
+          "rangeHigh": 10913
         },
         "breakdown": {
           "basicPension": 5220,
@@ -19643,8 +19643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8004,
-          "rangeLow": 6803,
-          "rangeHigh": 9205
+          "rangeLow": 5203,
+          "rangeHigh": 10805
         },
         "breakdown": {
           "basicPension": 5220,
@@ -19718,8 +19718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14080,
-          "rangeLow": 10560,
-          "rangeHigh": 17600
+          "rangeLow": 9152,
+          "rangeHigh": 19008
         },
         "breakdown": {
           "basicPension": 8352,
@@ -19793,8 +19793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12736,
-          "rangeLow": 10825,
-          "rangeHigh": 14646
+          "rangeLow": 8278,
+          "rangeHigh": 17193
         },
         "breakdown": {
           "basicPension": 8352,
@@ -21068,8 +21068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3936,
-          "rangeLow": 2952,
-          "rangeHigh": 4920
+          "rangeLow": 2559,
+          "rangeHigh": 5314
         },
         "breakdown": {
           "basicPension": 2843,
@@ -21143,8 +21143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4671,
-          "rangeLow": 3971,
-          "rangeHigh": 5372
+          "rangeLow": 3036,
+          "rangeHigh": 6306
         },
         "breakdown": {
           "basicPension": 2843,
@@ -21218,8 +21218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5376,
-          "rangeLow": 4032,
-          "rangeHigh": 6720
+          "rangeLow": 3494,
+          "rangeHigh": 7257
         },
         "breakdown": {
           "basicPension": 3554,
@@ -21293,8 +21293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5812,
-          "rangeLow": 4940,
-          "rangeHigh": 6683
+          "rangeLow": 3777,
+          "rangeHigh": 7846
         },
         "breakdown": {
           "basicPension": 3554,
@@ -21368,8 +21368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7175,
-          "rangeLow": 5381,
-          "rangeHigh": 8969
+          "rangeLow": 4664,
+          "rangeHigh": 9687
         },
         "breakdown": {
           "basicPension": 4443,
@@ -21443,8 +21443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7237,
-          "rangeLow": 6151,
-          "rangeHigh": 8322
+          "rangeLow": 4704,
+          "rangeHigh": 9769
         },
         "breakdown": {
           "basicPension": 4443,
@@ -21518,8 +21518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12573,
-          "rangeLow": 9430,
-          "rangeHigh": 15717
+          "rangeLow": 8173,
+          "rangeHigh": 16974
         },
         "breakdown": {
           "basicPension": 7108,
@@ -21593,8 +21593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11512,
-          "rangeLow": 9785,
-          "rangeHigh": 13239
+          "rangeLow": 7483,
+          "rangeHigh": 15541
         },
         "breakdown": {
           "basicPension": 7108,
@@ -21668,8 +21668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3946,
-          "rangeLow": 2959,
-          "rangeHigh": 4932
+          "rangeLow": 2565,
+          "rangeHigh": 5327
         },
         "breakdown": {
           "basicPension": 2852,
@@ -21743,8 +21743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4680,
-          "rangeLow": 3978,
-          "rangeHigh": 5382
+          "rangeLow": 3042,
+          "rangeHigh": 6318
         },
         "breakdown": {
           "basicPension": 2852,
@@ -21818,8 +21818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5388,
-          "rangeLow": 4041,
-          "rangeHigh": 6735
+          "rangeLow": 3502,
+          "rangeHigh": 7274
         },
         "breakdown": {
           "basicPension": 3564,
@@ -21893,8 +21893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5822,
-          "rangeLow": 4949,
-          "rangeHigh": 6695
+          "rangeLow": 3784,
+          "rangeHigh": 7860
         },
         "breakdown": {
           "basicPension": 3564,
@@ -21968,8 +21968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7191,
-          "rangeLow": 5393,
-          "rangeHigh": 8989
+          "rangeLow": 4674,
+          "rangeHigh": 9708
         },
         "breakdown": {
           "basicPension": 4456,
@@ -22043,8 +22043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7250,
-          "rangeLow": 6162,
-          "rangeHigh": 8337
+          "rangeLow": 4712,
+          "rangeHigh": 9787
         },
         "breakdown": {
           "basicPension": 4456,
@@ -22118,8 +22118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12600,
-          "rangeLow": 9450,
-          "rangeHigh": 15750
+          "rangeLow": 8190,
+          "rangeHigh": 17011
         },
         "breakdown": {
           "basicPension": 7129,
@@ -22193,8 +22193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11533,
-          "rangeLow": 9803,
-          "rangeHigh": 13263
+          "rangeLow": 7496,
+          "rangeHigh": 15569
         },
         "breakdown": {
           "basicPension": 7129,
@@ -22268,8 +22268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4498,
-          "rangeLow": 3374,
-          "rangeHigh": 5623
+          "rangeLow": 2924,
+          "rangeHigh": 6073
         },
         "breakdown": {
           "basicPension": 3349,
@@ -22343,8 +22343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5177,
-          "rangeLow": 4400,
-          "rangeHigh": 5954
+          "rangeLow": 3365,
+          "rangeHigh": 6989
         },
         "breakdown": {
           "basicPension": 3349,
@@ -22418,8 +22418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6102,
-          "rangeLow": 4577,
-          "rangeHigh": 7628
+          "rangeLow": 3966,
+          "rangeHigh": 8238
         },
         "breakdown": {
           "basicPension": 4186,
@@ -22493,8 +22493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6444,
-          "rangeLow": 5477,
-          "rangeHigh": 7410
+          "rangeLow": 4188,
+          "rangeHigh": 8699
         },
         "breakdown": {
           "basicPension": 4186,
@@ -22568,8 +22568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8107,
-          "rangeLow": 6080,
-          "rangeHigh": 10133
+          "rangeLow": 5269,
+          "rangeHigh": 10944
         },
         "breakdown": {
           "basicPension": 5233,
@@ -22643,8 +22643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 8027,
-          "rangeLow": 6823,
-          "rangeHigh": 9231
+          "rangeLow": 5217,
+          "rangeHigh": 10836
         },
         "breakdown": {
           "basicPension": 5233,
@@ -22718,8 +22718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 14120,
-          "rangeLow": 10590,
-          "rangeHigh": 17650
+          "rangeLow": 9178,
+          "rangeHigh": 19062
         },
         "breakdown": {
           "basicPension": 8372,
@@ -22793,8 +22793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12776,
-          "rangeLow": 10860,
-          "rangeHigh": 14693
+          "rangeLow": 8305,
+          "rangeHigh": 17248
         },
         "breakdown": {
           "basicPension": 8372,
@@ -24068,8 +24068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1834,
-          "rangeLow": 1375,
-          "rangeHigh": 2292
+          "rangeLow": 1192,
+          "rangeHigh": 2476
         },
         "breakdown": {
           "basicPension": 1484,
@@ -24143,8 +24143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2407,
-          "rangeLow": 2046,
-          "rangeHigh": 2768
+          "rangeLow": 1564,
+          "rangeHigh": 3249
         },
         "breakdown": {
           "basicPension": 1484,
@@ -24218,8 +24218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2438,
-          "rangeLow": 1829,
-          "rangeHigh": 3048
+          "rangeLow": 1585,
+          "rangeHigh": 3292
         },
         "breakdown": {
           "basicPension": 1855,
@@ -24293,8 +24293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2778,
-          "rangeLow": 2361,
-          "rangeHigh": 3194
+          "rangeLow": 1806,
+          "rangeHigh": 3750
         },
         "breakdown": {
           "basicPension": 1855,
@@ -24368,8 +24368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3194,
-          "rangeLow": 2395,
-          "rangeHigh": 3992
+          "rangeLow": 2076,
+          "rangeHigh": 4311
         },
         "breakdown": {
           "basicPension": 2318,
@@ -24443,8 +24443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3241,
-          "rangeLow": 2755,
-          "rangeHigh": 3728
+          "rangeLow": 2107,
+          "rangeHigh": 4376
         },
         "breakdown": {
           "basicPension": 2318,
@@ -24518,8 +24518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5460,
-          "rangeLow": 4095,
-          "rangeHigh": 6825
+          "rangeLow": 3549,
+          "rangeHigh": 7371
         },
         "breakdown": {
           "basicPension": 3709,
@@ -24593,8 +24593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4633,
-          "rangeLow": 3938,
-          "rangeHigh": 5327
+          "rangeLow": 3011,
+          "rangeHigh": 6254
         },
         "breakdown": {
           "basicPension": 3709,
@@ -24668,8 +24668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1843,
-          "rangeLow": 1382,
-          "rangeHigh": 2304
+          "rangeLow": 1198,
+          "rangeHigh": 2488
         },
         "breakdown": {
           "basicPension": 1492,
@@ -24743,8 +24743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2415,
-          "rangeLow": 2053,
-          "rangeHigh": 2777
+          "rangeLow": 1570,
+          "rangeHigh": 3260
         },
         "breakdown": {
           "basicPension": 1492,
@@ -24818,8 +24818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2450,
-          "rangeLow": 1838,
-          "rangeHigh": 3063
+          "rangeLow": 1593,
+          "rangeHigh": 3308
         },
         "breakdown": {
           "basicPension": 1865,
@@ -24893,8 +24893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2788,
-          "rangeLow": 2370,
-          "rangeHigh": 3206
+          "rangeLow": 1812,
+          "rangeHigh": 3764
         },
         "breakdown": {
           "basicPension": 1865,
@@ -24968,8 +24968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3209,
-          "rangeLow": 2407,
-          "rangeHigh": 4011
+          "rangeLow": 2086,
+          "rangeHigh": 4332
         },
         "breakdown": {
           "basicPension": 2331,
@@ -25043,8 +25043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3254,
-          "rangeLow": 2766,
-          "rangeHigh": 3743
+          "rangeLow": 2115,
+          "rangeHigh": 4394
         },
         "breakdown": {
           "basicPension": 2331,
@@ -25118,8 +25118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5485,
-          "rangeLow": 4114,
-          "rangeHigh": 6857
+          "rangeLow": 3566,
+          "rangeHigh": 7405
         },
         "breakdown": {
           "basicPension": 3730,
@@ -25193,8 +25193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4653,
-          "rangeLow": 3955,
-          "rangeHigh": 5351
+          "rangeLow": 3025,
+          "rangeHigh": 6282
         },
         "breakdown": {
           "basicPension": 3730,
@@ -25268,8 +25268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2384,
-          "rangeLow": 1788,
-          "rangeHigh": 2979
+          "rangeLow": 1549,
+          "rangeHigh": 3218
         },
         "breakdown": {
           "basicPension": 1989,
@@ -25343,8 +25343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2913,
-          "rangeLow": 2476,
-          "rangeHigh": 3349
+          "rangeLow": 1893,
+          "rangeHigh": 3932
         },
         "breakdown": {
           "basicPension": 1989,
@@ -25418,8 +25418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3144,
-          "rangeLow": 2358,
-          "rangeHigh": 3930
+          "rangeLow": 2043,
+          "rangeHigh": 4244
         },
         "breakdown": {
           "basicPension": 2487,
@@ -25493,8 +25493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3410,
-          "rangeLow": 2898,
-          "rangeHigh": 3921
+          "rangeLow": 2216,
+          "rangeHigh": 4603
         },
         "breakdown": {
           "basicPension": 2487,
@@ -25568,8 +25568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4094,
-          "rangeLow": 3070,
-          "rangeHigh": 5117
+          "rangeLow": 2661,
+          "rangeHigh": 5527
         },
         "breakdown": {
           "basicPension": 3109,
@@ -25643,8 +25643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4032,
-          "rangeLow": 3427,
-          "rangeHigh": 4636
+          "rangeLow": 2621,
+          "rangeHigh": 5443
         },
         "breakdown": {
           "basicPension": 3109,
@@ -25718,8 +25718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6944,
-          "rangeLow": 5208,
-          "rangeHigh": 8680
+          "rangeLow": 4514,
+          "rangeHigh": 9375
         },
         "breakdown": {
           "basicPension": 4974,
@@ -25793,8 +25793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5897,
-          "rangeLow": 5012,
-          "rangeHigh": 6781
+          "rangeLow": 3833,
+          "rangeHigh": 7961
         },
         "breakdown": {
           "basicPension": 4974,
@@ -27068,8 +27068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1834,
-          "rangeLow": 1375,
-          "rangeHigh": 2292
+          "rangeLow": 1192,
+          "rangeHigh": 2476
         },
         "breakdown": {
           "basicPension": 1484,
@@ -27143,8 +27143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2407,
-          "rangeLow": 2046,
-          "rangeHigh": 2768
+          "rangeLow": 1564,
+          "rangeHigh": 3249
         },
         "breakdown": {
           "basicPension": 1484,
@@ -27218,8 +27218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2438,
-          "rangeLow": 1829,
-          "rangeHigh": 3048
+          "rangeLow": 1585,
+          "rangeHigh": 3292
         },
         "breakdown": {
           "basicPension": 1855,
@@ -27293,8 +27293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2778,
-          "rangeLow": 2361,
-          "rangeHigh": 3194
+          "rangeLow": 1806,
+          "rangeHigh": 3750
         },
         "breakdown": {
           "basicPension": 1855,
@@ -27368,8 +27368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3194,
-          "rangeLow": 2395,
-          "rangeHigh": 3992
+          "rangeLow": 2076,
+          "rangeHigh": 4311
         },
         "breakdown": {
           "basicPension": 2318,
@@ -27443,8 +27443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3241,
-          "rangeLow": 2755,
-          "rangeHigh": 3728
+          "rangeLow": 2107,
+          "rangeHigh": 4376
         },
         "breakdown": {
           "basicPension": 2318,
@@ -27518,8 +27518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5460,
-          "rangeLow": 4095,
-          "rangeHigh": 6825
+          "rangeLow": 3549,
+          "rangeHigh": 7371
         },
         "breakdown": {
           "basicPension": 3709,
@@ -27593,8 +27593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4633,
-          "rangeLow": 3938,
-          "rangeHigh": 5327
+          "rangeLow": 3011,
+          "rangeHigh": 6254
         },
         "breakdown": {
           "basicPension": 3709,
@@ -27668,8 +27668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 1843,
-          "rangeLow": 1382,
-          "rangeHigh": 2304
+          "rangeLow": 1198,
+          "rangeHigh": 2488
         },
         "breakdown": {
           "basicPension": 1492,
@@ -27743,8 +27743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2415,
-          "rangeLow": 2053,
-          "rangeHigh": 2777
+          "rangeLow": 1570,
+          "rangeHigh": 3260
         },
         "breakdown": {
           "basicPension": 1492,
@@ -27818,8 +27818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2450,
-          "rangeLow": 1838,
-          "rangeHigh": 3063
+          "rangeLow": 1593,
+          "rangeHigh": 3308
         },
         "breakdown": {
           "basicPension": 1865,
@@ -27893,8 +27893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2788,
-          "rangeLow": 2370,
-          "rangeHigh": 3206
+          "rangeLow": 1812,
+          "rangeHigh": 3764
         },
         "breakdown": {
           "basicPension": 1865,
@@ -27968,8 +27968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3209,
-          "rangeLow": 2407,
-          "rangeHigh": 4011
+          "rangeLow": 2086,
+          "rangeHigh": 4332
         },
         "breakdown": {
           "basicPension": 2331,
@@ -28043,8 +28043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3254,
-          "rangeLow": 2766,
-          "rangeHigh": 3743
+          "rangeLow": 2115,
+          "rangeHigh": 4394
         },
         "breakdown": {
           "basicPension": 2331,
@@ -28118,8 +28118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5485,
-          "rangeLow": 4114,
-          "rangeHigh": 6857
+          "rangeLow": 3566,
+          "rangeHigh": 7405
         },
         "breakdown": {
           "basicPension": 3730,
@@ -28193,8 +28193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4653,
-          "rangeLow": 3955,
-          "rangeHigh": 5351
+          "rangeLow": 3025,
+          "rangeHigh": 6282
         },
         "breakdown": {
           "basicPension": 3730,
@@ -28268,8 +28268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2384,
-          "rangeLow": 1788,
-          "rangeHigh": 2979
+          "rangeLow": 1549,
+          "rangeHigh": 3218
         },
         "breakdown": {
           "basicPension": 1989,
@@ -28343,8 +28343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 2913,
-          "rangeLow": 2476,
-          "rangeHigh": 3349
+          "rangeLow": 1893,
+          "rangeHigh": 3932
         },
         "breakdown": {
           "basicPension": 1989,
@@ -28418,8 +28418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3144,
-          "rangeLow": 2358,
-          "rangeHigh": 3930
+          "rangeLow": 2043,
+          "rangeHigh": 4244
         },
         "breakdown": {
           "basicPension": 2487,
@@ -28493,8 +28493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3410,
-          "rangeLow": 2898,
-          "rangeHigh": 3921
+          "rangeLow": 2216,
+          "rangeHigh": 4603
         },
         "breakdown": {
           "basicPension": 2487,
@@ -28568,8 +28568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4094,
-          "rangeLow": 3070,
-          "rangeHigh": 5117
+          "rangeLow": 2661,
+          "rangeHigh": 5527
         },
         "breakdown": {
           "basicPension": 3109,
@@ -28643,8 +28643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4032,
-          "rangeLow": 3427,
-          "rangeHigh": 4636
+          "rangeLow": 2621,
+          "rangeHigh": 5443
         },
         "breakdown": {
           "basicPension": 3109,
@@ -28718,8 +28718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6944,
-          "rangeLow": 5208,
-          "rangeHigh": 8680
+          "rangeLow": 4514,
+          "rangeHigh": 9375
         },
         "breakdown": {
           "basicPension": 4974,
@@ -28793,8 +28793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5897,
-          "rangeLow": 5012,
-          "rangeHigh": 6781
+          "rangeLow": 3833,
+          "rangeHigh": 7961
         },
         "breakdown": {
           "basicPension": 4974,
@@ -30068,8 +30068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3809,
-          "rangeLow": 2857,
-          "rangeHigh": 4761
+          "rangeLow": 2476,
+          "rangeHigh": 5142
         },
         "breakdown": {
           "basicPension": 2835,
@@ -30143,8 +30143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4466,
-          "rangeLow": 3796,
-          "rangeHigh": 5136
+          "rangeLow": 2903,
+          "rangeHigh": 6029
         },
         "breakdown": {
           "basicPension": 2835,
@@ -30218,8 +30218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5167,
-          "rangeLow": 3875,
-          "rangeHigh": 6458
+          "rangeLow": 3358,
+          "rangeHigh": 6975
         },
         "breakdown": {
           "basicPension": 3544,
@@ -30293,8 +30293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5556,
-          "rangeLow": 4723,
-          "rangeHigh": 6390
+          "rangeLow": 3612,
+          "rangeHigh": 7501
         },
         "breakdown": {
           "basicPension": 3544,
@@ -30368,8 +30368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6864,
-          "rangeLow": 5148,
-          "rangeHigh": 8580
+          "rangeLow": 4462,
+          "rangeHigh": 9267
         },
         "breakdown": {
           "basicPension": 4430,
@@ -30443,8 +30443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6919,
-          "rangeLow": 5881,
-          "rangeHigh": 7957
+          "rangeLow": 4497,
+          "rangeHigh": 9341
         },
         "breakdown": {
           "basicPension": 4430,
@@ -30518,8 +30518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11957,
-          "rangeLow": 8967,
-          "rangeHigh": 14946
+          "rangeLow": 7772,
+          "rangeHigh": 16141
         },
         "breakdown": {
           "basicPension": 7087,
@@ -30593,8 +30593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11007,
-          "rangeLow": 9356,
-          "rangeHigh": 12659
+          "rangeLow": 7155,
+          "rangeHigh": 14860
         },
         "breakdown": {
           "basicPension": 7087,
@@ -30668,8 +30668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3818,
-          "rangeLow": 2864,
-          "rangeHigh": 4773
+          "rangeLow": 2482,
+          "rangeHigh": 5154
         },
         "breakdown": {
           "basicPension": 2843,
@@ -30743,8 +30743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4474,
-          "rangeLow": 3803,
-          "rangeHigh": 5145
+          "rangeLow": 2908,
+          "rangeHigh": 6040
         },
         "breakdown": {
           "basicPension": 2843,
@@ -30818,8 +30818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5179,
-          "rangeLow": 3884,
-          "rangeHigh": 6474
+          "rangeLow": 3366,
+          "rangeHigh": 6992
         },
         "breakdown": {
           "basicPension": 3554,
@@ -30893,8 +30893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5567,
-          "rangeLow": 4732,
-          "rangeHigh": 6402
+          "rangeLow": 3618,
+          "rangeHigh": 7515
         },
         "breakdown": {
           "basicPension": 3554,
@@ -30968,8 +30968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6880,
-          "rangeLow": 5160,
-          "rangeHigh": 8600
+          "rangeLow": 4472,
+          "rangeHigh": 9288
         },
         "breakdown": {
           "basicPension": 4443,
@@ -31043,8 +31043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6932,
-          "rangeLow": 5892,
-          "rangeHigh": 7972
+          "rangeLow": 4506,
+          "rangeHigh": 9358
         },
         "breakdown": {
           "basicPension": 4443,
@@ -31118,8 +31118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11983,
-          "rangeLow": 8987,
-          "rangeHigh": 14978
+          "rangeLow": 7789,
+          "rangeHigh": 16177
         },
         "breakdown": {
           "basicPension": 7108,
@@ -31193,8 +31193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11028,
-          "rangeLow": 9374,
-          "rangeHigh": 12682
+          "rangeLow": 7168,
+          "rangeHigh": 14888
         },
         "breakdown": {
           "basicPension": 7108,
@@ -31268,8 +31268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4365,
-          "rangeLow": 3274,
-          "rangeHigh": 5456
+          "rangeLow": 2837,
+          "rangeHigh": 5893
         },
         "breakdown": {
           "basicPension": 3341,
@@ -31343,8 +31343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4972,
-          "rangeLow": 4226,
-          "rangeHigh": 5717
+          "rangeLow": 3232,
+          "rangeHigh": 6712
         },
         "breakdown": {
           "basicPension": 3341,
@@ -31418,8 +31418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5883,
-          "rangeLow": 4412,
-          "rangeHigh": 7354
+          "rangeLow": 3824,
+          "rangeHigh": 7942
         },
         "breakdown": {
           "basicPension": 4176,
@@ -31493,8 +31493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6188,
-          "rangeLow": 5260,
-          "rangeHigh": 7117
+          "rangeLow": 4022,
+          "rangeHigh": 8354
         },
         "breakdown": {
           "basicPension": 4176,
@@ -31568,8 +31568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7781,
-          "rangeLow": 5835,
-          "rangeHigh": 9726
+          "rangeLow": 5057,
+          "rangeHigh": 10504
         },
         "breakdown": {
           "basicPension": 5220,
@@ -31643,8 +31643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7709,
-          "rangeLow": 6553,
-          "rangeHigh": 8866
+          "rangeLow": 5011,
+          "rangeHigh": 10407
         },
         "breakdown": {
           "basicPension": 5220,
@@ -31718,8 +31718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 13473,
-          "rangeLow": 10105,
-          "rangeHigh": 16842
+          "rangeLow": 8758,
+          "rangeHigh": 18189
         },
         "breakdown": {
           "basicPension": 8352,
@@ -31793,8 +31793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12272,
-          "rangeLow": 10431,
-          "rangeHigh": 14112
+          "rangeLow": 7977,
+          "rangeHigh": 16567
         },
         "breakdown": {
           "basicPension": 8352,
@@ -33068,8 +33068,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3821,
-          "rangeLow": 2865,
-          "rangeHigh": 4776
+          "rangeLow": 2483,
+          "rangeHigh": 5158
         },
         "breakdown": {
           "basicPension": 2843,
@@ -33143,8 +33143,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4478,
-          "rangeLow": 3806,
-          "rangeHigh": 5149
+          "rangeLow": 2911,
+          "rangeHigh": 6045
         },
         "breakdown": {
           "basicPension": 2843,
@@ -33218,8 +33218,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5183,
-          "rangeLow": 3887,
-          "rangeHigh": 6479
+          "rangeLow": 3369,
+          "rangeHigh": 6997
         },
         "breakdown": {
           "basicPension": 3554,
@@ -33293,8 +33293,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5572,
-          "rangeLow": 4737,
-          "rangeHigh": 6408
+          "rangeLow": 3622,
+          "rangeHigh": 7523
         },
         "breakdown": {
           "basicPension": 3554,
@@ -33368,8 +33368,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6886,
-          "rangeLow": 5164,
-          "rangeHigh": 8607
+          "rangeLow": 4476,
+          "rangeHigh": 9296
         },
         "breakdown": {
           "basicPension": 4443,
@@ -33443,8 +33443,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6941,
-          "rangeLow": 5900,
-          "rangeHigh": 7982
+          "rangeLow": 4512,
+          "rangeHigh": 9370
         },
         "breakdown": {
           "basicPension": 4443,
@@ -33518,8 +33518,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11995,
-          "rangeLow": 8996,
-          "rangeHigh": 14994
+          "rangeLow": 7797,
+          "rangeHigh": 16193
         },
         "breakdown": {
           "basicPension": 7108,
@@ -33593,8 +33593,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11046,
-          "rangeLow": 9389,
-          "rangeHigh": 12703
+          "rangeLow": 7180,
+          "rangeHigh": 14912
         },
         "breakdown": {
           "basicPension": 7108,
@@ -33668,8 +33668,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 3830,
-          "rangeLow": 2872,
-          "rangeHigh": 4787
+          "rangeLow": 2489,
+          "rangeHigh": 5170
         },
         "breakdown": {
           "basicPension": 2852,
@@ -33743,8 +33743,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4486,
-          "rangeLow": 3813,
-          "rangeHigh": 5159
+          "rangeLow": 2916,
+          "rangeHigh": 6056
         },
         "breakdown": {
           "basicPension": 2852,
@@ -33818,8 +33818,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5195,
-          "rangeLow": 3896,
-          "rangeHigh": 6494
+          "rangeLow": 3377,
+          "rangeHigh": 7013
         },
         "breakdown": {
           "basicPension": 3564,
@@ -33893,8 +33893,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5583,
-          "rangeLow": 4745,
-          "rangeHigh": 6420
+          "rangeLow": 3629,
+          "rangeHigh": 7537
         },
         "breakdown": {
           "basicPension": 3564,
@@ -33968,8 +33968,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6902,
-          "rangeLow": 5176,
-          "rangeHigh": 8627
+          "rangeLow": 4486,
+          "rangeHigh": 9317
         },
         "breakdown": {
           "basicPension": 4456,
@@ -34043,8 +34043,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6954,
-          "rangeLow": 5911,
-          "rangeHigh": 7997
+          "rangeLow": 4520,
+          "rangeHigh": 9388
         },
         "breakdown": {
           "basicPension": 4456,
@@ -34118,8 +34118,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12021,
-          "rangeLow": 9016,
-          "rangeHigh": 15026
+          "rangeLow": 7814,
+          "rangeHigh": 16228
         },
         "breakdown": {
           "basicPension": 7129,
@@ -34193,8 +34193,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 11066,
-          "rangeLow": 9407,
-          "rangeHigh": 12726
+          "rangeLow": 7193,
+          "rangeHigh": 14940
         },
         "breakdown": {
           "basicPension": 7129,
@@ -34268,8 +34268,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4377,
-          "rangeLow": 3283,
-          "rangeHigh": 5471
+          "rangeLow": 2845,
+          "rangeHigh": 5909
         },
         "breakdown": {
           "basicPension": 3349,
@@ -34343,8 +34343,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 4983,
-          "rangeLow": 4236,
-          "rangeHigh": 5731
+          "rangeLow": 3239,
+          "rangeHigh": 6728
         },
         "breakdown": {
           "basicPension": 3349,
@@ -34418,8 +34418,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 5899,
-          "rangeLow": 4424,
-          "rangeHigh": 7374
+          "rangeLow": 3834,
+          "rangeHigh": 7964
         },
         "breakdown": {
           "basicPension": 4186,
@@ -34493,8 +34493,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 6205,
-          "rangeLow": 5274,
-          "rangeHigh": 7135
+          "rangeLow": 4033,
+          "rangeHigh": 8376
         },
         "breakdown": {
           "basicPension": 4186,
@@ -34568,8 +34568,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7802,
-          "rangeLow": 5852,
-          "rangeHigh": 9753
+          "rangeLow": 5072,
+          "rangeHigh": 10533
         },
         "breakdown": {
           "basicPension": 5233,
@@ -34643,8 +34643,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 7731,
-          "rangeLow": 6571,
-          "rangeHigh": 8891
+          "rangeLow": 5025,
+          "rangeHigh": 10437
         },
         "breakdown": {
           "basicPension": 5233,
@@ -34718,8 +34718,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 13512,
-          "rangeLow": 10134,
-          "rangeHigh": 16889
+          "rangeLow": 8783,
+          "rangeHigh": 18241
         },
         "breakdown": {
           "basicPension": 8372,
@@ -34793,8 +34793,8 @@
       "expected": {
         "amount": {
           "monthlyTotal": 12310,
-          "rangeLow": 10463,
-          "rangeHigh": 14156
+          "rangeLow": 8001,
+          "rangeHigh": 16618
         },
         "breakdown": {
           "basicPension": 8372,
