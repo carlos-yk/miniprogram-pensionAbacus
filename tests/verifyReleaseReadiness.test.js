@@ -148,13 +148,20 @@ test('release docs include the device QA evidence initializer command', () => {
   const readme = fs.readFileSync(path.join(root, 'docs/README.md'), 'utf8');
 
   assert.match(releaseDoc, /npm run qa:device-evidence:init/);
+  assert.match(releaseDoc, /npm run qa:device-evidence:complete/);
+  assert.match(releaseDoc, /--tester "测试人姓名"/);
+  assert.match(releaseDoc, /--ios-screenshot "qa\/artifacts\/ios-main-flow\.png"/);
+  assert.match(releaseDoc, /--android-screenshot "qa\/artifacts\/android-main-flow\.png"/);
   assert.match(releaseDoc, /previewGenerated=true only after/i);
   assert.match(releaseDoc, /checks\.\*.*true.*真实/i);
   assert.match(releaseDoc, /核心历史参数缺失/);
   assert.match(releaseDoc, /非核心历史参数软提示/);
   assert.match(releaseDoc, /发布支持文件/);
   assert.match(releaseDoc, /qa\/device-qa-evidence\.example\.json/);
+  assert.doesNotMatch(releaseDoc, /正式发布仍被发布资产和真机链路阻塞/);
   assert.match(readme, /npm run qa:device-evidence:init/);
+  assert.match(readme, /npm run qa:device-evidence:complete/);
+  assert.match(readme, /--confirm-real-device/);
 });
 
 test('release support file checker reports tracked files with local modifications', () => {
