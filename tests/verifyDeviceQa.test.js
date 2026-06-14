@@ -24,6 +24,7 @@ test('device QA verifier prints actionable evidence instructions when evidence i
   assert.match(output, /Device QA next steps/);
   assert.match(output, /npm run qa:devtools-login/);
   assert.match(output, /npm run qa:device-evidence:init/);
+  assert.match(output, /npm run qa:device-evidence:complete/);
   assert.match(output, /npm run verify:devtools:preview/);
   assert.match(output, /qa\/device-qa-evidence\.example\.json/);
   assert.match(output, /qa\/device-qa-evidence\.json/);
