@@ -30,7 +30,8 @@
   "checks": {
     "homeEmployeeEntryOnly": false,
     "disabledFutureModules": false,
-    "unsupportedHistoricalYearsBlocked": false,
+    "coreHistoricalGapsBlocked": false,
+    "nonCoreHistoricalGapsSoftPrompt": false,
     "requiredFormValidation": false,
     "femaleRetirementTwoColumnLayout": false,
     "accountBalanceFlow": false,

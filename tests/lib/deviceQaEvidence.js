@@ -28,7 +28,8 @@ const requiredPlatforms = ['iOS', 'Android'];
 const requiredChecks = [
   'homeEmployeeEntryOnly',
   'disabledFutureModules',
-  'unsupportedHistoricalYearsBlocked',
+  'coreHistoricalGapsBlocked',
+  'nonCoreHistoricalGapsSoftPrompt',
   'requiredFormValidation',
   'femaleRetirementTwoColumnLayout',
   'accountBalanceFlow',
@@ -45,7 +46,8 @@ const requiredChecks = [
 const requiredCheckLabels = {
   homeEmployeeEntryOnly: '首页只开放城镇职工入口',
   disabledFutureModules: '长期规划模块置灰并提示敬请期待',
-  unsupportedHistoricalYearsBlocked: '触达未复核历史年份的输入不能提交测算',
+  coreHistoricalGapsBlocked: '触达核心历史参数缺失年份的输入不能提交测算',
+  nonCoreHistoricalGapsSoftPrompt: '仅缺非核心历史参数时出现软提示并允许继续估算',
   requiredFormValidation: '出生年月、退休类型、城市、缴费年限、缴费水平必填校验通过',
   femaleRetirementTwoColumnLayout: '女性退休类型两列布局展示正常',
   accountBalanceFlow: '个人账户余额填写、跳过和返回流程正常',

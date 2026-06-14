@@ -141,6 +141,8 @@ test('release docs include the device QA evidence initializer command', () => {
   assert.match(releaseDoc, /npm run qa:device-evidence:init/);
   assert.match(releaseDoc, /previewGenerated=true only after/i);
   assert.match(releaseDoc, /checks\.\*.*true.*真实/i);
+  assert.match(releaseDoc, /核心历史参数缺失/);
+  assert.match(releaseDoc, /非核心历史参数软提示/);
   assert.match(releaseDoc, /发布支持文件/);
   assert.match(releaseDoc, /qa\/device-qa-evidence\.example\.json/);
   assert.match(readme, /npm run qa:device-evidence:init/);
