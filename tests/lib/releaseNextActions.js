@@ -9,6 +9,20 @@ function unique(items) {
   return Array.from(new Set(items.filter(Boolean)));
 }
 
+const DEVICE_QA_COMPLETE_COMMAND = [
+  'npm run qa:device-evidence:complete --',
+  '--tester "测试人姓名"',
+  '--ios-model "iPhone 机型"',
+  '--ios-os "iOS 版本"',
+  '--ios-wechat "微信版本"',
+  '--ios-screenshot "qa/artifacts/ios-main-flow.png"',
+  '--android-model "Android 机型"',
+  '--android-os "Android 版本"',
+  '--android-wechat "微信版本"',
+  '--android-screenshot "qa/artifacts/android-main-flow.png"',
+  '--confirm-real-device'
+].join(' ');
+
 function buildReleaseNextActions({
   assetIssues,
   cityDataIssues,
@@ -111,7 +125,7 @@ function buildReleaseNextActions({
       loginCommand: devtoolsIssues && devtoolsIssues.loginCommand,
       previewCommand: devtoolsIssues && devtoolsIssues.previewCommand,
       draftCommand: 'npm run qa:device-evidence:init',
-      completeCommand: 'npm run qa:device-evidence:complete -- --confirm-real-device',
+      completeCommand: DEVICE_QA_COMPLETE_COMMAND,
       evidencePath: deviceQaIssues.evidencePath,
       examplePath: deviceQaIssues.examplePath,
       artifactRequirements: ['devtools.qrOutput', 'devtools.infoOutput', 'device.screenshot'],
