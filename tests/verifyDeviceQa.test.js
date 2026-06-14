@@ -134,6 +134,11 @@ test('device QA evidence initializer creates a conservative draft without overwr
   assert.equal(result.status, 0, output);
   assert.match(output, /Created device QA evidence draft/);
   assert.match(output, /npm run verify:devtools:preview/);
+  assert.match(output, /npm run qa:device-evidence:complete/);
+  assert.match(output, /--tester "测试人姓名"/);
+  assert.match(output, /--ios-screenshot "qa\/artifacts\/ios-main-flow\.png"/);
+  assert.match(output, /--android-screenshot "qa\/artifacts\/android-main-flow\.png"/);
+  assert.match(output, /--confirm-real-device/);
   assert.match(output, /npm run verify:device-qa/);
 
   const draft = JSON.parse(fs.readFileSync(outputPath, 'utf8'));

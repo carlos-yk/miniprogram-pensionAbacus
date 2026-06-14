@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const {
+  completeEvidenceCommand,
   evidencePath,
   examplePath,
   requiredChecks,
@@ -129,7 +130,7 @@ function main() {
   console.log('Next steps:');
   console.log('- Run npm run verify:devtools:preview on a non-sandboxed, logged-in WeChat DevTools desktop.');
   console.log('- Scan the QR code on real iOS and Android devices, complete the main flow, and save screenshots.');
-  console.log('- Fill tester, device details, device screenshot paths, result values, and checks.* only after real validation.');
+  console.log(`- After real validation, run ${completeEvidenceCommand}`);
   console.log('- Run npm run verify:device-qa.');
 }
 
