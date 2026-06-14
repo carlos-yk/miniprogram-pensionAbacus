@@ -111,6 +111,7 @@ function buildReleaseNextActions({
       loginCommand: devtoolsIssues && devtoolsIssues.loginCommand,
       previewCommand: devtoolsIssues && devtoolsIssues.previewCommand,
       draftCommand: 'npm run qa:device-evidence:init',
+      completeCommand: 'npm run qa:device-evidence:complete -- --confirm-real-device',
       evidencePath: deviceQaIssues.evidencePath,
       examplePath: deviceQaIssues.examplePath,
       artifactRequirements: ['devtools.qrOutput', 'devtools.infoOutput', 'device.screenshot'],
@@ -172,6 +173,9 @@ function printReleaseNextActions(actions, logger = console.error) {
     if (action.evidencePath) {
       if (action.draftCommand) {
         logger(`  Evidence draft: ${action.draftCommand}`);
+      }
+      if (action.completeCommand) {
+        logger(`  Evidence complete: ${action.completeCommand}`);
       }
       logger(`  Evidence: fill ${action.evidencePath} from ${action.examplePath}`);
     }

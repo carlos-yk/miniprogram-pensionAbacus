@@ -27,6 +27,7 @@ test('release readiness verifier prints actionable next steps for blockers', () 
   assert.doesNotMatch(output, /source-production-review/);
   assert.doesNotMatch(output, /data:shanghai:2001:production-ready-review/);
   assert.match(output, /npm run qa:device-evidence:init/);
+  assert.match(output, /npm run qa:device-evidence:complete/);
   assert.match(output, /npm run verify:devtools:preview/);
   assert.match(output, /qa\/device-qa-evidence\.json/);
   assert.match(output, /Artifacts: devtools\.qrOutput, devtools\.infoOutput, device\.screenshot files must exist/);
@@ -58,6 +59,7 @@ test('release status json exposes owner-based next actions', () => {
   assert.equal(qaAction.evidencePath, 'qa/device-qa-evidence.json');
   assert.equal(qaAction.loginHelperCommand, 'npm run qa:devtools-login');
   assert.equal(qaAction.draftCommand, 'npm run qa:device-evidence:init');
+  assert.equal(qaAction.completeCommand, 'npm run qa:device-evidence:complete -- --confirm-real-device');
   assert.ok(qaAction.artifactRequirements.includes('devtools.qrOutput'));
   assert.ok(qaAction.artifactRequirements.includes('device.screenshot'));
   assert.match(qaAction.loginCommand, /login/);
