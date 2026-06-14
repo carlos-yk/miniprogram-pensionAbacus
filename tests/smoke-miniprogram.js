@@ -155,6 +155,11 @@ function runCalculateSmoke() {
   assert.equal(page.data.scenarioTitle, '正在帮家人测算');
   assert.equal(page.data.cityOptions.length, 3);
   assert.equal(page.data.submitLabel, '立即测算');
+  assert.equal(page.data.birthMonth, '');
+  assert.equal(page.data.birthMonthLabel, '请选择出生年月');
+  assert.equal(page.data.birthMonthPickerValue, '1978-05');
+  assert.equal(page.data.birthMonthStart, '1940-01');
+  assert.equal(page.data.birthMonthEnd, '2026-05');
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), false);
   page.toggleContributionOptions();
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), true);

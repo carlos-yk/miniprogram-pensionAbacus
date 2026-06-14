@@ -39,6 +39,18 @@ test('calculate page renders worker type choices in a two-column grid', () => {
   assert.match(wxss, /grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
 });
 
+test('calculate page opens birth month picker near target users instead of current month', () => {
+  const wxml = read('miniprogram/pages/calculate/calculate.wxml');
+  const js = read('miniprogram/pages/calculate/calculate.js');
+
+  assert.match(wxml, /value="\{\{birthMonthPickerValue\}\}"/);
+  assert.match(wxml, /start="\{\{birthMonthStart\}\}"/);
+  assert.match(wxml, /end="\{\{birthMonthEnd\}\}"/);
+  assert.match(js, /birthMonthPickerValue/);
+  assert.match(js, /birthMonthStart/);
+  assert.match(js, /birthMonthEnd/);
+});
+
 test('result page displays a retirement month range for unknown female worker type', () => {
   const wxml = read('miniprogram/pages/result/result.wxml');
   const js = read('miniprogram/pages/result/result.js');

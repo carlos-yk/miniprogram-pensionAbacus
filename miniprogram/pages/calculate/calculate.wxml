@@ -17,7 +17,14 @@
 
   <view class="section">
     <view class="section-title">出生年月</view>
-    <picker mode="date" fields="month" value="{{birthMonth}}" bindchange="onBirthMonthChange">
+    <picker
+      mode="date"
+      fields="month"
+      value="{{birthMonthPickerValue}}"
+      start="{{birthMonthStart}}"
+      end="{{birthMonthEnd}}"
+      bindchange="onBirthMonthChange"
+    >
       <view class="picker-card card">
         <view>{{birthMonthLabel}}</view>
         <view class="muted">用于推算法定退休时间</view>

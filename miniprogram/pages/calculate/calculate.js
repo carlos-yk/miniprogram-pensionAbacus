@@ -5,7 +5,7 @@ const {
 } = require('../../utils/dataGate');
 const { calculatePensionEstimate } = require('../../utils/pensionCalculator');
 const { calculateRetirement } = require('../../utils/retirement');
-const { toMonthIndex } = require('../../utils/date');
+const { fromMonthIndex, toMonthIndex } = require('../../utils/date');
 const {
   getAdvancedContributionOptions,
   getContributionOptions,
@@ -21,6 +21,8 @@ const primaryContributionOptions = getPrimaryContributionOptions();
 const advancedContributionOptions = getAdvancedContributionOptions();
 const MAX_REASONABLE_PAID_YEARS = 50;
 const RETIRED_GRACE_MONTHS = 12;
+const TARGET_BIRTH_PICKER_AGE_YEARS = 48;
+const BIRTH_MONTH_START = '1940-01';
 
 function decorateWorkerTypes(selectedKey) {
   return workerTypes.map((item) => ({
@@ -101,6 +103,15 @@ function getInputBoundaryError({ birthMonth, workerType, paidYears }) {
   }
 
   return getRetirementScopeError(workerType, birthMonth);
+}
+
+function getDefaultBirthMonthPickerValue(currentMonth = features.calculationAsOfMonth) {
+  const startIndex = toMonthIndex(BIRTH_MONTH_START);
+  const endIndex = toMonthIndex(currentMonth);
+  const targetIndex = endIndex - TARGET_BIRTH_PICKER_AGE_YEARS * 12;
+  const clampedIndex = Math.min(endIndex, Math.max(startIndex, targetIndex));
+
+  return fromMonthIndex(clampedIndex);
 }
 
 function formatYearRange(years) {
@@ -203,6 +214,9 @@ Page({
     showScenarioBanner: false,
     birthMonth: '',
     birthMonthLabel: '请选择出生年月',
+    birthMonthPickerValue: getDefaultBirthMonthPickerValue(),
+    birthMonthStart: BIRTH_MONTH_START,
+    birthMonthEnd: features.calculationAsOfMonth,
     workerType: '',
     showFemaleUnknownHint: false,
     city: '',
@@ -251,6 +265,7 @@ Page({
     this.setData({
       birthMonth: event.detail.value,
       birthMonthLabel: event.detail.value || '请选择出生年月',
+      birthMonthPickerValue: event.detail.value || getDefaultBirthMonthPickerValue(),
       formError: ''
     });
     this.updateSubmitState();
