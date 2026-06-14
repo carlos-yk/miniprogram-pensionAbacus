@@ -1,5 +1,6 @@
 const {
   collectDeviceQaEvidenceIssues,
+  completeEvidenceCommand,
   getLatestWatchedContentChange,
   requiredCheckLabels,
   requiredChecks,
@@ -16,7 +17,7 @@ function printNextSteps() {
   console.error('- If DevTools is not logged in, run npm run qa:devtools-login and scan the generated QR code.');
   console.error('- Run npm run qa:device-evidence:init to create a conservative evidence draft.');
   console.error('- Run npm run verify:devtools:preview on a non-sandboxed, logged-in WeChat DevTools desktop.');
-  console.error('- After real iOS and Android validation, run npm run qa:device-evidence:complete -- --confirm-real-device with tester, device details, and screenshot paths.');
+  console.error(`- After real iOS and Android validation, run ${completeEvidenceCommand}`);
   console.error(`- Use ${examplePath} as the template if you need to fill ${evidencePath} manually after real device QA.`);
   console.error('- The preview QR and info files must exist at devtools.qrOutput and devtools.infoOutput.');
   console.error('- The iOS and Android device screenshots must exist at each device.screenshot path.');

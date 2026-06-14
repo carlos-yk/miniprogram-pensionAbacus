@@ -25,6 +25,12 @@ test('device QA verifier prints actionable evidence instructions when evidence i
   assert.match(output, /npm run qa:devtools-login/);
   assert.match(output, /npm run qa:device-evidence:init/);
   assert.match(output, /npm run qa:device-evidence:complete/);
+  assert.match(output, /--tester "测试人姓名"/);
+  assert.match(output, /--ios-model "iPhone 机型"/);
+  assert.match(output, /--ios-screenshot "qa\/artifacts\/ios-main-flow\.png"/);
+  assert.match(output, /--android-model "Android 机型"/);
+  assert.match(output, /--android-screenshot "qa\/artifacts\/android-main-flow\.png"/);
+  assert.match(output, /--confirm-real-device/);
   assert.match(output, /npm run verify:devtools:preview/);
   assert.match(output, /qa\/device-qa-evidence\.example\.json/);
   assert.match(output, /qa\/device-qa-evidence\.json/);

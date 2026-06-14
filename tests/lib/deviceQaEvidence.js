@@ -61,6 +61,19 @@ const requiredCheckLabels = {
   iosSmokePass: 'iOS 真机主流程通过',
   androidSmokePass: 'Android 真机主流程通过'
 };
+const completeEvidenceCommand = [
+  'npm run qa:device-evidence:complete --',
+  '--tester "测试人姓名"',
+  '--ios-model "iPhone 机型"',
+  '--ios-os "iOS 版本"',
+  '--ios-wechat "微信版本"',
+  '--ios-screenshot "qa/artifacts/ios-main-flow.png"',
+  '--android-model "Android 机型"',
+  '--android-os "Android 版本"',
+  '--android-wechat "微信版本"',
+  '--android-screenshot "qa/artifacts/android-main-flow.png"',
+  '--confirm-real-device'
+].join(' ');
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'));
@@ -301,6 +314,7 @@ function collectDeviceQaEvidenceIssues() {
 module.exports = {
   collectDeviceQaEvidenceContentIssues,
   collectDeviceQaEvidenceIssues,
+  completeEvidenceCommand,
   evidencePath,
   examplePath,
   getLatestWatchedContentChange,
