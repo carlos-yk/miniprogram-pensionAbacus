@@ -288,6 +288,71 @@ test('device QA evidence completer writes passing evidence after explicit real-d
   }
 });
 
+test('device QA evidence completer rejects placeholder device details before writing pass', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-device-qa-complete-'));
+  const evidencePath = path.join(tempDir, 'device-qa-evidence.json');
+  const qrOutput = path.join(tempDir, 'preview.png');
+  const infoOutput = path.join(tempDir, 'preview.json');
+  const iosScreenshot = path.join(tempDir, 'ios.png');
+  const androidScreenshot = path.join(tempDir, 'android.png');
+  fs.writeFileSync(qrOutput, 'preview qr');
+  fs.writeFileSync(infoOutput, '{"size":{"total":1}}');
+  fs.writeFileSync(iosScreenshot, 'ios screenshot');
+  fs.writeFileSync(androidScreenshot, 'android screenshot');
+
+  const initResult = spawnSync(process.execPath, [
+    'tests/init-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tested-at',
+    '2026-06-05T08:00:00.000Z'
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(initResult.status, 0, `${initResult.stdout}\n${initResult.stderr}`);
+
+  const result = spawnSync(process.execPath, [
+    'tests/complete-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tested-at',
+    '2026-06-05T09:00:00.000Z',
+    '--tester',
+    'QA Tester',
+    '--qr-output',
+    qrOutput,
+    '--info-output',
+    infoOutput,
+    '--ios-model',
+    'iPhone',
+    '--ios-os',
+    'iOS version',
+    '--ios-wechat',
+    'WeChat version',
+    '--ios-screenshot',
+    iosScreenshot,
+    '--android-model',
+    'Android phone',
+    '--android-os',
+    'Android version',
+    '--android-wechat',
+    'WeChat version',
+    '--android-screenshot',
+    androidScreenshot,
+    '--confirm-real-device'
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 1, output);
+  assert.match(output, /placeholder/i);
+  const evidence = JSON.parse(fs.readFileSync(evidencePath, 'utf8'));
+  assert.equal(evidence.devices[0].result, 'pending');
+});
+
 test('package exposes device QA helper commands', () => {
   const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 

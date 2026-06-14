@@ -90,6 +90,10 @@ function isFilled(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function hasPlaceholder(value) {
+  return /^(name|iPhone|Android phone|iOS version|Android version|WeChat version)$/i.test(String(value || '').trim());
+}
+
 function assertRequiredOptions(options) {
   const required = [
     'tester',
@@ -116,6 +120,11 @@ function assertRequiredOptions(options) {
 
   if (!options.confirmRealDevice) {
     throw new Error('Refusing to mark device QA as pass without --confirm-real-device after real iOS and Android validation.');
+  }
+
+  const placeholderFields = required.filter((key) => hasPlaceholder(options[key]));
+  if (placeholderFields.length > 0) {
+    throw new Error(`Refusing to mark device QA as pass with placeholder values: ${placeholderFields.join(', ')}`);
   }
 }
 
