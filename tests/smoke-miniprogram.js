@@ -157,12 +157,16 @@ function runCalculateSmoke() {
   assert.equal(page.data.submitLabel, '立即测算');
   assert.equal(page.data.birthMonth, '');
   assert.equal(page.data.birthMonthLabel, '请选择出生年月');
-  assert.equal(page.data.birthMonthPickerValue, '1978-05');
+  assert.equal(page.data.birthMonthPickerValue, '1973-05');
   assert.equal(page.data.birthMonthStart, '1940-01');
   assert.equal(page.data.birthMonthEnd, '2026-05');
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), false);
   page.toggleContributionOptions();
   assert.equal(page.data.visibleContributionOptions.some((item) => item.key === 'ratio_150'), true);
+
+  page.selectWorkerType(tapDataset({ key: 'male' }));
+  assert.equal(page.data.birthMonthPickerValue, '1968-05');
+  assert.equal(page.data.birthMonth, '');
 
   page.onBirthMonthChange(inputValue('1968-06'));
   page.selectWorkerType(tapDataset({ key: 'male' }));
@@ -183,6 +187,13 @@ function runCalculateSmoke() {
 
   assert.equal(calls.navigateTo.at(-1).url, '/pages/result/result?scenario=family');
   assert.notEqual(wx.getStorageSync(storage.FAMILY_LAST_RESULT_KEY), '');
+
+  const femalePage = loadPage('miniprogram/pages/calculate/calculate.js');
+  femalePage.selectWorkerType(tapDataset({ key: 'female_original_50' }));
+  assert.equal(femalePage.data.birthMonthPickerValue, '1978-05');
+  femalePage.onBirthMonthChange(inputValue('1977-01'));
+  femalePage.selectWorkerType(tapDataset({ key: 'male' }));
+  assert.equal(femalePage.data.birthMonthPickerValue, '1977-01');
 }
 
 function runCalculateValidationSmoke() {

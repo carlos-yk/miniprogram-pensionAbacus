@@ -21,7 +21,13 @@ const primaryContributionOptions = getPrimaryContributionOptions();
 const advancedContributionOptions = getAdvancedContributionOptions();
 const MAX_REASONABLE_PAID_YEARS = 50;
 const RETIRED_GRACE_MONTHS = 12;
-const TARGET_BIRTH_PICKER_AGE_YEARS = 48;
+const DEFAULT_BIRTH_PICKER_AGE_YEARS = 53;
+const DEFAULT_BIRTH_PICKER_AGE_BY_WORKER_TYPE = {
+  male: 58,
+  female_original_55: 53,
+  female_original_50: 48,
+  female_unknown: 51
+};
 const BIRTH_MONTH_START = '1940-01';
 
 function decorateWorkerTypes(selectedKey) {
@@ -105,10 +111,11 @@ function getInputBoundaryError({ birthMonth, workerType, paidYears }) {
   return getRetirementScopeError(workerType, birthMonth);
 }
 
-function getDefaultBirthMonthPickerValue(currentMonth = features.calculationAsOfMonth) {
+function getDefaultBirthMonthPickerValue(workerType = '', currentMonth = features.calculationAsOfMonth) {
   const startIndex = toMonthIndex(BIRTH_MONTH_START);
   const endIndex = toMonthIndex(currentMonth);
-  const targetIndex = endIndex - TARGET_BIRTH_PICKER_AGE_YEARS * 12;
+  const targetAgeYears = DEFAULT_BIRTH_PICKER_AGE_BY_WORKER_TYPE[workerType] || DEFAULT_BIRTH_PICKER_AGE_YEARS;
+  const targetIndex = endIndex - targetAgeYears * 12;
   const clampedIndex = Math.min(endIndex, Math.max(startIndex, targetIndex));
 
   return fromMonthIndex(clampedIndex);
@@ -273,12 +280,18 @@ Page({
 
   selectWorkerType(event) {
     const workerType = event.currentTarget.dataset.key;
-    this.setData({
+    const nextData = {
       workerType,
       workerTypes: decorateWorkerTypes(workerType),
       showFemaleUnknownHint: workerType === 'female_unknown',
       formError: ''
-    });
+    };
+
+    if (!this.data.birthMonth) {
+      nextData.birthMonthPickerValue = getDefaultBirthMonthPickerValue(workerType);
+    }
+
+    this.setData(nextData);
     this.updateSubmitState();
   },
 

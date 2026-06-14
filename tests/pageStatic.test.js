@@ -51,6 +51,14 @@ test('calculate page opens birth month picker near target users instead of curre
   assert.match(js, /birthMonthEnd/);
 });
 
+test('calculate page adjusts unopened birth month picker by worker type', () => {
+  const js = read('miniprogram/pages/calculate/calculate.js');
+
+  assert.match(js, /DEFAULT_BIRTH_PICKER_AGE_BY_WORKER_TYPE/);
+  assert.match(js, /getDefaultBirthMonthPickerValue\(workerType/);
+  assert.match(js, /!this\.data\.birthMonth/);
+});
+
 test('result page displays a retirement month range for unknown female worker type', () => {
   const wxml = read('miniprogram/pages/result/result.wxml');
   const js = read('miniprogram/pages/result/result.js');
