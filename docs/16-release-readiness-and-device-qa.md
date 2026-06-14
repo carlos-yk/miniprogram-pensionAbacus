@@ -138,6 +138,18 @@ npm run qa:device-evidence:init
 
 该命令会基于 `qa/device-qa-evidence.example.json` 生成 `qa/device-qa-evidence.json` 草稿；它只用于减少手工抄字段，不代表验收通过。草稿会保持 `devtools.previewGenerated=false`、设备 `result=pending`、所有 `checks.*=false`。
 
+真实 iOS 和 Android 主流程都验收通过后，可以用辅助命令写入证据，避免手填 JSON 漏字段：
+
+```bash
+npm run qa:device-evidence:complete -- \
+  --tester "测试人姓名" \
+  --ios-model "iPhone 机型" --ios-os "iOS 版本" --ios-wechat "微信版本" --ios-screenshot "qa/artifacts/ios-main-flow.png" \
+  --android-model "Android 机型" --android-os "Android 版本" --android-wechat "微信版本" --android-screenshot "qa/artifacts/android-main-flow.png" \
+  --confirm-real-device
+```
+
+`qa:device-evidence:complete` 会校验预览二维码、预览信息、iOS 截图和 Android 截图文件都存在；没有 `--confirm-real-device` 时不会把设备和检查项标记为通过。该确认只应在真实扫码验收完成后使用。
+
 真实验收后，填写 `qa/device-qa-evidence.json`。实际证据文件默认不提交到 git，但发布闸门会读取它，确认 iOS、Android、预览二维码和关键流程验收均通过。
 
 `devtools.previewGenerated=true only after` `npm run verify:devtools:preview` 已真实生成二维码和预览信息文件。将 `checks.*` 设置为 true 前必须完成真实 iOS 和 Android 真机验证；不能为了通过发布闸门提前改成 true。

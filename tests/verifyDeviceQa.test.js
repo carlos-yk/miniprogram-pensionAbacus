@@ -156,6 +156,138 @@ test('device QA evidence initializer creates a conservative draft without overwr
   assert.match(secondOutput, /--force/);
 });
 
+test('device QA evidence completer refuses to mark pass without real-device confirmation', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-device-qa-complete-'));
+  const evidencePath = path.join(tempDir, 'device-qa-evidence.json');
+  const iosScreenshot = path.join(tempDir, 'ios.png');
+  const androidScreenshot = path.join(tempDir, 'android.png');
+  fs.writeFileSync(iosScreenshot, 'ios screenshot');
+  fs.writeFileSync(androidScreenshot, 'android screenshot');
+
+  const initResult = spawnSync(process.execPath, [
+    'tests/init-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tested-at',
+    '2026-06-05T08:00:00.000Z'
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(initResult.status, 0, `${initResult.stdout}\n${initResult.stderr}`);
+
+  const result = spawnSync(process.execPath, [
+    'tests/complete-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tester',
+    'QA Tester',
+    '--ios-model',
+    'iPhone 15',
+    '--ios-os',
+    'iOS 18.5',
+    '--ios-wechat',
+    '8.0.58',
+    '--ios-screenshot',
+    iosScreenshot,
+    '--android-model',
+    'Pixel 8',
+    '--android-os',
+    'Android 15',
+    '--android-wechat',
+    '8.0.58',
+    '--android-screenshot',
+    androidScreenshot
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 1, output);
+  assert.match(output, /--confirm-real-device/);
+
+  const evidence = JSON.parse(fs.readFileSync(evidencePath, 'utf8'));
+  assert.equal(evidence.tester, 'name');
+  assert.equal(evidence.devices[0].result, 'pending');
+});
+
+test('device QA evidence completer writes passing evidence after explicit real-device confirmation', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pension-device-qa-complete-'));
+  const evidencePath = path.join(tempDir, 'device-qa-evidence.json');
+  const qrOutput = path.join(tempDir, 'preview.png');
+  const infoOutput = path.join(tempDir, 'preview.json');
+  const iosScreenshot = path.join(tempDir, 'ios.png');
+  const androidScreenshot = path.join(tempDir, 'android.png');
+  fs.writeFileSync(qrOutput, 'preview qr');
+  fs.writeFileSync(infoOutput, '{"size":{"total":1}}');
+  fs.writeFileSync(iosScreenshot, 'ios screenshot');
+  fs.writeFileSync(androidScreenshot, 'android screenshot');
+
+  const initResult = spawnSync(process.execPath, [
+    'tests/init-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tested-at',
+    '2026-06-05T08:00:00.000Z'
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(initResult.status, 0, `${initResult.stdout}\n${initResult.stderr}`);
+
+  const result = spawnSync(process.execPath, [
+    'tests/complete-device-qa-evidence.js',
+    '--output',
+    evidencePath,
+    '--tested-at',
+    '2026-06-05T09:00:00.000Z',
+    '--tester',
+    'QA Tester',
+    '--qr-output',
+    qrOutput,
+    '--info-output',
+    infoOutput,
+    '--ios-model',
+    'iPhone 15',
+    '--ios-os',
+    'iOS 18.5',
+    '--ios-wechat',
+    '8.0.58',
+    '--ios-screenshot',
+    iosScreenshot,
+    '--android-model',
+    'Pixel 8',
+    '--android-os',
+    'Android 15',
+    '--android-wechat',
+    '8.0.58',
+    '--android-screenshot',
+    androidScreenshot,
+    '--confirm-real-device'
+  ], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  const output = `${result.stdout}\n${result.stderr}`;
+
+  assert.equal(result.status, 0, output);
+  assert.match(output, /Updated device QA evidence/);
+  assert.match(output, /npm run verify:device-qa/);
+
+  const evidence = JSON.parse(fs.readFileSync(evidencePath, 'utf8'));
+  assert.equal(evidence.testedAt, '2026-06-05T09:00:00.000Z');
+  assert.equal(evidence.tester, 'QA Tester');
+  assert.equal(evidence.devtools.previewGenerated, true);
+  assert.equal(evidence.devtools.qrOutput, qrOutput);
+  assert.equal(evidence.devtools.infoOutput, infoOutput);
+  assert.equal(evidence.devices.find((device) => device.platform === 'iOS').result, 'pass');
+  assert.equal(evidence.devices.find((device) => device.platform === 'Android').result, 'pass');
+  for (const check of requiredChecks) {
+    assert.equal(evidence.checks[check], true, `${check} should be true`);
+  }
+});
+
 test('package exposes device QA helper commands', () => {
   const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
@@ -166,6 +298,10 @@ test('package exposes device QA helper commands', () => {
   assert.equal(
     packageJson.scripts['qa:device-evidence:init'],
     'node tests/init-device-qa-evidence.js'
+  );
+  assert.equal(
+    packageJson.scripts['qa:device-evidence:complete'],
+    'node tests/complete-device-qa-evidence.js'
   );
 });
 

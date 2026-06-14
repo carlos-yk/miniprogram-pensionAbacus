@@ -6,6 +6,7 @@
     "data:backfill-tasks": "node data/generated/generate-city-data-backfill-tasks.mjs",
     "qa:devtools-login": "node tests/devtools-login.js",
     "qa:device-evidence:init": "node tests/init-device-qa-evidence.js",
+    "qa:device-evidence:complete": "node tests/complete-device-qa-evidence.js",
     "release:status": "node tests/print-release-status.js",
     "release:status:json": "node tests/print-release-status.js --json",
     "test": "node --test tests/*.test.js",
